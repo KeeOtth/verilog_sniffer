@@ -1,0 +1,405 @@
+
+Parse Tree:
+Node @0 (tag: kDescriptionList) {
+  Node @0 (tag: kModuleDeclaration) {
+    Node @0 (tag: kModuleHeader) {
+      Leaf @0 (#"module" @170-176: "module")
+      Leaf @2 (#SymbolIdentifier @177-184: "counter")
+      Node @5 (tag: kParenGroup) {
+        Leaf @0 (#'(' @184-185: "(")
+        Node @1 (tag: kPortDeclarationList) {
+          Node @0 (tag: kPort) {
+            Node @0 (tag: kPortReference) {
+              Node @0 (tag: kUnqualifiedId) {
+                Leaf @0 (#SymbolIdentifier @185-188: "clk")
+              }
+            }
+          }
+          Leaf @1 (#',' @188-189: ",")
+          Node @2 (tag: kPort) {
+            Node @0 (tag: kPortReference) {
+              Node @0 (tag: kUnqualifiedId) {
+                Leaf @0 (#SymbolIdentifier @190-193: "rst")
+              }
+            }
+          }
+          Leaf @3 (#',' @193-194: ",")
+          Node @4 (tag: kPort) {
+            Node @0 (tag: kPortReference) {
+              Node @0 (tag: kUnqualifiedId) {
+                Leaf @0 (#SymbolIdentifier @195-199: "data")
+              }
+            }
+          }
+          Leaf @5 (#',' @199-200: ",")
+          Node @6 (tag: kPort) {
+            Node @0 (tag: kPortReference) {
+              Node @0 (tag: kUnqualifiedId) {
+                Leaf @0 (#SymbolIdentifier @201-207: "updown")
+              }
+            }
+          }
+          Leaf @7 (#',' @207-208: ",")
+          Node @8 (tag: kPort) {
+            Node @0 (tag: kPortReference) {
+              Node @0 (tag: kUnqualifiedId) {
+                Leaf @0 (#SymbolIdentifier @209-213: "load")
+              }
+            }
+          }
+          Leaf @9 (#',' @213-214: ",")
+          Node @10 (tag: kPort) {
+            Node @0 (tag: kPortReference) {
+              Node @0 (tag: kUnqualifiedId) {
+                Leaf @0 (#SymbolIdentifier @215-223: "data_out")
+              }
+            }
+          }
+        }
+        Leaf @2 (#')' @223-224: ")")
+      }
+      Leaf @7 (#';' @224-225: ";")
+    }
+    Node @1 (tag: kModuleItemList) {
+      Node @0 (tag: kModulePortDeclaration) {
+        Leaf @0 (#"input" @229-234: "input")
+        Node @1 (tag: kDataType) {
+        }
+        Node @2 (tag: kIdentifierList) {
+          Node @0 (tag: kIdentifierUnpackedDimensions) {
+            Node @0 (tag: kUnqualifiedId) {
+              Leaf @0 (#SymbolIdentifier @235-238: "clk")
+            }
+            Node @1 (tag: kUnpackedDimensions) {
+            }
+          }
+          Leaf @1 (#',' @238-239: ",")
+          Node @2 (tag: kIdentifierUnpackedDimensions) {
+            Leaf @0 (#SymbolIdentifier @240-243: "rst")
+            Node @1 (tag: kUnpackedDimensions) {
+            }
+          }
+          Leaf @3 (#',' @243-244: ",")
+          Node @4 (tag: kIdentifierUnpackedDimensions) {
+            Leaf @0 (#SymbolIdentifier @245-249: "load")
+            Node @1 (tag: kUnpackedDimensions) {
+            }
+          }
+        }
+        Leaf @3 (#';' @249-250: ";")
+      }
+      Node @1 (tag: kModulePortDeclaration) {
+        Leaf @0 (#"input" @252-257: "input")
+        Node @1 (tag: kDataType) {
+        }
+        Node @2 (tag: kIdentifierList) {
+          Node @0 (tag: kIdentifierUnpackedDimensions) {
+            Node @0 (tag: kUnqualifiedId) {
+              Leaf @0 (#SymbolIdentifier @258-264: "updown")
+            }
+            Node @1 (tag: kUnpackedDimensions) {
+            }
+          }
+        }
+        Leaf @3 (#';' @264-265: ";")
+      }
+      Node @2 (tag: kModulePortDeclaration) {
+        Leaf @0 (#"input" @267-272: "input")
+        Node @1 (tag: kDataType) {
+          Node @3 (tag: kPackedDimensions) {
+            Node @0 (tag: kDeclarationDimensions) {
+              Node @0 (tag: kDimensionRange) {
+                Leaf @0 (#'[' @273-274: "[")
+                Node @1 (tag: kExpression) {
+                  Node @0 (tag: kNumber) {
+                    Leaf @0 (#TK_DecNumber @274-275: "3")
+                  }
+                }
+                Leaf @2 (#':' @275-276: ":")
+                Node @3 (tag: kExpression) {
+                  Node @0 (tag: kNumber) {
+                    Leaf @0 (#TK_DecNumber @276-277: "0")
+                  }
+                }
+                Leaf @4 (#']' @277-278: "]")
+              }
+            }
+          }
+        }
+        Node @2 (tag: kIdentifierUnpackedDimensionsList) {
+          Node @0 (tag: kIdentifierUnpackedDimensions) {
+            Leaf @0 (#SymbolIdentifier @279-283: "data")
+            Node @1 (tag: kUnpackedDimensions) {
+            }
+          }
+        }
+        Leaf @3 (#';' @283-284: ";")
+      }
+      Node @3 (tag: kModulePortDeclaration) {
+        Leaf @0 (#"output" @287-293: "output")
+        Node @1 (tag: kDataType) {
+          Node @2 (tag: kPackedDimensions) {
+            Node @0 (tag: kDeclarationDimensions) {
+              Node @0 (tag: kDimensionRange) {
+                Leaf @0 (#'[' @298-299: "[")
+                Node @1 (tag: kExpression) {
+                  Node @0 (tag: kNumber) {
+                    Leaf @0 (#TK_DecNumber @299-300: "3")
+                  }
+                }
+                Leaf @2 (#':' @300-301: ":")
+                Node @3 (tag: kExpression) {
+                  Node @0 (tag: kNumber) {
+                    Leaf @0 (#TK_DecNumber @301-302: "0")
+                  }
+                }
+                Leaf @4 (#']' @302-303: "]")
+              }
+            }
+          }
+        }
+        Node @2 (tag: kPortIdentifierList) {
+          Node @0 (tag: kPortIdentifier) {
+            Leaf @0 (#SymbolIdentifier @304-312: "data_out")
+          }
+        }
+        Leaf @3 (#';' @312-313: ";")
+      }
+      Node @4 (tag: kAlwaysStatement) {
+        Leaf @0 (#"always" @317-323: "always")
+        Node @1 (tag: kProceduralTimingControlStatement) {
+          Node @0 (tag: kEventControl) {
+            Leaf @0 (#'@' @323-324: "@")
+            Node @1 (tag: kParenGroup) {
+              Leaf @0 (#'(' @324-325: "(")
+              Node @1 (tag: kEventExpressionList) {
+                Node @0 (tag: kEventExpression) {
+                  Leaf @0 (#"posedge" @325-332: "posedge")
+                  Node @1 (tag: kExpression) {
+                    Node @0 (tag: kFunctionCall) {
+                      Node @0 (tag: kReference) {
+                        Node @0 (tag: kLocalRoot) {
+                          Node @0 (tag: kUnqualifiedId) {
+                            Leaf @0 (#SymbolIdentifier @333-336: "clk")
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              Leaf @2 (#')' @336-337: ")")
+            }
+          }
+          Node @1 (tag: kSeqBlock) {
+            Node @0 (tag: kBegin) {
+              Leaf @0 (#"begin" @339-344: "begin")
+            }
+            Node @1 (tag: kBlockItemStatementList) {
+              Node @0 (tag: kConditionalStatement) {
+                Node @0 (tag: kIfClause) {
+                  Node @0 (tag: kIfHeader) {
+                    Leaf @1 (#"if" @347-349: "if")
+                    Node @2 (tag: kParenGroup) {
+                      Leaf @0 (#'(' @349-350: "(")
+                      Node @1 (tag: kExpression) {
+                        Node @0 (tag: kFunctionCall) {
+                          Node @0 (tag: kReference) {
+                            Node @0 (tag: kLocalRoot) {
+                              Node @0 (tag: kUnqualifiedId) {
+                                Leaf @0 (#SymbolIdentifier @350-353: "rst")
+                              }
+                            }
+                          }
+                        }
+                      }
+                      Leaf @2 (#')' @353-354: ")")
+                    }
+                  }
+                  Node @1 (tag: kIfBody) {
+                    Node @0 (tag: kNonblockingAssignmentStatement) {
+                      Node @0 (tag: kLPValue) {
+                        Node @0 (tag: kReference) {
+                          Node @0 (tag: kLocalRoot) {
+                            Node @0 (tag: kUnqualifiedId) {
+                              Leaf @0 (#SymbolIdentifier @358-366: "data_out")
+                            }
+                          }
+                        }
+                      }
+                      Leaf @1 (#"<=" @367-369: "<=")
+                      Node @3 (tag: kExpression) {
+                        Node @0 (tag: kNumber) {
+                          Leaf @0 (#TK_DecNumber @370-371: "4")
+                          Node @1 (tag: kBaseDigits) {
+                            Leaf @0 (#TK_BinBase @371-373: "\'b")
+                            Leaf @1 (#TK_BinDigits @373-374: "0")
+                          }
+                        }
+                      }
+                      Leaf @4 (#';' @374-375: ";")
+                    }
+                  }
+                }
+                Node @1 (tag: kElseClause) {
+                  Leaf @0 (#"else" @378-382: "else")
+                  Node @1 (tag: kElseBody) {
+                    Node @0 (tag: kConditionalStatement) {
+                      Node @0 (tag: kIfClause) {
+                        Node @0 (tag: kIfHeader) {
+                          Leaf @1 (#"if" @383-385: "if")
+                          Node @2 (tag: kParenGroup) {
+                            Leaf @0 (#'(' @385-386: "(")
+                            Node @1 (tag: kExpression) {
+                              Node @0 (tag: kFunctionCall) {
+                                Node @0 (tag: kReference) {
+                                  Node @0 (tag: kLocalRoot) {
+                                    Node @0 (tag: kUnqualifiedId) {
+                                      Leaf @0 (#SymbolIdentifier @386-390: "load")
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                            Leaf @2 (#')' @390-391: ")")
+                          }
+                        }
+                        Node @1 (tag: kIfBody) {
+                          Node @0 (tag: kNonblockingAssignmentStatement) {
+                            Node @0 (tag: kLPValue) {
+                              Node @0 (tag: kReference) {
+                                Node @0 (tag: kLocalRoot) {
+                                  Node @0 (tag: kUnqualifiedId) {
+                                    Leaf @0 (#SymbolIdentifier @395-403: "data_out")
+                                  }
+                                }
+                              }
+                            }
+                            Leaf @1 (#"<=" @404-406: "<=")
+                            Node @3 (tag: kExpression) {
+                              Node @0 (tag: kFunctionCall) {
+                                Node @0 (tag: kReference) {
+                                  Node @0 (tag: kLocalRoot) {
+                                    Node @0 (tag: kUnqualifiedId) {
+                                      Leaf @0 (#SymbolIdentifier @407-411: "data")
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                            Leaf @4 (#';' @411-412: ";")
+                          }
+                        }
+                      }
+                      Node @1 (tag: kElseClause) {
+                        Leaf @0 (#"else" @415-419: "else")
+                        Node @1 (tag: kElseBody) {
+                          Node @0 (tag: kNonblockingAssignmentStatement) {
+                            Node @0 (tag: kLPValue) {
+                              Node @0 (tag: kReference) {
+                                Node @0 (tag: kLocalRoot) {
+                                  Node @0 (tag: kUnqualifiedId) {
+                                    Leaf @0 (#SymbolIdentifier @423-431: "data_out")
+                                  }
+                                }
+                              }
+                            }
+                            Leaf @1 (#"<=" @432-434: "<=")
+                            Node @3 (tag: kExpression) {
+                              Node @0 (tag: kParenGroup) {
+                                Leaf @0 (#'(' @435-436: "(")
+                                Node @1 (tag: kExpression) {
+                                  Node @0 (tag: kConditionExpression) {
+                                    Node @0 (tag: kParenGroup) {
+                                      Leaf @0 (#'(' @436-437: "(")
+                                      Node @1 (tag: kExpression) {
+                                        Node @0 (tag: kFunctionCall) {
+                                          Node @0 (tag: kReference) {
+                                            Node @0 (tag: kLocalRoot) {
+                                              Node @0 (tag: kUnqualifiedId) {
+                                                Leaf @0 (#SymbolIdentifier @437-443: "updown")
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                      Leaf @2 (#')' @443-444: ")")
+                                    }
+                                    Leaf @1 (#'?' @444-445: "?")
+                                    Node @2 (tag: kExpression) {
+                                      Node @0 (tag: kParenGroup) {
+                                        Leaf @0 (#'(' @445-446: "(")
+                                        Node @1 (tag: kExpression) {
+                                          Node @0 (tag: kBinaryExpression) {
+                                            Node @0 (tag: kFunctionCall) {
+                                              Node @0 (tag: kReference) {
+                                                Node @0 (tag: kLocalRoot) {
+                                                  Node @0 (tag: kUnqualifiedId) {
+                                                    Leaf @0 (#SymbolIdentifier @446-454: "data_out")
+                                                  }
+                                                }
+                                              }
+                                            }
+                                            Leaf @1 (#'+' @455-456: "+")
+                                            Node @2 (tag: kNumber) {
+                                              Leaf @0 (#TK_DecNumber @457-458: "1")
+                                              Node @1 (tag: kBaseDigits) {
+                                                Leaf @0 (#TK_BinBase @458-460: "\'b")
+                                                Leaf @1 (#TK_BinDigits @460-461: "1")
+                                              }
+                                            }
+                                          }
+                                        }
+                                        Leaf @2 (#')' @461-462: ")")
+                                      }
+                                    }
+                                    Leaf @3 (#':' @462-463: ":")
+                                    Node @4 (tag: kParenGroup) {
+                                      Leaf @0 (#'(' @463-464: "(")
+                                      Node @1 (tag: kExpression) {
+                                        Node @0 (tag: kBinaryExpression) {
+                                          Node @0 (tag: kFunctionCall) {
+                                            Node @0 (tag: kReference) {
+                                              Node @0 (tag: kLocalRoot) {
+                                                Node @0 (tag: kUnqualifiedId) {
+                                                  Leaf @0 (#SymbolIdentifier @464-472: "data_out")
+                                                }
+                                              }
+                                            }
+                                          }
+                                          Leaf @1 (#'-' @473-474: "-")
+                                          Node @2 (tag: kNumber) {
+                                            Leaf @0 (#TK_DecNumber @474-475: "1")
+                                            Node @1 (tag: kBaseDigits) {
+                                              Leaf @0 (#TK_BinBase @475-477: "\'b")
+                                              Leaf @1 (#TK_BinDigits @477-478: "1")
+                                            }
+                                          }
+                                        }
+                                      }
+                                      Leaf @2 (#')' @478-479: ")")
+                                    }
+                                  }
+                                }
+                                Leaf @2 (#')' @479-480: ")")
+                              }
+                            }
+                            Leaf @4 (#';' @480-481: ";")
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            Node @2 (tag: kEnd) {
+              Leaf @0 (#"end" @483-486: "end")
+            }
+          }
+        }
+      }
+    }
+    Leaf @2 (#"endmodule" @488-497: "endmodule")
+  }
+}

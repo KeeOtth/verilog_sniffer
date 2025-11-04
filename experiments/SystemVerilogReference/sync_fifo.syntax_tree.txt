@@ -1,0 +1,1664 @@
+
+Parse Tree:
+Node @0 (tag: kDescriptionList) {
+  Node @0 (tag: kPreprocessorDefine) {
+    Leaf @0 (#"`define" @222-229: "`define")
+    Leaf @1 (#PP_Identifier @230-240: "FIFO_WIDTH")
+    Leaf @2 (#"<<`define-tokens>>" @241-269: "16  //width of each location")
+  }
+  Node @1 (tag: kPreprocessorDefine) {
+    Leaf @0 (#"`define" @270-277: "`define")
+    Leaf @1 (#PP_Identifier @278-292: "FIFO_SIZE_BITS")
+    Leaf @2 (#"<<`define-tokens>>" @293-332: "5  //5 bits for counter => 32 deep FIFO")
+  }
+  Node @2 (tag: kPreprocessorDefine) {
+    Leaf @0 (#"`define" @333-340: "`define")
+    Leaf @1 (#PP_Identifier @341-350: "FIFO_SIZE")
+    Leaf @2 (#"<<`define-tokens>>" @351-372: "( 1<<`FIFO_SIZE_BITS)")
+  }
+  Node @3 (tag: kModuleDeclaration) {
+    Node @0 (tag: kModuleHeader) {
+      Leaf @0 (#"module" @387-393: "module")
+      Leaf @2 (#SymbolIdentifier @394-403: "sync_fifo")
+      Node @5 (tag: kParenGroup) {
+        Leaf @0 (#'(' @403-404: "(")
+        Node @1 (tag: kPortDeclarationList) {
+          Node @0 (tag: kPortDeclaration) {
+            Leaf @0 (#"input" @407-412: "input")
+            Node @2 (tag: kDataType) {
+              Node @1 (tag: kDataTypePrimitive) {
+                Leaf @0 (#"logic" @413-418: "logic")
+              }
+              Node @3 (tag: kPackedDimensions) {
+              }
+            }
+            Node @3 (tag: kUnqualifiedId) {
+              Leaf @0 (#SymbolIdentifier @420-425: "reset")
+            }
+            Node @4 (tag: kUnpackedDimensions) {
+            }
+          }
+          Leaf @1 (#',' @425-426: ",")
+          Node @2 (tag: kPortDeclaration) {
+            Leaf @0 (#"input" @429-434: "input")
+            Node @2 (tag: kDataType) {
+              Node @1 (tag: kDataTypePrimitive) {
+                Leaf @0 (#"logic" @435-440: "logic")
+              }
+              Node @3 (tag: kPackedDimensions) {
+              }
+            }
+            Node @3 (tag: kUnqualifiedId) {
+              Leaf @0 (#SymbolIdentifier @441-444: "clk")
+            }
+            Node @4 (tag: kUnpackedDimensions) {
+            }
+          }
+          Leaf @3 (#',' @444-445: ",")
+          Node @4 (tag: kPortDeclaration) {
+            Leaf @0 (#"input" @448-453: "input")
+            Node @2 (tag: kDataType) {
+              Node @1 (tag: kDataTypePrimitive) {
+                Leaf @0 (#"logic" @454-459: "logic")
+              }
+              Node @3 (tag: kPackedDimensions) {
+              }
+            }
+            Node @3 (tag: kUnqualifiedId) {
+              Leaf @0 (#SymbolIdentifier @460-465: "write")
+            }
+            Node @4 (tag: kUnpackedDimensions) {
+            }
+          }
+          Leaf @5 (#',' @465-466: ",")
+          Node @6 (tag: kPortDeclaration) {
+            Leaf @0 (#"input" @469-474: "input")
+            Node @2 (tag: kDataType) {
+              Node @1 (tag: kDataTypePrimitive) {
+                Leaf @0 (#"logic" @475-480: "logic")
+              }
+              Node @3 (tag: kPackedDimensions) {
+              }
+            }
+            Node @3 (tag: kUnqualifiedId) {
+              Leaf @0 (#SymbolIdentifier @481-485: "read")
+            }
+            Node @4 (tag: kUnpackedDimensions) {
+            }
+          }
+          Leaf @7 (#',' @485-486: ",")
+          Node @8 (tag: kPortDeclaration) {
+            Leaf @0 (#"input" @492-497: "input")
+            Node @2 (tag: kDataType) {
+              Node @1 (tag: kDataTypePrimitive) {
+                Leaf @0 (#"logic" @498-503: "logic")
+              }
+              Node @3 (tag: kPackedDimensions) {
+                Node @0 (tag: kDeclarationDimensions) {
+                  Node @0 (tag: kDimensionRange) {
+                    Leaf @0 (#'[' @504-505: "[")
+                    Node @1 (tag: kExpression) {
+                      Node @0 (tag: kBinaryExpression) {
+                        Node @0 (tag: kFunctionCall) {
+                          Node @0 (tag: kReference) {
+                            Node @0 (tag: kLocalRoot) {
+                              Node @0 (tag: kUnqualifiedId) {
+                                Leaf @0 (#MacroIdentifier @505-516: "`FIFO_WIDTH")
+                              }
+                            }
+                          }
+                        }
+                        Leaf @1 (#'-' @516-517: "-")
+                        Node @2 (tag: kNumber) {
+                          Leaf @0 (#TK_DecNumber @517-518: "1")
+                        }
+                      }
+                    }
+                    Leaf @2 (#':' @518-519: ":")
+                    Node @3 (tag: kExpression) {
+                      Node @0 (tag: kNumber) {
+                        Leaf @0 (#TK_DecNumber @519-520: "0")
+                      }
+                    }
+                    Leaf @4 (#']' @520-521: "]")
+                  }
+                }
+              }
+            }
+            Node @3 (tag: kUnqualifiedId) {
+              Leaf @0 (#SymbolIdentifier @522-529: "data_in")
+            }
+            Node @4 (tag: kUnpackedDimensions) {
+            }
+          }
+          Leaf @9 (#',' @529-530: ",")
+          Node @10 (tag: kPortDeclaration) {
+            Leaf @0 (#"output" @551-557: "output")
+            Node @2 (tag: kDataType) {
+              Node @1 (tag: kDataTypePrimitive) {
+                Leaf @0 (#"logic" @558-563: "logic")
+              }
+              Node @3 (tag: kPackedDimensions) {
+                Node @0 (tag: kDeclarationDimensions) {
+                  Node @0 (tag: kDimensionRange) {
+                    Leaf @0 (#'[' @564-565: "[")
+                    Node @1 (tag: kExpression) {
+                      Node @0 (tag: kBinaryExpression) {
+                        Node @0 (tag: kFunctionCall) {
+                          Node @0 (tag: kReference) {
+                            Node @0 (tag: kLocalRoot) {
+                              Node @0 (tag: kUnqualifiedId) {
+                                Leaf @0 (#MacroIdentifier @565-576: "`FIFO_WIDTH")
+                              }
+                            }
+                          }
+                        }
+                        Leaf @1 (#'-' @576-577: "-")
+                        Node @2 (tag: kNumber) {
+                          Leaf @0 (#TK_DecNumber @577-578: "1")
+                        }
+                      }
+                    }
+                    Leaf @2 (#':' @578-579: ":")
+                    Node @3 (tag: kExpression) {
+                      Node @0 (tag: kNumber) {
+                        Leaf @0 (#TK_DecNumber @579-580: "0")
+                      }
+                    }
+                    Leaf @4 (#']' @580-581: "]")
+                  }
+                }
+              }
+            }
+            Node @3 (tag: kUnqualifiedId) {
+              Leaf @0 (#SymbolIdentifier @582-590: "data_out")
+            }
+            Node @4 (tag: kUnpackedDimensions) {
+            }
+          }
+          Leaf @11 (#',' @590-591: ",")
+          Node @12 (tag: kPortDeclaration) {
+            Leaf @0 (#"output" @612-618: "output")
+            Node @2 (tag: kDataType) {
+              Node @1 (tag: kDataTypePrimitive) {
+                Leaf @0 (#"logic" @619-624: "logic")
+              }
+              Node @3 (tag: kPackedDimensions) {
+              }
+            }
+            Node @3 (tag: kUnqualifiedId) {
+              Leaf @0 (#SymbolIdentifier @625-635: "fifo_empty")
+            }
+            Node @4 (tag: kUnpackedDimensions) {
+            }
+          }
+          Leaf @13 (#',' @635-636: ",")
+          Node @14 (tag: kPortDeclaration) {
+            Leaf @0 (#"output" @639-645: "output")
+            Node @2 (tag: kDataType) {
+              Node @1 (tag: kDataTypePrimitive) {
+                Leaf @0 (#"logic" @646-651: "logic")
+              }
+              Node @3 (tag: kPackedDimensions) {
+              }
+            }
+            Node @3 (tag: kUnqualifiedId) {
+              Leaf @0 (#SymbolIdentifier @652-661: "fifo_full")
+            }
+            Node @4 (tag: kUnpackedDimensions) {
+            }
+          }
+          Leaf @15 (#',' @661-662: ",")
+          Node @16 (tag: kPortDeclaration) {
+            Leaf @0 (#"output" @671-677: "output")
+            Node @2 (tag: kDataType) {
+              Node @1 (tag: kDataTypePrimitive) {
+                Leaf @0 (#"logic" @678-683: "logic")
+              }
+              Node @3 (tag: kPackedDimensions) {
+                Node @0 (tag: kDeclarationDimensions) {
+                  Node @0 (tag: kDimensionRange) {
+                    Leaf @0 (#'[' @684-685: "[")
+                    Node @1 (tag: kExpression) {
+                      Node @0 (tag: kBinaryExpression) {
+                        Node @0 (tag: kFunctionCall) {
+                          Node @0 (tag: kReference) {
+                            Node @0 (tag: kLocalRoot) {
+                              Node @0 (tag: kUnqualifiedId) {
+                                Leaf @0 (#MacroIdentifier @685-700: "`FIFO_SIZE_BITS")
+                              }
+                            }
+                          }
+                        }
+                        Leaf @1 (#'-' @700-701: "-")
+                        Node @2 (tag: kNumber) {
+                          Leaf @0 (#TK_DecNumber @701-702: "1")
+                        }
+                      }
+                    }
+                    Leaf @2 (#':' @702-703: ":")
+                    Node @3 (tag: kExpression) {
+                      Node @0 (tag: kNumber) {
+                        Leaf @0 (#TK_DecNumber @703-704: "0")
+                      }
+                    }
+                    Leaf @4 (#']' @704-705: "]")
+                  }
+                }
+              }
+            }
+            Node @3 (tag: kUnqualifiedId) {
+              Leaf @0 (#SymbolIdentifier @706-718: "fifo_counter")
+            }
+            Node @4 (tag: kUnpackedDimensions) {
+            }
+          }
+        }
+        Leaf @2 (#')' @719-720: ")")
+      }
+      Leaf @7 (#';' @720-721: ";")
+    }
+    Node @1 (tag: kModuleItemList) {
+      Node @0 (tag: kDataDeclaration) {
+        Node @1 (tag: kInstantiationBase) {
+          Node @0 (tag: kInstantiationType) {
+            Node @0 (tag: kDataType) {
+              Node @1 (tag: kDataTypePrimitive) {
+                Leaf @0 (#"logic" @800-805: "logic")
+              }
+              Node @3 (tag: kPackedDimensions) {
+                Node @0 (tag: kDeclarationDimensions) {
+                  Node @0 (tag: kDimensionScalar) {
+                    Leaf @0 (#'[' @805-806: "[")
+                    Node @1 (tag: kExpressionList) {
+                      Node @0 (tag: kExpression) {
+                        Node @0 (tag: kBinaryExpression) {
+                          Node @0 (tag: kFunctionCall) {
+                            Node @0 (tag: kReference) {
+                              Node @0 (tag: kLocalRoot) {
+                                Node @0 (tag: kUnqualifiedId) {
+                                  Leaf @0 (#MacroIdentifier @806-821: "`FIFO_SIZE_BITS")
+                                }
+                              }
+                            }
+                          }
+                          Leaf @1 (#'-' @821-822: "-")
+                          Node @2 (tag: kNumber) {
+                            Leaf @0 (#TK_DecNumber @822-823: "1")
+                          }
+                        }
+                      }
+                    }
+                    Leaf @2 (#']' @823-824: "]")
+                  }
+                }
+              }
+            }
+          }
+          Node @1 (tag: kGateInstanceRegisterVariableList) {
+            Node @0 (tag: kRegisterVariable) {
+              Leaf @0 (#SymbolIdentifier @825-831: "wr_ptr")
+              Node @1 (tag: kUnpackedDimensions) {
+              }
+            }
+          }
+        }
+        Leaf @2 (#';' @831-832: ";")
+      }
+      Node @1 (tag: kDataDeclaration) {
+        Node @1 (tag: kInstantiationBase) {
+          Node @0 (tag: kInstantiationType) {
+            Node @0 (tag: kDataType) {
+              Node @1 (tag: kDataTypePrimitive) {
+                Leaf @0 (#"logic" @835-840: "logic")
+              }
+              Node @3 (tag: kPackedDimensions) {
+                Node @0 (tag: kDeclarationDimensions) {
+                  Node @0 (tag: kDimensionScalar) {
+                    Leaf @0 (#'[' @840-841: "[")
+                    Node @1 (tag: kExpressionList) {
+                      Node @0 (tag: kExpression) {
+                        Node @0 (tag: kBinaryExpression) {
+                          Node @0 (tag: kFunctionCall) {
+                            Node @0 (tag: kReference) {
+                              Node @0 (tag: kLocalRoot) {
+                                Node @0 (tag: kUnqualifiedId) {
+                                  Leaf @0 (#MacroIdentifier @841-856: "`FIFO_SIZE_BITS")
+                                }
+                              }
+                            }
+                          }
+                          Leaf @1 (#'-' @856-857: "-")
+                          Node @2 (tag: kNumber) {
+                            Leaf @0 (#TK_DecNumber @857-858: "1")
+                          }
+                        }
+                      }
+                    }
+                    Leaf @2 (#']' @858-859: "]")
+                  }
+                }
+              }
+            }
+          }
+          Node @1 (tag: kGateInstanceRegisterVariableList) {
+            Node @0 (tag: kRegisterVariable) {
+              Leaf @0 (#SymbolIdentifier @860-866: "rd_ptr")
+              Node @1 (tag: kUnpackedDimensions) {
+              }
+            }
+          }
+        }
+        Leaf @2 (#';' @866-867: ";")
+      }
+      Node @2 (tag: kDataDeclaration) {
+        Node @1 (tag: kInstantiationBase) {
+          Node @0 (tag: kInstantiationType) {
+            Node @0 (tag: kDataType) {
+              Node @1 (tag: kDataTypePrimitive) {
+                Leaf @0 (#"logic" @888-893: "logic")
+              }
+              Node @3 (tag: kPackedDimensions) {
+                Node @0 (tag: kDeclarationDimensions) {
+                  Node @0 (tag: kDimensionRange) {
+                    Leaf @0 (#'[' @894-895: "[")
+                    Node @1 (tag: kExpression) {
+                      Node @0 (tag: kBinaryExpression) {
+                        Node @0 (tag: kFunctionCall) {
+                          Node @0 (tag: kReference) {
+                            Node @0 (tag: kLocalRoot) {
+                              Node @0 (tag: kUnqualifiedId) {
+                                Leaf @0 (#MacroIdentifier @895-906: "`FIFO_WIDTH")
+                              }
+                            }
+                          }
+                        }
+                        Leaf @1 (#'-' @906-907: "-")
+                        Node @2 (tag: kNumber) {
+                          Leaf @0 (#TK_DecNumber @907-908: "1")
+                        }
+                      }
+                    }
+                    Leaf @2 (#':' @908-909: ":")
+                    Node @3 (tag: kExpression) {
+                      Node @0 (tag: kNumber) {
+                        Leaf @0 (#TK_DecNumber @909-910: "0")
+                      }
+                    }
+                    Leaf @4 (#']' @910-911: "]")
+                  }
+                }
+              }
+            }
+          }
+          Node @1 (tag: kGateInstanceRegisterVariableList) {
+            Node @0 (tag: kRegisterVariable) {
+              Leaf @0 (#SymbolIdentifier @912-920: "fifo_mem")
+              Node @1 (tag: kUnpackedDimensions) {
+                Node @0 (tag: kDeclarationDimensions) {
+                  Node @0 (tag: kDimensionRange) {
+                    Leaf @0 (#'[' @921-922: "[")
+                    Node @1 (tag: kExpression) {
+                      Node @0 (tag: kBinaryExpression) {
+                        Node @0 (tag: kFunctionCall) {
+                          Node @0 (tag: kReference) {
+                            Node @0 (tag: kLocalRoot) {
+                              Node @0 (tag: kUnqualifiedId) {
+                                Leaf @0 (#MacroIdentifier @922-932: "`FIFO_SIZE")
+                              }
+                            }
+                          }
+                        }
+                        Leaf @1 (#'-' @932-933: "-")
+                        Node @2 (tag: kNumber) {
+                          Leaf @0 (#TK_DecNumber @933-934: "1")
+                        }
+                      }
+                    }
+                    Leaf @2 (#':' @934-935: ":")
+                    Node @3 (tag: kExpression) {
+                      Node @0 (tag: kNumber) {
+                        Leaf @0 (#TK_DecNumber @935-936: "0")
+                      }
+                    }
+                    Leaf @4 (#']' @936-937: "]")
+                  }
+                }
+              }
+            }
+          }
+        }
+        Leaf @2 (#';' @937-938: ";")
+      }
+      Node @3 (tag: kAlwaysStatement) {
+        Leaf @0 (#"always" @945-951: "always")
+        Node @1 (tag: kProceduralTimingControlStatement) {
+          Node @0 (tag: kEventControl) {
+            Leaf @0 (#'@' @952-953: "@")
+            Node @1 (tag: kParenGroup) {
+              Leaf @0 (#'(' @953-954: "(")
+              Node @1 (tag: kEventExpressionList) {
+                Node @0 (tag: kEventExpression) {
+                  Node @0 (tag: kExpression) {
+                    Node @0 (tag: kFunctionCall) {
+                      Node @0 (tag: kReference) {
+                        Node @0 (tag: kLocalRoot) {
+                          Node @0 (tag: kUnqualifiedId) {
+                            Leaf @0 (#SymbolIdentifier @954-966: "fifo_counter")
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              Leaf @2 (#')' @966-967: ")")
+            }
+          }
+          Node @1 (tag: kSeqBlock) {
+            Node @0 (tag: kBegin) {
+              Leaf @0 (#"begin" @968-973: "begin")
+            }
+            Node @1 (tag: kBlockItemStatementList) {
+              Node @0 (tag: kNetVariableAssignment) {
+                Node @0 (tag: kLPValue) {
+                  Node @0 (tag: kReference) {
+                    Node @0 (tag: kLocalRoot) {
+                      Node @0 (tag: kUnqualifiedId) {
+                        Leaf @0 (#SymbolIdentifier @976-986: "fifo_empty")
+                      }
+                    }
+                  }
+                }
+                Leaf @1 (#'=' @987-988: "=")
+                Node @2 (tag: kExpression) {
+                  Node @0 (tag: kParenGroup) {
+                    Leaf @0 (#'(' @989-990: "(")
+                    Node @1 (tag: kExpression) {
+                      Node @0 (tag: kBinaryExpression) {
+                        Node @0 (tag: kFunctionCall) {
+                          Node @0 (tag: kReference) {
+                            Node @0 (tag: kLocalRoot) {
+                              Node @0 (tag: kUnqualifiedId) {
+                                Leaf @0 (#SymbolIdentifier @990-1002: "fifo_counter")
+                              }
+                            }
+                          }
+                        }
+                        Leaf @1 (#"==" @1002-1004: "==")
+                        Node @2 (tag: kNumber) {
+                          Leaf @0 (#TK_DecNumber @1004-1005: "0")
+                        }
+                      }
+                    }
+                    Leaf @2 (#')' @1005-1006: ")")
+                  }
+                }
+                Leaf @3 (#';' @1006-1007: ";")
+              }
+              Node @1 (tag: kNetVariableAssignment) {
+                Node @0 (tag: kLPValue) {
+                  Node @0 (tag: kReference) {
+                    Node @0 (tag: kLocalRoot) {
+                      Node @0 (tag: kUnqualifiedId) {
+                        Leaf @0 (#SymbolIdentifier @1010-1019: "fifo_full")
+                      }
+                    }
+                  }
+                }
+                Leaf @1 (#'=' @1020-1021: "=")
+                Node @2 (tag: kExpression) {
+                  Node @0 (tag: kParenGroup) {
+                    Leaf @0 (#'(' @1022-1023: "(")
+                    Node @1 (tag: kExpression) {
+                      Node @0 (tag: kBinaryExpression) {
+                        Node @0 (tag: kFunctionCall) {
+                          Node @0 (tag: kReference) {
+                            Node @0 (tag: kLocalRoot) {
+                              Node @0 (tag: kUnqualifiedId) {
+                                Leaf @0 (#SymbolIdentifier @1023-1035: "fifo_counter")
+                              }
+                            }
+                          }
+                        }
+                        Leaf @1 (#"==" @1035-1037: "==")
+                        Node @2 (tag: kFunctionCall) {
+                          Node @0 (tag: kReference) {
+                            Node @0 (tag: kLocalRoot) {
+                              Node @0 (tag: kUnqualifiedId) {
+                                Leaf @0 (#MacroIdentifier @1038-1048: "`FIFO_SIZE")
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                    Leaf @2 (#')' @1048-1049: ")")
+                  }
+                }
+                Leaf @3 (#';' @1049-1050: ";")
+              }
+            }
+            Node @2 (tag: kEnd) {
+              Leaf @0 (#"end" @1051-1054: "end")
+            }
+          }
+        }
+      }
+      Node @4 (tag: kAlwaysStatement) {
+        Leaf @0 (#"always" @1056-1062: "always")
+        Node @1 (tag: kProceduralTimingControlStatement) {
+          Node @0 (tag: kEventControl) {
+            Leaf @0 (#'@' @1063-1064: "@")
+            Node @1 (tag: kParenGroup) {
+              Leaf @0 (#'(' @1064-1065: "(")
+              Node @1 (tag: kEventExpressionList) {
+                Node @0 (tag: kEventExpression) {
+                  Leaf @0 (#"posedge" @1065-1072: "posedge")
+                  Node @1 (tag: kExpression) {
+                    Node @0 (tag: kFunctionCall) {
+                      Node @0 (tag: kReference) {
+                        Node @0 (tag: kLocalRoot) {
+                          Node @0 (tag: kUnqualifiedId) {
+                            Leaf @0 (#SymbolIdentifier @1073-1076: "clk")
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                Leaf @1 (#"or" @1077-1079: "or")
+                Node @2 (tag: kEventExpression) {
+                  Leaf @0 (#"posedge" @1080-1087: "posedge")
+                  Node @1 (tag: kExpression) {
+                    Node @0 (tag: kFunctionCall) {
+                      Node @0 (tag: kReference) {
+                        Node @0 (tag: kLocalRoot) {
+                          Node @0 (tag: kUnqualifiedId) {
+                            Leaf @0 (#SymbolIdentifier @1088-1093: "reset")
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              Leaf @2 (#')' @1093-1094: ")")
+            }
+          }
+          Node @1 (tag: kSeqBlock) {
+            Node @0 (tag: kBegin) {
+              Leaf @0 (#"begin" @1095-1100: "begin")
+            }
+            Node @1 (tag: kBlockItemStatementList) {
+              Node @0 (tag: kConditionalStatement) {
+                Node @0 (tag: kIfClause) {
+                  Node @0 (tag: kIfHeader) {
+                    Leaf @1 (#"if" @1103-1105: "if")
+                    Node @2 (tag: kParenGroup) {
+                      Leaf @0 (#'(' @1105-1106: "(")
+                      Node @1 (tag: kExpression) {
+                        Node @0 (tag: kFunctionCall) {
+                          Node @0 (tag: kReference) {
+                            Node @0 (tag: kLocalRoot) {
+                              Node @0 (tag: kUnqualifiedId) {
+                                Leaf @0 (#SymbolIdentifier @1107-1112: "reset")
+                              }
+                            }
+                          }
+                        }
+                      }
+                      Leaf @2 (#')' @1113-1114: ")")
+                    }
+                  }
+                  Node @1 (tag: kIfBody) {
+                    Node @0 (tag: kNonblockingAssignmentStatement) {
+                      Node @0 (tag: kLPValue) {
+                        Node @0 (tag: kReference) {
+                          Node @0 (tag: kLocalRoot) {
+                            Node @0 (tag: kUnqualifiedId) {
+                              Leaf @0 (#SymbolIdentifier @1120-1132: "fifo_counter")
+                            }
+                          }
+                        }
+                      }
+                      Leaf @1 (#"<=" @1133-1135: "<=")
+                      Node @3 (tag: kExpression) {
+                        Node @0 (tag: kNumber) {
+                          Leaf @0 (#TK_DecNumber @1136-1137: "0")
+                        }
+                      }
+                      Leaf @4 (#';' @1137-1138: ";")
+                    }
+                  }
+                }
+                Node @1 (tag: kElseClause) {
+                  Leaf @0 (#"else" @1179-1183: "else")
+                  Node @1 (tag: kElseBody) {
+                    Node @0 (tag: kConditionalStatement) {
+                      Node @0 (tag: kIfClause) {
+                        Node @0 (tag: kIfHeader) {
+                          Leaf @1 (#"if" @1184-1186: "if")
+                          Node @2 (tag: kParenGroup) {
+                            Leaf @0 (#'(' @1186-1187: "(")
+                            Node @1 (tag: kExpression) {
+                              Node @0 (tag: kBinaryExpression) {
+                                Node @0 (tag: kParenGroup) {
+                                  Leaf @0 (#'(' @1188-1189: "(")
+                                  Node @1 (tag: kExpression) {
+                                    Node @0 (tag: kBinaryExpression) {
+                                      Node @0 (tag: kUnaryPrefixExpression) {
+                                        Leaf @0 (#'!' @1189-1190: "!")
+                                        Node @1 (tag: kFunctionCall) {
+                                          Node @0 (tag: kReference) {
+                                            Node @0 (tag: kLocalRoot) {
+                                              Node @0 (tag: kUnqualifiedId) {
+                                                Leaf @0 (#SymbolIdentifier @1190-1199: "fifo_full")
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                      Leaf @1 (#"&&" @1200-1202: "&&")
+                                      Node @2 (tag: kFunctionCall) {
+                                        Node @0 (tag: kReference) {
+                                          Node @0 (tag: kLocalRoot) {
+                                            Node @0 (tag: kUnqualifiedId) {
+                                              Leaf @0 (#SymbolIdentifier @1203-1208: "write")
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                  Leaf @2 (#')' @1208-1209: ")")
+                                }
+                                Leaf @1 (#"&&" @1210-1212: "&&")
+                                Node @2 (tag: kParenGroup) {
+                                  Leaf @0 (#'(' @1213-1214: "(")
+                                  Node @1 (tag: kExpression) {
+                                    Node @0 (tag: kBinaryExpression) {
+                                      Node @0 (tag: kUnaryPrefixExpression) {
+                                        Leaf @0 (#'!' @1215-1216: "!")
+                                        Node @1 (tag: kFunctionCall) {
+                                          Node @0 (tag: kReference) {
+                                            Node @0 (tag: kLocalRoot) {
+                                              Node @0 (tag: kUnqualifiedId) {
+                                                Leaf @0 (#SymbolIdentifier @1216-1226: "fifo_empty")
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                      Leaf @1 (#"&&" @1227-1229: "&&")
+                                      Node @2 (tag: kFunctionCall) {
+                                        Node @0 (tag: kReference) {
+                                          Node @0 (tag: kLocalRoot) {
+                                            Node @0 (tag: kUnqualifiedId) {
+                                              Leaf @0 (#SymbolIdentifier @1230-1234: "read")
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                  Leaf @2 (#')' @1234-1235: ")")
+                                }
+                              }
+                            }
+                            Leaf @2 (#')' @1236-1237: ")")
+                          }
+                        }
+                        Node @1 (tag: kIfBody) {
+                          Node @0 (tag: kNonblockingAssignmentStatement) {
+                            Node @0 (tag: kLPValue) {
+                              Node @0 (tag: kReference) {
+                                Node @0 (tag: kLocalRoot) {
+                                  Node @0 (tag: kUnqualifiedId) {
+                                    Leaf @0 (#SymbolIdentifier @1243-1255: "fifo_counter")
+                                  }
+                                }
+                              }
+                            }
+                            Leaf @1 (#"<=" @1256-1258: "<=")
+                            Node @3 (tag: kExpression) {
+                              Node @0 (tag: kFunctionCall) {
+                                Node @0 (tag: kReference) {
+                                  Node @0 (tag: kLocalRoot) {
+                                    Node @0 (tag: kUnqualifiedId) {
+                                      Leaf @0 (#SymbolIdentifier @1259-1271: "fifo_counter")
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                            Leaf @4 (#';' @1271-1272: ";")
+                          }
+                        }
+                      }
+                      Node @1 (tag: kElseClause) {
+                        Leaf @0 (#"else" @1290-1294: "else")
+                        Node @1 (tag: kElseBody) {
+                          Node @0 (tag: kConditionalStatement) {
+                            Node @0 (tag: kIfClause) {
+                              Node @0 (tag: kIfHeader) {
+                                Leaf @1 (#"if" @1295-1297: "if")
+                                Node @2 (tag: kParenGroup) {
+                                  Leaf @0 (#'(' @1297-1298: "(")
+                                  Node @1 (tag: kExpression) {
+                                    Node @0 (tag: kBinaryExpression) {
+                                      Node @0 (tag: kUnaryPrefixExpression) {
+                                        Leaf @0 (#'!' @1299-1300: "!")
+                                        Node @1 (tag: kFunctionCall) {
+                                          Node @0 (tag: kReference) {
+                                            Node @0 (tag: kLocalRoot) {
+                                              Node @0 (tag: kUnqualifiedId) {
+                                                Leaf @0 (#SymbolIdentifier @1300-1309: "fifo_full")
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                      Leaf @1 (#"&&" @1310-1312: "&&")
+                                      Node @2 (tag: kFunctionCall) {
+                                        Node @0 (tag: kReference) {
+                                          Node @0 (tag: kLocalRoot) {
+                                            Node @0 (tag: kUnqualifiedId) {
+                                              Leaf @0 (#SymbolIdentifier @1313-1318: "write")
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                  Leaf @2 (#')' @1318-1319: ")")
+                                }
+                              }
+                              Node @1 (tag: kIfBody) {
+                                Node @0 (tag: kNonblockingAssignmentStatement) {
+                                  Node @0 (tag: kLPValue) {
+                                    Node @0 (tag: kReference) {
+                                      Node @0 (tag: kLocalRoot) {
+                                        Node @0 (tag: kUnqualifiedId) {
+                                          Leaf @0 (#SymbolIdentifier @1325-1337: "fifo_counter")
+                                        }
+                                      }
+                                    }
+                                  }
+                                  Leaf @1 (#"<=" @1338-1340: "<=")
+                                  Node @3 (tag: kExpression) {
+                                    Node @0 (tag: kBinaryExpression) {
+                                      Node @0 (tag: kFunctionCall) {
+                                        Node @0 (tag: kReference) {
+                                          Node @0 (tag: kLocalRoot) {
+                                            Node @0 (tag: kUnqualifiedId) {
+                                              Leaf @0 (#SymbolIdentifier @1341-1353: "fifo_counter")
+                                            }
+                                          }
+                                        }
+                                      }
+                                      Leaf @1 (#'+' @1354-1355: "+")
+                                      Node @2 (tag: kNumber) {
+                                        Leaf @0 (#TK_DecNumber @1356-1357: "1")
+                                      }
+                                    }
+                                  }
+                                  Leaf @4 (#';' @1357-1358: ";")
+                                }
+                              }
+                            }
+                            Node @1 (tag: kElseClause) {
+                              Leaf @0 (#"else" @1375-1379: "else")
+                              Node @1 (tag: kElseBody) {
+                                Node @0 (tag: kConditionalStatement) {
+                                  Node @0 (tag: kIfClause) {
+                                    Node @0 (tag: kIfHeader) {
+                                      Leaf @1 (#"if" @1380-1382: "if")
+                                      Node @2 (tag: kParenGroup) {
+                                        Leaf @0 (#'(' @1382-1383: "(")
+                                        Node @1 (tag: kExpression) {
+                                          Node @0 (tag: kBinaryExpression) {
+                                            Node @0 (tag: kUnaryPrefixExpression) {
+                                              Leaf @0 (#'!' @1384-1385: "!")
+                                              Node @1 (tag: kFunctionCall) {
+                                                Node @0 (tag: kReference) {
+                                                  Node @0 (tag: kLocalRoot) {
+                                                    Node @0 (tag: kUnqualifiedId) {
+                                                      Leaf @0 (#SymbolIdentifier @1385-1395: "fifo_empty")
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                            Leaf @1 (#"&&" @1396-1398: "&&")
+                                            Node @2 (tag: kFunctionCall) {
+                                              Node @0 (tag: kReference) {
+                                                Node @0 (tag: kLocalRoot) {
+                                                  Node @0 (tag: kUnqualifiedId) {
+                                                    Leaf @0 (#SymbolIdentifier @1399-1403: "read")
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                        Leaf @2 (#')' @1404-1405: ")")
+                                      }
+                                    }
+                                    Node @1 (tag: kIfBody) {
+                                      Node @0 (tag: kNonblockingAssignmentStatement) {
+                                        Node @0 (tag: kLPValue) {
+                                          Node @0 (tag: kReference) {
+                                            Node @0 (tag: kLocalRoot) {
+                                              Node @0 (tag: kUnqualifiedId) {
+                                                Leaf @0 (#SymbolIdentifier @1411-1423: "fifo_counter")
+                                              }
+                                            }
+                                          }
+                                        }
+                                        Leaf @1 (#"<=" @1424-1426: "<=")
+                                        Node @3 (tag: kExpression) {
+                                          Node @0 (tag: kBinaryExpression) {
+                                            Node @0 (tag: kFunctionCall) {
+                                              Node @0 (tag: kReference) {
+                                                Node @0 (tag: kLocalRoot) {
+                                                  Node @0 (tag: kUnqualifiedId) {
+                                                    Leaf @0 (#SymbolIdentifier @1427-1439: "fifo_counter")
+                                                  }
+                                                }
+                                              }
+                                            }
+                                            Leaf @1 (#'-' @1440-1441: "-")
+                                            Node @2 (tag: kNumber) {
+                                              Leaf @0 (#TK_DecNumber @1442-1443: "1")
+                                            }
+                                          }
+                                        }
+                                        Leaf @4 (#';' @1443-1444: ";")
+                                      }
+                                    }
+                                  }
+                                  Node @1 (tag: kElseClause) {
+                                    Leaf @0 (#"else" @1447-1451: "else")
+                                    Node @1 (tag: kElseBody) {
+                                      Node @0 (tag: kNonblockingAssignmentStatement) {
+                                        Node @0 (tag: kLPValue) {
+                                          Node @0 (tag: kReference) {
+                                            Node @0 (tag: kLocalRoot) {
+                                              Node @0 (tag: kUnqualifiedId) {
+                                                Leaf @0 (#SymbolIdentifier @1457-1469: "fifo_counter")
+                                              }
+                                            }
+                                          }
+                                        }
+                                        Leaf @1 (#"<=" @1470-1472: "<=")
+                                        Node @3 (tag: kExpression) {
+                                          Node @0 (tag: kFunctionCall) {
+                                            Node @0 (tag: kReference) {
+                                              Node @0 (tag: kLocalRoot) {
+                                                Node @0 (tag: kUnqualifiedId) {
+                                                  Leaf @0 (#SymbolIdentifier @1473-1485: "fifo_counter")
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                        Leaf @4 (#';' @1485-1486: ";")
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            Node @2 (tag: kEnd) {
+              Leaf @0 (#"end" @1487-1490: "end")
+            }
+          }
+        }
+      }
+      Node @5 (tag: kAlwaysStatement) {
+        Leaf @0 (#"always" @1492-1498: "always")
+        Node @1 (tag: kProceduralTimingControlStatement) {
+          Node @0 (tag: kEventControl) {
+            Leaf @0 (#'@' @1499-1500: "@")
+            Node @1 (tag: kParenGroup) {
+              Leaf @0 (#'(' @1500-1501: "(")
+              Node @1 (tag: kEventExpressionList) {
+                Node @0 (tag: kEventExpression) {
+                  Leaf @0 (#"posedge" @1502-1509: "posedge")
+                  Node @1 (tag: kExpression) {
+                    Node @0 (tag: kFunctionCall) {
+                      Node @0 (tag: kReference) {
+                        Node @0 (tag: kLocalRoot) {
+                          Node @0 (tag: kUnqualifiedId) {
+                            Leaf @0 (#SymbolIdentifier @1510-1513: "clk")
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                Leaf @1 (#"or" @1514-1516: "or")
+                Node @2 (tag: kEventExpression) {
+                  Leaf @0 (#"posedge" @1517-1524: "posedge")
+                  Node @1 (tag: kExpression) {
+                    Node @0 (tag: kFunctionCall) {
+                      Node @0 (tag: kReference) {
+                        Node @0 (tag: kLocalRoot) {
+                          Node @0 (tag: kUnqualifiedId) {
+                            Leaf @0 (#SymbolIdentifier @1525-1530: "reset")
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              Leaf @2 (#')' @1530-1531: ")")
+            }
+          }
+          Node @1 (tag: kSeqBlock) {
+            Node @0 (tag: kBegin) {
+              Leaf @0 (#"begin" @1532-1537: "begin")
+            }
+            Node @1 (tag: kBlockItemStatementList) {
+              Node @0 (tag: kConditionalStatement) {
+                Node @0 (tag: kIfClause) {
+                  Node @0 (tag: kIfHeader) {
+                    Leaf @1 (#"if" @1540-1542: "if")
+                    Node @2 (tag: kParenGroup) {
+                      Leaf @0 (#'(' @1542-1543: "(")
+                      Node @1 (tag: kExpression) {
+                        Node @0 (tag: kFunctionCall) {
+                          Node @0 (tag: kReference) {
+                            Node @0 (tag: kLocalRoot) {
+                              Node @0 (tag: kUnqualifiedId) {
+                                Leaf @0 (#SymbolIdentifier @1544-1549: "reset")
+                              }
+                            }
+                          }
+                        }
+                      }
+                      Leaf @2 (#')' @1550-1551: ")")
+                    }
+                  }
+                  Node @1 (tag: kIfBody) {
+                    Node @0 (tag: kNonblockingAssignmentStatement) {
+                      Node @0 (tag: kLPValue) {
+                        Node @0 (tag: kReference) {
+                          Node @0 (tag: kLocalRoot) {
+                            Node @0 (tag: kUnqualifiedId) {
+                              Leaf @0 (#SymbolIdentifier @1556-1564: "data_out")
+                            }
+                          }
+                        }
+                      }
+                      Leaf @1 (#"<=" @1565-1567: "<=")
+                      Node @3 (tag: kExpression) {
+                        Node @0 (tag: kNumber) {
+                          Leaf @0 (#TK_DecNumber @1568-1569: "0")
+                        }
+                      }
+                      Leaf @4 (#';' @1569-1570: ";")
+                    }
+                  }
+                }
+                Node @1 (tag: kElseClause) {
+                  Leaf @0 (#"else" @1573-1577: "else")
+                  Node @1 (tag: kElseBody) {
+                    Node @0 (tag: kSeqBlock) {
+                      Node @0 (tag: kBegin) {
+                        Leaf @0 (#"begin" @1580-1585: "begin")
+                      }
+                      Node @1 (tag: kBlockItemStatementList) {
+                        Node @0 (tag: kConditionalStatement) {
+                          Node @0 (tag: kIfClause) {
+                            Node @0 (tag: kIfHeader) {
+                              Leaf @1 (#"if" @1590-1592: "if")
+                              Node @2 (tag: kParenGroup) {
+                                Leaf @0 (#'(' @1592-1593: "(")
+                                Node @1 (tag: kExpression) {
+                                  Node @0 (tag: kBinaryExpression) {
+                                    Node @0 (tag: kFunctionCall) {
+                                      Node @0 (tag: kReference) {
+                                        Node @0 (tag: kLocalRoot) {
+                                          Node @0 (tag: kUnqualifiedId) {
+                                            Leaf @0 (#SymbolIdentifier @1594-1598: "read")
+                                          }
+                                        }
+                                      }
+                                    }
+                                    Leaf @1 (#"&&" @1599-1601: "&&")
+                                    Node @2 (tag: kUnaryPrefixExpression) {
+                                      Leaf @0 (#'!' @1602-1603: "!")
+                                      Node @1 (tag: kFunctionCall) {
+                                        Node @0 (tag: kReference) {
+                                          Node @0 (tag: kLocalRoot) {
+                                            Node @0 (tag: kUnqualifiedId) {
+                                              Leaf @0 (#SymbolIdentifier @1603-1613: "fifo_empty")
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                                Leaf @2 (#')' @1614-1615: ")")
+                              }
+                            }
+                            Node @1 (tag: kIfBody) {
+                              Node @0 (tag: kNonblockingAssignmentStatement) {
+                                Node @0 (tag: kLPValue) {
+                                  Node @0 (tag: kReference) {
+                                    Node @0 (tag: kLocalRoot) {
+                                      Node @0 (tag: kUnqualifiedId) {
+                                        Leaf @0 (#SymbolIdentifier @1622-1630: "data_out")
+                                      }
+                                    }
+                                  }
+                                }
+                                Leaf @1 (#"<=" @1631-1633: "<=")
+                                Node @3 (tag: kExpression) {
+                                  Node @0 (tag: kFunctionCall) {
+                                    Node @0 (tag: kReference) {
+                                      Node @0 (tag: kLocalRoot) {
+                                        Node @0 (tag: kUnqualifiedId) {
+                                          Leaf @0 (#SymbolIdentifier @1634-1642: "fifo_mem")
+                                        }
+                                      }
+                                      Node @1 (tag: kDimensionScalar) {
+                                        Leaf @0 (#'[' @1642-1643: "[")
+                                        Node @1 (tag: kExpressionList) {
+                                          Node @0 (tag: kExpression) {
+                                            Node @0 (tag: kFunctionCall) {
+                                              Node @0 (tag: kReference) {
+                                                Node @0 (tag: kLocalRoot) {
+                                                  Node @0 (tag: kUnqualifiedId) {
+                                                    Leaf @0 (#SymbolIdentifier @1643-1649: "rd_ptr")
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                        Leaf @2 (#']' @1649-1650: "]")
+                                      }
+                                    }
+                                  }
+                                }
+                                Leaf @4 (#';' @1650-1651: ";")
+                              }
+                            }
+                          }
+                          Node @1 (tag: kElseClause) {
+                            Leaf @0 (#"else" @1656-1660: "else")
+                            Node @1 (tag: kElseBody) {
+                              Node @0 (tag: kNonblockingAssignmentStatement) {
+                                Node @0 (tag: kLPValue) {
+                                  Node @0 (tag: kReference) {
+                                    Node @0 (tag: kLocalRoot) {
+                                      Node @0 (tag: kUnqualifiedId) {
+                                        Leaf @0 (#SymbolIdentifier @1667-1675: "data_out")
+                                      }
+                                    }
+                                  }
+                                }
+                                Leaf @1 (#"<=" @1676-1678: "<=")
+                                Node @3 (tag: kExpression) {
+                                  Node @0 (tag: kFunctionCall) {
+                                    Node @0 (tag: kReference) {
+                                      Node @0 (tag: kLocalRoot) {
+                                        Node @0 (tag: kUnqualifiedId) {
+                                          Leaf @0 (#SymbolIdentifier @1679-1687: "data_out")
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                                Leaf @4 (#';' @1687-1688: ";")
+                              }
+                            }
+                          }
+                        }
+                      }
+                      Node @2 (tag: kEnd) {
+                        Leaf @0 (#"end" @1692-1695: "end")
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            Node @2 (tag: kEnd) {
+              Leaf @0 (#"end" @1696-1699: "end")
+            }
+          }
+        }
+      }
+      Node @6 (tag: kAlwaysStatement) {
+        Leaf @0 (#"always" @1701-1707: "always")
+        Node @1 (tag: kProceduralTimingControlStatement) {
+          Node @0 (tag: kEventControl) {
+            Leaf @0 (#'@' @1708-1709: "@")
+            Node @1 (tag: kParenGroup) {
+              Leaf @0 (#'(' @1709-1710: "(")
+              Node @1 (tag: kEventExpressionList) {
+                Node @0 (tag: kEventExpression) {
+                  Leaf @0 (#"posedge" @1710-1717: "posedge")
+                  Node @1 (tag: kExpression) {
+                    Node @0 (tag: kFunctionCall) {
+                      Node @0 (tag: kReference) {
+                        Node @0 (tag: kLocalRoot) {
+                          Node @0 (tag: kUnqualifiedId) {
+                            Leaf @0 (#SymbolIdentifier @1718-1721: "clk")
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              Leaf @2 (#')' @1721-1722: ")")
+            }
+          }
+          Node @1 (tag: kSeqBlock) {
+            Node @0 (tag: kBegin) {
+              Leaf @0 (#"begin" @1723-1728: "begin")
+            }
+            Node @1 (tag: kBlockItemStatementList) {
+              Node @0 (tag: kConditionalStatement) {
+                Node @0 (tag: kIfClause) {
+                  Node @0 (tag: kIfHeader) {
+                    Leaf @1 (#"if" @1731-1733: "if")
+                    Node @2 (tag: kParenGroup) {
+                      Leaf @0 (#'(' @1733-1734: "(")
+                      Node @1 (tag: kExpression) {
+                        Node @0 (tag: kBinaryExpression) {
+                          Node @0 (tag: kFunctionCall) {
+                            Node @0 (tag: kReference) {
+                              Node @0 (tag: kLocalRoot) {
+                                Node @0 (tag: kUnqualifiedId) {
+                                  Leaf @0 (#SymbolIdentifier @1735-1740: "write")
+                                }
+                              }
+                            }
+                          }
+                          Leaf @1 (#"&&" @1741-1743: "&&")
+                          Node @2 (tag: kUnaryPrefixExpression) {
+                            Leaf @0 (#'!' @1744-1745: "!")
+                            Node @1 (tag: kFunctionCall) {
+                              Node @0 (tag: kReference) {
+                                Node @0 (tag: kLocalRoot) {
+                                  Node @0 (tag: kUnqualifiedId) {
+                                    Leaf @0 (#SymbolIdentifier @1745-1754: "fifo_full")
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                      Leaf @2 (#')' @1755-1756: ")")
+                    }
+                  }
+                  Node @1 (tag: kIfBody) {
+                    Node @0 (tag: kNonblockingAssignmentStatement) {
+                      Node @0 (tag: kLPValue) {
+                        Node @0 (tag: kReference) {
+                          Node @0 (tag: kLocalRoot) {
+                            Node @0 (tag: kUnqualifiedId) {
+                              Leaf @0 (#SymbolIdentifier @1761-1769: "fifo_mem")
+                            }
+                          }
+                          Node @1 (tag: kDimensionScalar) {
+                            Leaf @0 (#'[' @1769-1770: "[")
+                            Node @1 (tag: kExpressionList) {
+                              Node @0 (tag: kExpression) {
+                                Node @0 (tag: kFunctionCall) {
+                                  Node @0 (tag: kReference) {
+                                    Node @0 (tag: kLocalRoot) {
+                                      Node @0 (tag: kUnqualifiedId) {
+                                        Leaf @0 (#SymbolIdentifier @1770-1776: "wr_ptr")
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                            Leaf @2 (#']' @1776-1777: "]")
+                          }
+                        }
+                      }
+                      Leaf @1 (#"<=" @1778-1780: "<=")
+                      Node @3 (tag: kExpression) {
+                        Node @0 (tag: kFunctionCall) {
+                          Node @0 (tag: kReference) {
+                            Node @0 (tag: kLocalRoot) {
+                              Node @0 (tag: kUnqualifiedId) {
+                                Leaf @0 (#SymbolIdentifier @1781-1788: "data_in")
+                              }
+                            }
+                          }
+                        }
+                      }
+                      Leaf @4 (#';' @1788-1789: ";")
+                    }
+                  }
+                }
+                Node @1 (tag: kElseClause) {
+                  Leaf @0 (#"else" @1792-1796: "else")
+                  Node @1 (tag: kElseBody) {
+                    Node @0 (tag: kNonblockingAssignmentStatement) {
+                      Node @0 (tag: kLPValue) {
+                        Node @0 (tag: kReference) {
+                          Node @0 (tag: kLocalRoot) {
+                            Node @0 (tag: kUnqualifiedId) {
+                              Leaf @0 (#SymbolIdentifier @1801-1809: "fifo_mem")
+                            }
+                          }
+                          Node @1 (tag: kDimensionScalar) {
+                            Leaf @0 (#'[' @1809-1810: "[")
+                            Node @1 (tag: kExpressionList) {
+                              Node @0 (tag: kExpression) {
+                                Node @0 (tag: kFunctionCall) {
+                                  Node @0 (tag: kReference) {
+                                    Node @0 (tag: kLocalRoot) {
+                                      Node @0 (tag: kUnqualifiedId) {
+                                        Leaf @0 (#SymbolIdentifier @1810-1816: "wr_ptr")
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                            Leaf @2 (#']' @1816-1817: "]")
+                          }
+                        }
+                      }
+                      Leaf @1 (#"<=" @1818-1820: "<=")
+                      Node @3 (tag: kExpression) {
+                        Node @0 (tag: kFunctionCall) {
+                          Node @0 (tag: kReference) {
+                            Node @0 (tag: kLocalRoot) {
+                              Node @0 (tag: kUnqualifiedId) {
+                                Leaf @0 (#SymbolIdentifier @1821-1829: "fifo_mem")
+                              }
+                            }
+                            Node @1 (tag: kDimensionScalar) {
+                              Leaf @0 (#'[' @1829-1830: "[")
+                              Node @1 (tag: kExpressionList) {
+                                Node @0 (tag: kExpression) {
+                                  Node @0 (tag: kFunctionCall) {
+                                    Node @0 (tag: kReference) {
+                                      Node @0 (tag: kLocalRoot) {
+                                        Node @0 (tag: kUnqualifiedId) {
+                                          Leaf @0 (#SymbolIdentifier @1830-1836: "wr_ptr")
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                              Leaf @2 (#']' @1836-1837: "]")
+                            }
+                          }
+                        }
+                      }
+                      Leaf @4 (#';' @1837-1838: ";")
+                    }
+                  }
+                }
+              }
+            }
+            Node @2 (tag: kEnd) {
+              Leaf @0 (#"end" @1839-1842: "end")
+            }
+          }
+        }
+      }
+      Node @7 (tag: kAlwaysStatement) {
+        Leaf @0 (#"always" @1844-1850: "always")
+        Node @1 (tag: kProceduralTimingControlStatement) {
+          Node @0 (tag: kEventControl) {
+            Leaf @0 (#'@' @1850-1851: "@")
+            Node @1 (tag: kParenGroup) {
+              Leaf @0 (#'(' @1851-1852: "(")
+              Node @1 (tag: kEventExpressionList) {
+                Node @0 (tag: kEventExpression) {
+                  Leaf @0 (#"posedge" @1852-1859: "posedge")
+                  Node @1 (tag: kExpression) {
+                    Node @0 (tag: kFunctionCall) {
+                      Node @0 (tag: kReference) {
+                        Node @0 (tag: kLocalRoot) {
+                          Node @0 (tag: kUnqualifiedId) {
+                            Leaf @0 (#SymbolIdentifier @1860-1863: "clk")
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                Leaf @1 (#"or" @1864-1866: "or")
+                Node @2 (tag: kEventExpression) {
+                  Leaf @0 (#"posedge" @1867-1874: "posedge")
+                  Node @1 (tag: kExpression) {
+                    Node @0 (tag: kFunctionCall) {
+                      Node @0 (tag: kReference) {
+                        Node @0 (tag: kLocalRoot) {
+                          Node @0 (tag: kUnqualifiedId) {
+                            Leaf @0 (#SymbolIdentifier @1875-1880: "reset")
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              Leaf @2 (#')' @1880-1881: ")")
+            }
+          }
+          Node @1 (tag: kSeqBlock) {
+            Node @0 (tag: kBegin) {
+              Leaf @0 (#"begin" @1882-1887: "begin")
+            }
+            Node @1 (tag: kBlockItemStatementList) {
+              Node @0 (tag: kConditionalStatement) {
+                Node @0 (tag: kIfClause) {
+                  Node @0 (tag: kIfHeader) {
+                    Leaf @1 (#"if" @1890-1892: "if")
+                    Node @2 (tag: kParenGroup) {
+                      Leaf @0 (#'(' @1892-1893: "(")
+                      Node @1 (tag: kExpression) {
+                        Node @0 (tag: kFunctionCall) {
+                          Node @0 (tag: kReference) {
+                            Node @0 (tag: kLocalRoot) {
+                              Node @0 (tag: kUnqualifiedId) {
+                                Leaf @0 (#SymbolIdentifier @1894-1899: "reset")
+                              }
+                            }
+                          }
+                        }
+                      }
+                      Leaf @2 (#')' @1900-1901: ")")
+                    }
+                  }
+                  Node @1 (tag: kIfBody) {
+                    Node @0 (tag: kSeqBlock) {
+                      Node @0 (tag: kBegin) {
+                        Leaf @0 (#"begin" @1905-1910: "begin")
+                      }
+                      Node @1 (tag: kBlockItemStatementList) {
+                        Node @0 (tag: kNonblockingAssignmentStatement) {
+                          Node @0 (tag: kLPValue) {
+                            Node @0 (tag: kReference) {
+                              Node @0 (tag: kLocalRoot) {
+                                Node @0 (tag: kUnqualifiedId) {
+                                  Leaf @0 (#SymbolIdentifier @1917-1923: "wr_ptr")
+                                }
+                              }
+                            }
+                          }
+                          Leaf @1 (#"<=" @1924-1926: "<=")
+                          Node @3 (tag: kExpression) {
+                            Node @0 (tag: kNumber) {
+                              Leaf @0 (#TK_DecNumber @1927-1928: "0")
+                            }
+                          }
+                          Leaf @4 (#';' @1928-1929: ";")
+                        }
+                        Node @1 (tag: kNonblockingAssignmentStatement) {
+                          Node @0 (tag: kLPValue) {
+                            Node @0 (tag: kReference) {
+                              Node @0 (tag: kLocalRoot) {
+                                Node @0 (tag: kUnqualifiedId) {
+                                  Leaf @0 (#SymbolIdentifier @1936-1942: "rd_ptr")
+                                }
+                              }
+                            }
+                          }
+                          Leaf @1 (#"<=" @1943-1945: "<=")
+                          Node @3 (tag: kExpression) {
+                            Node @0 (tag: kNumber) {
+                              Leaf @0 (#TK_DecNumber @1946-1947: "0")
+                            }
+                          }
+                          Leaf @4 (#';' @1947-1948: ";")
+                        }
+                      }
+                      Node @2 (tag: kEnd) {
+                        Leaf @0 (#"end" @1952-1955: "end")
+                      }
+                    }
+                  }
+                }
+                Node @1 (tag: kElseClause) {
+                  Leaf @0 (#"else" @1959-1963: "else")
+                  Node @1 (tag: kElseBody) {
+                    Node @0 (tag: kSeqBlock) {
+                      Node @0 (tag: kBegin) {
+                        Leaf @0 (#"begin" @1967-1972: "begin")
+                      }
+                      Node @1 (tag: kBlockItemStatementList) {
+                        Node @0 (tag: kConditionalStatement) {
+                          Node @0 (tag: kIfClause) {
+                            Node @0 (tag: kIfHeader) {
+                              Leaf @1 (#"if" @1978-1980: "if")
+                              Node @2 (tag: kParenGroup) {
+                                Leaf @0 (#'(' @1980-1981: "(")
+                                Node @1 (tag: kExpression) {
+                                  Node @0 (tag: kBinaryExpression) {
+                                    Node @0 (tag: kUnaryPrefixExpression) {
+                                      Leaf @0 (#'!' @1982-1983: "!")
+                                      Node @1 (tag: kFunctionCall) {
+                                        Node @0 (tag: kReference) {
+                                          Node @0 (tag: kLocalRoot) {
+                                            Node @0 (tag: kUnqualifiedId) {
+                                              Leaf @0 (#SymbolIdentifier @1983-1992: "fifo_full")
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                    Leaf @1 (#"&&" @1993-1995: "&&")
+                                    Node @2 (tag: kFunctionCall) {
+                                      Node @0 (tag: kReference) {
+                                        Node @0 (tag: kLocalRoot) {
+                                          Node @0 (tag: kUnqualifiedId) {
+                                            Leaf @0 (#SymbolIdentifier @1996-2001: "write")
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                                Leaf @2 (#')' @2002-2003: ")")
+                              }
+                            }
+                            Node @1 (tag: kIfBody) {
+                              Node @0 (tag: kNonblockingAssignmentStatement) {
+                                Node @0 (tag: kLPValue) {
+                                  Node @0 (tag: kReference) {
+                                    Node @0 (tag: kLocalRoot) {
+                                      Node @0 (tag: kUnqualifiedId) {
+                                        Leaf @0 (#SymbolIdentifier @2015-2021: "wr_ptr")
+                                      }
+                                    }
+                                  }
+                                }
+                                Leaf @1 (#"<=" @2022-2024: "<=")
+                                Node @3 (tag: kExpression) {
+                                  Node @0 (tag: kBinaryExpression) {
+                                    Node @0 (tag: kFunctionCall) {
+                                      Node @0 (tag: kReference) {
+                                        Node @0 (tag: kLocalRoot) {
+                                          Node @0 (tag: kUnqualifiedId) {
+                                            Leaf @0 (#SymbolIdentifier @2025-2031: "wr_ptr")
+                                          }
+                                        }
+                                      }
+                                    }
+                                    Leaf @1 (#'+' @2032-2033: "+")
+                                    Node @2 (tag: kNumber) {
+                                      Leaf @0 (#TK_DecNumber @2034-2035: "1")
+                                    }
+                                  }
+                                }
+                                Leaf @4 (#';' @2035-2036: ";")
+                              }
+                            }
+                          }
+                          Node @1 (tag: kElseClause) {
+                            Leaf @0 (#"else" @2042-2046: "else")
+                            Node @1 (tag: kElseBody) {
+                              Node @0 (tag: kNonblockingAssignmentStatement) {
+                                Node @0 (tag: kLPValue) {
+                                  Node @0 (tag: kReference) {
+                                    Node @0 (tag: kLocalRoot) {
+                                      Node @0 (tag: kUnqualifiedId) {
+                                        Leaf @0 (#SymbolIdentifier @2048-2054: "wr_ptr")
+                                      }
+                                    }
+                                  }
+                                }
+                                Leaf @1 (#"<=" @2055-2057: "<=")
+                                Node @3 (tag: kExpression) {
+                                  Node @0 (tag: kFunctionCall) {
+                                    Node @0 (tag: kReference) {
+                                      Node @0 (tag: kLocalRoot) {
+                                        Node @0 (tag: kUnqualifiedId) {
+                                          Leaf @0 (#SymbolIdentifier @2058-2064: "wr_ptr")
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                                Leaf @4 (#';' @2064-2065: ";")
+                              }
+                            }
+                          }
+                        }
+                        Node @1 (tag: kConditionalStatement) {
+                          Node @0 (tag: kIfClause) {
+                            Node @0 (tag: kIfHeader) {
+                              Leaf @1 (#"if" @2072-2074: "if")
+                              Node @2 (tag: kParenGroup) {
+                                Leaf @0 (#'(' @2074-2075: "(")
+                                Node @1 (tag: kExpression) {
+                                  Node @0 (tag: kBinaryExpression) {
+                                    Node @0 (tag: kUnaryPrefixExpression) {
+                                      Leaf @0 (#'!' @2076-2077: "!")
+                                      Node @1 (tag: kFunctionCall) {
+                                        Node @0 (tag: kReference) {
+                                          Node @0 (tag: kLocalRoot) {
+                                            Node @0 (tag: kUnqualifiedId) {
+                                              Leaf @0 (#SymbolIdentifier @2077-2087: "fifo_empty")
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                    Leaf @1 (#"&&" @2088-2090: "&&")
+                                    Node @2 (tag: kFunctionCall) {
+                                      Node @0 (tag: kReference) {
+                                        Node @0 (tag: kLocalRoot) {
+                                          Node @0 (tag: kUnqualifiedId) {
+                                            Leaf @0 (#SymbolIdentifier @2091-2095: "read")
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                                Leaf @2 (#')' @2096-2097: ")")
+                              }
+                            }
+                            Node @1 (tag: kIfBody) {
+                              Node @0 (tag: kNonblockingAssignmentStatement) {
+                                Node @0 (tag: kLPValue) {
+                                  Node @0 (tag: kReference) {
+                                    Node @0 (tag: kLocalRoot) {
+                                      Node @0 (tag: kUnqualifiedId) {
+                                        Leaf @0 (#SymbolIdentifier @2105-2111: "rd_ptr")
+                                      }
+                                    }
+                                  }
+                                }
+                                Leaf @1 (#"<=" @2112-2114: "<=")
+                                Node @3 (tag: kExpression) {
+                                  Node @0 (tag: kBinaryExpression) {
+                                    Node @0 (tag: kFunctionCall) {
+                                      Node @0 (tag: kReference) {
+                                        Node @0 (tag: kLocalRoot) {
+                                          Node @0 (tag: kUnqualifiedId) {
+                                            Leaf @0 (#SymbolIdentifier @2115-2121: "rd_ptr")
+                                          }
+                                        }
+                                      }
+                                    }
+                                    Leaf @1 (#'+' @2122-2123: "+")
+                                    Node @2 (tag: kNumber) {
+                                      Leaf @0 (#TK_DecNumber @2124-2125: "1")
+                                    }
+                                  }
+                                }
+                                Leaf @4 (#';' @2125-2126: ";")
+                              }
+                            }
+                          }
+                          Node @1 (tag: kElseClause) {
+                            Leaf @0 (#"else" @2132-2136: "else")
+                            Node @1 (tag: kElseBody) {
+                              Node @0 (tag: kNonblockingAssignmentStatement) {
+                                Node @0 (tag: kLPValue) {
+                                  Node @0 (tag: kReference) {
+                                    Node @0 (tag: kLocalRoot) {
+                                      Node @0 (tag: kUnqualifiedId) {
+                                        Leaf @0 (#SymbolIdentifier @2144-2150: "rd_ptr")
+                                      }
+                                    }
+                                  }
+                                }
+                                Leaf @1 (#"<=" @2151-2153: "<=")
+                                Node @3 (tag: kExpression) {
+                                  Node @0 (tag: kFunctionCall) {
+                                    Node @0 (tag: kReference) {
+                                      Node @0 (tag: kLocalRoot) {
+                                        Node @0 (tag: kUnqualifiedId) {
+                                          Leaf @0 (#SymbolIdentifier @2154-2160: "rd_ptr")
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                                Leaf @4 (#';' @2160-2161: ";")
+                              }
+                            }
+                          }
+                        }
+                      }
+                      Node @2 (tag: kEnd) {
+                        Leaf @0 (#"end" @2165-2168: "end")
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            Node @2 (tag: kEnd) {
+              Leaf @0 (#"end" @2169-2172: "end")
+            }
+          }
+        }
+      }
+    }
+    Leaf @2 (#"endmodule" @2176-2185: "endmodule")
+  }
+}

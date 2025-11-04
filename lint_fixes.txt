@@ -1,7 +1,0 @@
---- a/order_dependancy.sv
-+++ b/order_dependancy.sv
-@@ -4,3 +4,3 @@
- 
--module tb;
-+module order_dependancy;
-     logic a, b, result;
