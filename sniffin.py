@@ -366,60 +366,64 @@ def find_positional_port_connections(txt_tree_path, original_file_path):
     return issues
 
 
+def analyze_file(file_path):
+    """
+    Analisa um único arquivo Verilog/SystemVerilog e retorna um dicionário
+    com a contagem de cada smell encontrado.
+
+    Exemplo de retorno:
+    {
+        "syntax_tree_txt": 3,
+        "syntax_tree_concat": 1,
+        "syntax_tree_missing_directive": 1,
+        "syntax_tree_non_automatic": 2,
+        "syntax_tree_identical_names": 0,
+        "syntax_tree_implicit_base": 4,
+        "syntax_tree_positional_ports": 1,
+    }
+    """
+    path = Path(file_path)
+    if not path.exists():
+        raise FileNotFoundError(f"Arquivo não encontrado: {file_path}")
+
+    # Gera a árvore sintática
+    generate_tree(path)
+    txt_tree_path = path.with_suffix(".syntax_tree.txt")
+
+    # Executa detectores
+    tree_issues = find_ambiguous_in_tree(txt_tree_path, path)
+    concat_issues = find_concatenations_in_assignments(txt_tree_path, path)
+    missing_nettype_issues = find_missing_default_nettype(txt_tree_path, path)
+    non_automatic_issues = find_non_automatic_functions(txt_tree_path, path)
+    identical_names_issues = find_identical_port_signal_names(txt_tree_path, path)
+    base_pattern_issues = find_implicit_base_numbers(txt_tree_path, path)
+    positional_issues = find_positional_port_connections(txt_tree_path, path)
+
+    # Monta o dicionário de contagem
+    smell_counts = {
+        "#1_Ambiguous_literals": len(tree_issues),
+        "#2_Order_dependancy": len(positional_issues),
+        "#3_Identical_names": len(identical_names_issues),
+        "#4_Standard_base_literals": len(base_pattern_issues),
+        "#5_Concat_arrayLiterals": len(concat_issues),
+        "#6_Implicit_nettype": len(missing_nettype_issues),
+        "#7_Non_automatic_init": len(non_automatic_issues),
+    }
+
+    return smell_counts
+
+
 def main():
-    all_issues = []
-
-    inicio = time.perf_counter()
-
     for file_path in sys.argv[1:]:
-        path = Path(file_path)
-        if not path.exists():
-            print(f"Arquivo não encontrado: {file_path}", file=sys.stderr)
+        try:
+            result = analyze_file(file_path)
+        except FileNotFoundError as e:
+            print(str(e))
             continue
 
-        generate_tree(path)
-        txt_tree_path = path.with_suffix(".syntax_tree.txt")
-
-        tree_issues = find_ambiguous_in_tree(txt_tree_path, path)
-        concat_issues = find_concatenations_in_assignments(txt_tree_path, path)
-        missing_nettype_issues = find_missing_default_nettype(txt_tree_path, path)
-        non_automatic_issues = find_non_automatic_functions(txt_tree_path, path)
-        identical_names_issues = find_identical_port_signal_names(txt_tree_path, path)
-        base_pattern_issues = find_implicit_base_numbers(txt_tree_path, path)
-        positional_issues = find_positional_port_connections(txt_tree_path, path)
-        # debug_number_tokens(txt_tree_path)
-
-        combined_issues = {f"{i['line']}:": i for i in tree_issues}
-
-        for issue in (
-            tree_issues
-            + concat_issues
-            + missing_nettype_issues
-            + non_automatic_issues
-            + identical_names_issues
-            + base_pattern_issues
-            + positional_issues
-        ):
-            key = f"{issue['line']}"
-            if key not in combined_issues:
-                combined_issues[key] = issue
-
-        issues = list(combined_issues.values())
-
-        if issues:
-            all_issues.extend(issues)
-            for issue in issues:
-                print(f"  Linha {issue['line']}: {issue['message']}")
-                print(f"     Contexto: {issue['context']}")
-        else:
-            print("  Achei nada boy.")
-
-    fim = time.perf_counter()
-
-    tempo_decorrido = fim - inicio
-
-    print(f"tempo de execução: {tempo_decorrido}\n")
-
+        print(f"\n=== Arquivo: {file_path} ===")
+        for smell, count in result.items():
+            print(f"{smell}: {count}")
 
 if __name__ == "__main__":
     main()
