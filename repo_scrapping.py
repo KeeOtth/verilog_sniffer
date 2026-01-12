@@ -11,8 +11,7 @@ def buscar_repositorios(paginas=5):
     repositorios = {}
     url = "https://api.github.com/search/code"
 
-    # Busca qualquer arquivo .sv, .svh, .v, .vh
-    query = "extension:sv"
+    query = "extension:sv OR extension:svh OR extension:v OR extension:vh"
 
     for page in range(1, paginas + 1):
         params = {"q": query, "per_page": 100, "page": page}

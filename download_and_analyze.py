@@ -8,11 +8,11 @@ from sniffin2 import analyze_file
 BASE_RAW_URL = "https://raw.githubusercontent.com/"
 TEMP_ROOT = Path("temp_repos")
 
-HDL_EXT = (".sv", ".svh", ".v", ".vh")
+HDL_EXT = (".sv")
 
-CSV_INPUT = "repositorios_k6.csv"
-CSV_OUT_DETALHADO = "resultados_detalhados.csv"
-CSV_OUT_REPO = "tabela_agregada.csv"
+CSV_INPUT = "repositorios_sv.csv"
+CSV_OUT_DETALHADO = "resultados_detalhados2.csv"
+CSV_OUT_REPO = "tabela_agregada2.csv"
 
 
 # ================================================================
