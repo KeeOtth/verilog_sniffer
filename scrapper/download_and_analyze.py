@@ -5,7 +5,7 @@ from pathlib import Path
 
 import requests
 
-from sniffin2 import analyze_file
+from sniffin_v2 import analyze_file
 
 BASE_RAW_URL = "https://raw.githubusercontent.com/"
 TEMP_ROOT = Path("temp_repos")
