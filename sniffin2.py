@@ -200,40 +200,90 @@ def find_identical_port_signal_names(txt_tree_path, original_file_path):
 
     return issues
 
-
 def find_implicit_base_numbers(txt_tree_path, original_file_path):
     issues = []
-    tree_text = Path(txt_tree_path).read_text(encoding="utf-8")
+    txt_tree_path = Path(txt_tree_path)
 
-    pattern = re.compile(
-        r"Node @\d+ \(tag: kNumber\) \{"
-        r"(?:(?!Node @\d+ \(tag: kBaseDigits\)).)*?"
-        r'Leaf @\d+ \(#TK_DecNumber @(\d+)-\d+: "([^"]+)"\)'
-        r"(?:(?!Node @\d+ \(tag: kBaseDigits\)).)*?"
-        r"\}",
-        re.DOTALL,
-    )
-
+    tree_text = txt_tree_path.read_text(encoding="utf-8")
     src_text = Path(original_file_path).read_text(encoding="utf-8")
     code_lines = src_text.splitlines()
 
-    for m in pattern.finditer(tree_text):
-        start_offset = int(m.group(1))
-        number = m.group(2)
+    control_blocks_re = re.compile(
+        r"Node @\d+ \(tag: (kIfStatement|kForLoopStatement|kWhileLoopStatement|kDoWhileStatement|kCaseItem)\) \{"
+        r"(.*?)"
+        r"\n\}",
+        re.DOTALL,
+    )
 
-        ctx = tree_text[max(0, m.start() - 500) : m.start()]
-        if "kCaseItem" in ctx:
+    implicit_number_re = re.compile(
+        r"Node @\d+ \(tag: kNumber\) \{"
+        r"(?!.*?kBaseDigits)"
+        r".*?#TK_DecNumber @(\d+)-(\d+): \"([^\"]+)\"",
+        re.DOTALL,
+    )
+
+    for block in control_blocks_re.finditer(tree_text):
+        block_text = block.group(2)
+
+        for number_match in implicit_number_re.finditer(block_text):
+            start_offset = int(number_match.group(1))
+            number_value = number_match.group(3)
+
             line_num = _offset_line(src_text, start_offset)
+
+            context = (
+                code_lines[line_num - 1].strip()
+                if 0 <= line_num - 1 < len(code_lines)
+                else ""
+            )
+
             issues.append(
                 {
                     "file": str(original_file_path),
                     "line": line_num,
-                    "context": code_lines[line_num - 1].strip(),
+                    "context": context,
                     "method": "syntax_tree_implicit_base",
-                    "message": f"Número no case sem base explícita: {number}",
+                    "message": (
+                        f"Número sem base explícita em estrutura de controle: {number_value}"
+                    ),
                 }
             )
+
     return issues
+
+# def find_implicit_base_numbers(txt_tree_path, original_file_path):
+#     issues = []
+#     tree_text = Path(txt_tree_path).read_text(encoding="utf-8")
+
+#     pattern = re.compile(
+#         r"Node @\d+ \(tag: kNumber\) \{"
+#         r"(?:(?!Node @\d+ \(tag: kBaseDigits\)).)*?"
+#         r'Leaf @\d+ \(#TK_DecNumber @(\d+)-\d+: "([^"]+)"\)'
+#         r"(?:(?!Node @\d+ \(tag: kBaseDigits\)).)*?"
+#         r"\}",
+#         re.DOTALL,
+#     )
+
+#     src_text = Path(original_file_path).read_text(encoding="utf-8")
+#     code_lines = src_text.splitlines()
+
+#     for m in pattern.finditer(tree_text):
+#         start_offset = int(m.group(1))
+#         number = m.group(2)
+
+#         ctx = tree_text[max(0, m.start() - 500) : m.start()]
+#         if "kCaseItem" in ctx:
+#             line_num = _offset_line(src_text, start_offset)
+#             issues.append(
+#                 {
+#                     "file": str(original_file_path),
+#                     "line": line_num,
+#                     "context": code_lines[line_num - 1].strip(),
+#                     "method": "syntax_tree_implicit_base",
+#                     "message": f"Número no case sem base explícita: {number}",
+#                 }
+#             )
+#     return issues
 
 
 def find_positional_port_connections(txt_tree_path, original_file_path):

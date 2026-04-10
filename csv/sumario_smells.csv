@@ -1,0 +1,8 @@
+﻿smell_desc,total,media,projetos,arquivos,percentual
+Nomes idênticos,3587,7.567510548523207,361,474,47.78
+Literais de concatenação/array,1097,2.3143459915611815,361,474,14.61
+Literais sem base padrão,840,1.7721518987341771,361,474,11.19
+Literais Ambíguos,612,1.2911392405063291,361,474,8.15
+Dependência de ordem,537,1.1329113924050633,361,474,7.15
+Nettype implícito,452,0.9535864978902954,361,474,6.02
+Ausência de init automático,382,0.8059071729957806,361,474,5.09
