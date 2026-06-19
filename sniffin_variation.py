@@ -3,7 +3,7 @@ import re
 
 class VeribleASTParser:
     NODE_REGEX = re.compile(r"Node .* \(tag: (\w+)\)")
-    LEAF_REGEX = re.compile(r'Leaf .* \(#(\w+).*: "([^"]+)"\)')
+    LEAF_REGEX = re.compile(r'Leaf .* \(#("?[\w]+"?).*: "([^"]+)"\)')
 
     def parse(self, lines):
         stack = []
@@ -30,7 +30,7 @@ class VeribleASTParser:
             # --- LEAF ---
             leaf_match = self.LEAF_REGEX.search(line)
             if leaf_match:
-                token_type = leaf_match.group(1)
+                token_type = leaf_match.group(1).strip('"')
                 token_value = leaf_match.group(2)
 
                 leaf = {"type": token_type, "token": token_value, "meta": line}
@@ -46,6 +46,23 @@ class VeribleASTParser:
                     stack.pop()
 
         return root
+
+
+def find_descendants_by_token(node, token):
+
+    results = []
+
+    def walk(n):
+
+        if n.get("token") == token:
+            results.append(n)
+
+        for c in n.get("children", []):
+            walk(c)
+
+    walk(node)
+
+    return results
 
 
 def get_children_by_type(node, type_name):
@@ -164,6 +181,57 @@ class UnsizedBaselessLiteralDetector(SmellDetector):
         return results
 
 
+class NonAutomaticFunctionDetector(SmellDetector):
+    def is_function(self, node):
+        return node["type"] == "kFunctionDeclaration"
+
+    def has_automatic(self, function_node):
+
+        headers = get_children_by_type(function_node, "kFunctionHeader")
+
+        if not headers:
+            return False
+
+        return len(find_descendants(headers[0], "automatic")) > 0
+
+    def extract_name(self, function_node):
+
+        headers = get_children_by_type(function_node, "kFunctionHeader")
+
+        if not headers:
+            return None
+
+        ids = find_descendants(headers[0], "SymbolIdentifier")
+
+        if ids:
+            return ids[0]["token"]
+
+        return None
+
+    def build_result(self, function_node):
+
+        return {
+            "smell": "non_automatic_function",
+            "function": self.extract_name(function_node),
+            "raw": function_node.get("meta", ""),
+        }
+
+    def detect(self, tree):
+
+        results = []
+
+        for node in traverse(tree):
+            if not self.is_function(node):
+                continue
+
+            if self.has_automatic(node):
+                continue
+
+            results.append(self.build_result(node))
+
+        return results
+
+
 class Analyzer:
     def __init__(self, detectors):
         self.detectors = detectors
@@ -180,7 +248,7 @@ class Analyzer:
 
 if __name__ == "__main__":
     # Caminho do arquivo gerado pelo Verible
-    input_file = "ast.txt"
+    input_file = "/home/gabriel/ast-comparator/lol.syntax_tree.txt"
 
     with open(input_file, "r", encoding="utf-8") as f:
         lines = f.readlines()
@@ -190,11 +258,22 @@ if __name__ == "__main__":
     tree = parser.parse(lines)
 
     # Detectores
-    detectors = [UnsizedBaselessLiteralDetector()]
+    detectors = [UnsizedBaselessLiteralDetector(), NonAutomaticFunctionDetector()]
 
     # Analyzer
     analyzer = Analyzer(detectors)
     results = analyzer.run(tree)
+
+    for node in traverse(tree):
+        if node.get("token") == "automatic":
+            print(node)
+
+    for node in traverse(tree):
+        print(node["type"])
+
+    for node in traverse(tree):
+        if node["type"] == "automatic":
+            print("ENCONTREI")
 
     # Output
     print("\n=== RESULTADOS ===\n")

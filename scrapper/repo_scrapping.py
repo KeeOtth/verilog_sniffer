@@ -3,7 +3,7 @@ import time
 
 import requests
 
-
+GITHUB_TOKEN = "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"
 HEADERS = {"Authorization": f"token {GITHUB_TOKEN}"}
 
 
