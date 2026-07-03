@@ -1,21 +1,57 @@
+import concurrent.futures
 import csv
+import logging
 import os
 import shutil
+import sys
+import threading
+import time
+from collections import Counter
 from pathlib import Path
 
 import requests
 
-from sniffin_v2 import analyze_file
+try:
+    from ..sniffin_variation import SMELL_NAMES, analyze_file
+except Exception:
+    # Quando executado como script dentro de scrapper (cd scrapper && python -m ...)
+    # adiciona o diretório pai ao sys.path para permitir import absoluto.
+    # Gambiarra
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+    from sniffin_variation import SMELL_NAMES, analyze_file
 
 BASE_RAW_URL = "https://raw.githubusercontent.com/"
 TEMP_ROOT = Path("temp_repos")
 
+# Diretórios e arquivos CSV (usa a pasta `csv/` no root do projeto)
+REPO_ROOT = Path(__file__).resolve().parent.parent
+CSV_DIR = REPO_ROOT / "csv"
+
 # CORRIGIDO: Todas as extensões com ponto
 HDL_EXT = (".sv", ".svh", ".vh", ".v", ".vhd", ".vhdl")
 
-CSV_INPUT = "repositorios_sv.csv"
-CSV_OUT_DETALHADO = "resultados_detalhados2.csv"
-CSV_OUT_REPO = "tabela_agregada2.csv"
+CSV_INPUT = CSV_DIR / "repositorios_sv.csv"
+CSV_OUT_DETALHADO = CSV_DIR / "resultados_detalhados3.csv"
+CSV_OUT_REPO = CSV_DIR / "tabela_agregada3.csv"
+
+# Configuração de paralelismo
+DEFAULT_MAX_WORKERS = max(4, (os.cpu_count() or 2) * 2)
+
+# Logging básico
+logging.basicConfig(level=logging.INFO, format="[%(levelname)s] %(message)s")
+
+# Cache de branch bem-sucedido por repositório para evitar tentativas repetidas
+_branch_cache = {}
+
+
+def contar_smells(resultado):
+
+    contador = Counter()
+
+    for smell in resultado:
+        contador[smell["smell"]] += 1
+
+    return contador
 
 
 def contar_linhas(arquivo_path):
@@ -49,38 +85,58 @@ def ler_csv_repos():
     return repos
 
 
-def baixar_arquivo_raw(repo, file_path, dest_file):
-    possible_branches = ["main", "master", "dev", "development", "trunk"]
+def build_github_url(repo_name, branch, file_path):
+    repo_name = repo_name.strip("/")
+    if not branch or branch == "(no-branch)":
+        branch = "master"
+    return f"https://github.com/{repo_name}/blob/{branch}/{file_path}"
 
-    for br in possible_branches:
+
+def baixar_arquivo_raw(repo, file_path, dest_file, session: requests.Session):
+    """Baixa um arquivo usando a sessão fornecida. Usa cache de branch por repo."""
+    # Se já tivermos encontrado um branch que funciona para esse repo, tente primeiro
+    cached = _branch_cache.get(repo)
+
+    branches = []
+    if cached:
+        branches.append(cached)
+
+    # limitar tentativa a branches comuns para reduzir latência
+    for b in ("master", "main"):
+        if b not in branches:
+            branches.append(b)
+
+    # tenta cada branch
+    for br in branches:
         url = f"{BASE_RAW_URL}{repo}/{br}/{file_path}"
-
         try:
-            resp = requests.get(url, timeout=10)
+            resp = session.get(url, timeout=10)
             if resp.status_code == 200:
                 dest_file.parent.mkdir(parents=True, exist_ok=True)
                 with open(dest_file, "wb") as f:
                     f.write(resp.content)
-                print(f"[OK] Baixado: {repo}/{file_path}")
-                return True
-        except Exception as e:
+                logging.info(f"Baixado: {repo}/{file_path} ({br})")
+                _branch_cache[repo] = br
+                return True, br
+        except Exception:
             continue
 
-    # Tentar sem branch (alguns usam caminho direto)
+    # fallback: tentar sem branch
     url = f"{BASE_RAW_URL}{repo}/{file_path}"
     try:
-        resp = requests.get(url, timeout=10)
+        resp = session.get(url, timeout=10)
         if resp.status_code == 200:
             dest_file.parent.mkdir(parents=True, exist_ok=True)
             with open(dest_file, "wb") as f:
                 f.write(resp.content)
-            print(f"[OK] Baixado (sem branch): {repo}/{file_path}")
-            return True
+            logging.info(f"Baixado (sem branch): {repo}/{file_path}")
+            _branch_cache[repo] = "(no-branch)"
+            return True, "(no-branch)"
     except Exception:
         pass
 
-    print(f"[ERRO] Arquivo não encontrado em {repo}: {file_path}")
-    return False
+    logging.warning(f"Arquivo não encontrado em {repo}: {file_path}")
+    return False, None
 
 
 def verificar_extensao_hdl(arquivo_path):
@@ -95,47 +151,71 @@ def processar_repositorio(repo, resultados_detalhados, agregador):
     print(f"\n=== PROCESSANDO {repo_name} ({len(files)} arquivos) ===")
 
     temp_repo_dir = TEMP_ROOT / repo_name.replace("/", "__")
-
     # Contador agregado por smell
     soma_smells_repo = {}
     arquivos_processados = 0
 
-    for relative_path in files:
+    # Usa uma sessão compartilhada por repositório (keep-alive)
+    session = requests.Session()
+
+    def worker(relative_path):
+        nonlocal arquivos_processados
         relative_path = relative_path.strip()
 
-        # Verificação CORRETA de extensão
         if not verificar_extensao_hdl(relative_path):
-            print(f"[PULAR] Extensão não HDL: {relative_path}")
-            continue
+            logging.info(f"PULAR (não HDL): {relative_path}")
+            return None
 
         dest_file = temp_repo_dir / relative_path
 
-        ok = baixar_arquivo_raw(repo_name, relative_path, dest_file)
+        ok, branch = baixar_arquivo_raw(repo_name, relative_path, dest_file, session)
         if not ok:
-            continue
+            return None
 
-        # Analisar
         try:
-            smells = analyze_file(dest_file)
+            resultado = analyze_file(dest_file)
+            smells = contar_smells(resultado)
             arquivos_processados += 1
         except Exception as e:
-            print(f"[ERRO] Analisando {dest_file}: {e}")
-            continue
+            logging.warning(f"Analisando {dest_file}: {e}")
+            return None
 
         num_linhas = contar_linhas(dest_file)
 
-        # Registrar linha a linha no CSV detalhado
-        for smell, quantidade in smells.items():
-            resultados_detalhados.append(
+        github_url = build_github_url(repo_name, branch, relative_path)
+        rows = []
+        for smell in SMELL_NAMES:
+            quantidade = smells.get(smell, 0)
+            rows.append(
                 {
                     "repo": repo_name,
-                    "arquivo": str(dest_file),
+                    "arquivo": github_url,
                     "linhas": num_linhas,
                     "smell": smell,
                     "quantidade": quantidade,
                 }
             )
-            soma_smells_repo[smell] = soma_smells_repo.get(smell, 0) + quantidade
+        return (rows, smells)
+
+    # paraleliza por arquivo (I/O bound + subprocess calls)
+    with concurrent.futures.ThreadPoolExecutor(max_workers=DEFAULT_MAX_WORKERS) as exc:
+        futures = {exc.submit(worker, p): p for p in files}
+        for fut in concurrent.futures.as_completed(futures):
+            res = None
+            try:
+                res = fut.result()
+            except Exception as e:
+                logging.warning(f"Erro no worker: {e}")
+                res = None
+
+            if not res:
+                continue
+
+            rows, smells = res
+            resultados_detalhados.extend(rows)
+
+            for smell, qty in smells.items():
+                soma_smells_repo[smell] = soma_smells_repo.get(smell, 0) + qty
 
     print(
         f"[INFO] {repo_name}: {arquivos_processados}/{len(files)} arquivos processados"
@@ -152,10 +232,7 @@ def processar_repositorio(repo, resultados_detalhados, agregador):
 
 
 def salvar_tabela_agregada(agregador):
-    todos_smells = set()
-    for repo, smells in agregador.items():
-        todos_smells.update(smells.keys())
-    todos_smells = sorted(todos_smells)
+    todos_smells = SMELL_NAMES
 
     with open(CSV_OUT_REPO, "w", newline="", encoding="utf-8") as f:
         fieldnames = ["repo"] + todos_smells
