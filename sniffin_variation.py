@@ -693,6 +693,43 @@ def get_input_file():
     return Path("/home/gabriel/ast-comparator/atom.syntax_tree.txt")
 
 
+DETECTORS = [
+    UnsizedBaselessDetector(),
+    NonAutoFunctionDetector(),
+    PackedMultidimConcatDetector(),
+    CaseXDetector(),
+    ChainedComparisonDetector(),
+    ImplicitDecimalBinaryDetector(),
+]
+
+SMELL_NAMES = [
+    "unsized_baseless_literal_in_control",
+    "non_automatic_function",
+    "packed_multidimensional_concat_assignment",
+    "casex_statement",
+    "chained_comparison",
+    "implicit_decimal_literal_in_binary_expression",
+]
+
+
+def analyze_file(file_path):
+
+    file_path = Path(file_path)
+
+    if file_path.suffix == ".sv":
+        syntax_tree_path = generate_syntax_tree(file_path)
+        lines = read_syntax_tree(syntax_tree_path)
+    else:
+        lines = read_syntax_tree(file_path)
+
+    parser = VeribleASTParser()
+    tree = parser.parse(lines)
+
+    analyzer = Analyzer(DETECTORS)
+
+    return analyzer.run(tree)
+
+
 if __name__ == "__main__":
     input_path = get_input_file()
 
