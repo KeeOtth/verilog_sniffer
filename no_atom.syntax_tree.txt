@@ -1,0 +1,124 @@
+
+Parse Tree:
+Node @0 (tag: kDescriptionList) {
+  Node @0 (tag: kModuleDeclaration) {
+    Node @0 (tag: kModuleHeader) {
+      Leaf @0 (#"module" @0-6: "module")
+      Leaf @2 (#SymbolIdentifier @7-14: "example")
+      Leaf @7 (#';' @14-15: ";")
+    }
+    Node @1 (tag: kModuleItemList) {
+      Node @0 (tag: kDataDeclaration) {
+        Node @1 (tag: kInstantiationBase) {
+          Node @0 (tag: kInstantiationType) {
+            Node @0 (tag: kDataType) {
+              Node @1 (tag: kDataTypePrimitive) {
+                Leaf @0 (#"byte" @21-25: "byte")
+              }
+              Node @3 (tag: kPackedDimensions) {
+              }
+            }
+          }
+          Node @1 (tag: kGateInstanceRegisterVariableList) {
+            Node @0 (tag: kRegisterVariable) {
+              Leaf @0 (#SymbolIdentifier @26-28: "in")
+              Node @1 (tag: kUnpackedDimensions) {
+              }
+            }
+          }
+        }
+        Leaf @2 (#';' @28-29: ";")
+      }
+      Node @1 (tag: kDataDeclaration) {
+        Node @1 (tag: kInstantiationBase) {
+          Node @0 (tag: kInstantiationType) {
+            Node @0 (tag: kDataType) {
+              Node @1 (tag: kDataTypePrimitive) {
+                Leaf @0 (#"int" @34-37: "int")
+              }
+              Node @3 (tag: kPackedDimensions) {
+              }
+            }
+          }
+          Node @1 (tag: kGateInstanceRegisterVariableList) {
+            Node @0 (tag: kRegisterVariable) {
+              Leaf @0 (#SymbolIdentifier @38-41: "out")
+              Node @1 (tag: kUnpackedDimensions) {
+              }
+            }
+          }
+        }
+        Leaf @2 (#';' @41-42: ";")
+      }
+      Node @2 (tag: kInitialStatement) {
+        Leaf @0 (#"initial" @48-55: "initial")
+        Node @1 (tag: kSeqBlock) {
+          Node @0 (tag: kBegin) {
+            Leaf @0 (#"begin" @56-61: "begin")
+          }
+          Node @1 (tag: kBlockItemStatementList) {
+            Node @0 (tag: kNetVariableAssignment) {
+              Node @0 (tag: kLPValue) {
+                Node @0 (tag: kReference) {
+                  Node @0 (tag: kLocalRoot) {
+                    Node @0 (tag: kUnqualifiedId) {
+                      Leaf @0 (#SymbolIdentifier @70-72: "in")
+                    }
+                  }
+                }
+              }
+              Leaf @1 (#'=' @73-74: "=")
+              Node @2 (tag: kExpression) {
+                Node @0 (tag: kUnaryPrefixExpression) {
+                  Leaf @0 (#'-' @75-76: "-")
+                  Node @1 (tag: kNumber) {
+                    Leaf @0 (#TK_DecNumber @76-77: "5")
+                  }
+                }
+              }
+              Leaf @3 (#';' @77-78: ";")
+            }
+            Node @1 (tag: kNetVariableAssignment) {
+              Node @0 (tag: kLPValue) {
+                Node @0 (tag: kReference) {
+                  Node @0 (tag: kLocalRoot) {
+                    Node @0 (tag: kUnqualifiedId) {
+                      Leaf @0 (#SymbolIdentifier @87-90: "out")
+                    }
+                  }
+                }
+              }
+              Leaf @1 (#'=' @91-92: "=")
+              Node @2 (tag: kExpression) {
+                Node @0 (tag: kBinaryExpression) {
+                  Node @0 (tag: kFunctionCall) {
+                    Node @0 (tag: kReference) {
+                      Node @0 (tag: kLocalRoot) {
+                        Node @0 (tag: kUnqualifiedId) {
+                          Leaf @0 (#SymbolIdentifier @93-95: "in")
+                        }
+                      }
+                    }
+                  }
+                  Leaf @1 (#'+' @96-97: "+")
+                  Node @2 (tag: kNumber) {
+                    Leaf @0 (#TK_DecNumber @98-99: "1")
+                    Node @1 (tag: kBaseDigits) {
+                      Leaf @0 (#TK_BinBase @99-101: "\'b")
+                      Leaf @1 (#TK_BinDigits @101-102: "1")
+                    }
+                  }
+                }
+              }
+              Leaf @3 (#';' @102-103: ";")
+            }
+          }
+          Node @2 (tag: kEnd) {
+            Leaf @0 (#"end" @108-111: "end")
+          }
+        }
+      }
+    }
+    Leaf @2 (#"endmodule" @113-122: "endmodule")
+  }
+}
