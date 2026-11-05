@@ -1,0 +1,384 @@
+repositório,url,arquivos
+MiSTer-devel/GnW_MiSTer,https://github.com/MiSTer-devel/GnW_MiSTer,GnW.sv
+UCLONG/NetEmulation,https://github.com/UCLONG/NetEmulation,ppe.sv
+ironsteel/nes_ecp5,https://github.com/ironsteel/nes_ecp5,ppu.sv
+ameetgohil/elastic-buffer,https://github.com/ameetgohil/elastic-buffer,eb1.sv
+Matt8898/leg,https://github.com/Matt8898/leg,rob.sv
+dsheffie/rv64core,https://github.com/dsheffie/rv64core,l2.sv
+mist-devel/ql,https://github.com/mist-devel/ql,ql.sv
+ElectronAsh/psx_gpu_test,https://github.com/ElectronAsh/psx_gpu_test,PS1.sv
+NazerkeT/MultilevelTLB,https://github.com/NazerkeT/MultilevelTLB,ptw.sv
+ForwardCom/softcoreA,https://github.com/ForwardCom/softcoreA,top.sv
+yujixr/r2rv,https://github.com/yujixr/r2rv,alu.sv
+GeorgeSangillo/ARM-Single-Cycle-Processor,https://github.com/GeorgeSangillo/ARM-Single-Cycle-Processor,ALU.sv
+benreese0/ECPE174FinalProject,https://github.com/benreese0/ECPE174FinalProject,LCD.sv
+harbaum/ikbd,https://github.com/harbaum/ikbd,ps2.sv
+Jin-zd/NSCSCC2024,https://github.com/Jin-zd/NSCSCC2024,cpu.sv
+dabridgham/KV10,https://github.com/dabridgham/KV10,mem.sv
+ds18nomad/NN_Calculator_SOC_Design,https://github.com/ds18nomad/NN_Calculator_SOC_Design,nn.sv
+abdo1819/fpu,https://github.com/abdo1819/fpu,fpu.sv
+SaiVineethKalluruSrinivas/Reorder-buffer-4-way-O3-CPU-verilog,https://github.com/SaiVineethKalluruSrinivas/Reorder-buffer-4-way-O3-CPU-verilog,iq.sv
+JPaulMora/NibblER,https://github.com/JPaulMora/NibblER,A.vh
+karthik-0398/picoMIPS,https://github.com/karthik-0398/picoMIPS,pc.sv
+kiryk/l8,https://github.com/kiryk/l8,l8.sv
+ZPNMiaoHeng/tinyriscv_v,https://github.com/ZPNMiaoHeng/tinyriscv_v,rtl/core/exu.sv; rtl/core/csr.sv; rtl/core/idu.sv; rtl/core/bpu.sv
+ftqtfff/TimingFunctionVerification,https://github.com/ftqtfff/TimingFunctionVerification,bwe.sv
+wele0612/Kaiserlake,https://github.com/wele0612/Kaiserlake,HCU.sv
+rculbertson88/Mister64,https://github.com/rculbertson88/Mister64,N64.sv
+SarahToscano/MIPS32,https://github.com/SarahToscano/MIPS32,pc.sv; mdr.sv
+jvorob/cse502,https://github.com/jvorob/cse502,tlb.sv; MMU.sv
+raparici/C64_MiSTer_DEV,https://github.com/raparici/C64_MiSTer_DEV,c64.sv
+m7md5303/Ultrasonic-zynq7000-based-system,https://github.com/m7md5303/Ultrasonic-zynq7000-based-system,TB.sv
+BHa2R00/uart_interface,https://github.com/BHa2R00/uart_interface,41.sv; 39.sv
+BHa2R00/rtl_notes,https://github.com/BHa2R00/rtl_notes,61.sv; 55.sv; 44.sv; 67.sv
+qqn2/fsm_example,https://github.com/qqn2/fsm_example,tb.sv
+tommy73594/SNN,https://github.com/tommy73594/SNN,pe.sv; adder_T.sv
+2011eric/DCLAB-Final,https://github.com/2011eric/DCLAB-Final,MP.sv; Top.sv
+Kavi91/16-bit_Processor_Core,https://github.com/Kavi91/16-bit_Processor_Core,ir.sv; rb.sv; cu.sv; pc.sv
+luqeei1/Lab4-Group23,https://github.com/luqeei1/Lab4-Group23,pc.sv
+udit-gupta/cse502,https://github.com/udit-gupta/cse502,EX.sv
+KarthikeyaSharma16/Systolic-accelerator,https://github.com/KarthikeyaSharma16/Systolic-accelerator,PE.sv
+yxhong-tw/Check-in-and-Pickup,https://github.com/yxhong-tw/Check-in-and-Pickup,tb.sv
+berkarslanpencesi/MultiCycleRiscV,https://github.com/berkarslanpencesi/MultiCycleRiscV,pc.sv
+Sash-github-account/32b_MIPS_CPU,https://github.com/Sash-github-account/32b_MIPS_CPU,pc.sv
+ItsSriRamRahul/TransformerTPU,https://github.com/ItsSriRamRahul/TransformerTPU,PE.sv
+marcadrian20/Matrix_Multiplier_Systolic,https://github.com/marcadrian20/Matrix_Multiplier_Systolic,PE.sv
+yacoub-john/SmartHomeSystem,https://github.com/yacoub-john/SmartHomeSystem,ip.sv
+luisjo81/CE4301-ProyectoGrupal1,https://github.com/luisjo81/CE4301-ProyectoGrupal1,pc.sv
+ricktruong/X9-Architecture,https://github.com/ricktruong/X9-Architecture,PC.sv
+RMezSa/RV32I-VERILOG,https://github.com/RMezSa/RV32I-VERILOG,PC.sv
+JesalMP/Risc-V-32BIT-Dual-Core,https://github.com/JesalMP/Risc-V-32BIT-Dual-Core,IF.sv; ID.sv
+BHa2R00/cpu,https://github.com/BHa2R00/cpu,24.sv; 20.sv; 32.sv
+HasanZarook/RISCV_Pipeline_Architecture,https://github.com/HasanZarook/RISCV_Pipeline_Architecture,pc.sv
+clo34/Digital-Audio-Signal-Processing-System,https://github.com/clo34/Digital-Audio-Signal-Processing-System,FA.sv
+Peter-Herrmann/Lucid64,https://github.com/Peter-Herrmann/Lucid64,csr.vh
+MSakib2001/Knight-bot,https://github.com/MSakib2001/Knight-bot,PID.sv
+Kitrinx/GBA_MiSTer_archive,https://github.com/Kitrinx/GBA_MiSTer_archive,GBA.sv
+Kitrinx/GBA_MiSTer-_OLD,https://github.com/Kitrinx/GBA_MiSTer-_OLD,GBA.sv
+jaycordaro/Basic-MAX10-FPGA-project,https://github.com/jaycordaro/Basic-MAX10-FPGA-project,led.sv
+b-dmitry1/riscv,https://github.com/b-dmitry1/riscv,cpu.vh
+ProyectosCE/CE3201_PF,https://github.com/ProyectosCE/CE3201_PF,CPU.sv
+CPEN-391-TEAM-7/RNN_Accelerator,https://github.com/CPEN-391-TEAM-7/RNN_Accelerator,rnn.sv
+shantanu5092/Network-on-Chip-NOC-,https://github.com/shantanu5092/Network-on-Chip-NOC-,crc.sv
+Tbthanh/trafficlight-with-systemverilog,https://github.com/Tbthanh/trafficlight-with-systemverilog,fsm.sv
+BHa2R00/rsa,https://github.com/BHa2R00/rsa,33.sv
+MSakib2001/Buck-Buck-Go,https://github.com/MSakib2001/Buck-Buck-Go,src/vpu/vpu.sv
+S0UN/CompArch---prog-8,https://github.com/S0UN/CompArch---prog-8,d.sv
+sandeepa0105/Single_Cycle_RISC-V_Processor,https://github.com/sandeepa0105/Single_Cycle_RISC-V_Processor,pc.sv
+jiegec/GuGuMIPS,https://github.com/jiegec/GuGuMIPS,ex.sv
+CroosJJSE/RISC_V_NON-pipelined-processor,https://github.com/CroosJJSE/RISC_V_NON-pipelined-processor,PC.sv
+Hotwater17/SvarogSoC,https://github.com/Hotwater17/SvarogSoC,pc.sv
+aksyristos/Pulpinorepo,https://github.com/aksyristos/Pulpinorepo,tb.sv
+lzk2023/MHA,https://github.com/lzk2023/MHA,PE.sv
+Prurite/cs207-FPGAPiano,https://github.com/Prurite/cs207-FPGAPiano,io.sv
+pasiramavishan/RISCV-Pipeline-Processor,https://github.com/pasiramavishan/RISCV-Pipeline-Processor,PC.sv
+peterwudi/isp,https://github.com/peterwudi/isp,tb.sv
+kolarfpga-dev/Design,https://github.com/kolarfpga-dev/Design,ss.sv
+arkeks/SPI_fpga,https://github.com/arkeks/SPI_fpga,tb.sv; counter.sv
+Alerodcas/ArregloSist-licoNPU,https://github.com/Alerodcas/ArregloSist-licoNPU,pe.sv
+dannym49/Calpoly-CPE233,https://github.com/dannym49/Calpoly-CPE233,PC.sv
+roscibely/SAP1-computer,https://github.com/roscibely/SAP1-computer,UC.sv
+themaheerahkhalid/Single_Cycle_Riscv_Architecture,https://github.com/themaheerahkhalid/Single_Cycle_Riscv_Architecture,pc.sv
+takanori2003/Verilog-CPU,https://github.com/takanori2003/Verilog-CPU,ID.sv
+7174Andy/CSE-141L-Project,https://github.com/7174Andy/CSE-141L-Project,PC.sv
+Raa-23/GPU,https://github.com/Raa-23/GPU,pc.sv
+farazch1/RISC-V_3_Stage_pipelined_processor_design,https://github.com/farazch1/RISC-V_3_Stage_pipelined_processor_design,pc.sv
+JyresaMae/FPGA,https://github.com/JyresaMae/FPGA,ARM Single-Cycle Processor/ALU.sv
+retrocrypta/Atari_ST-poseidon,https://github.com/retrocrypta/Atari_ST-poseidon,MiSTery/ikbd/ps2.sv
+thefatheroffire/fire_cpu,https://github.com/thefatheroffire/fire_cpu,exu.sv; csr.sv; idu.sv; bpu.sv
+claudiosouzabrito/UFPB,https://github.com/claudiosouzabrito/UFPB,concepcao-estruturada-de-circuitos-integrados/Datapath2/pc.sv; concepcao-estruturada-de-circuitos-integrados/Datapath2/mdr.sv
+SaberMahmoud1/Ultrasonic-zynq7000-based-system,https://github.com/SaberMahmoud1/Ultrasonic-zynq7000-based-system,TB.sv
+BobLouis/DIC,https://github.com/BobLouis/DIC,DIC2024_hw2/ref/tb.sv
+ahan10/Smart-Home-System,https://github.com/ahan10/Smart-Home-System,ip.sv
+raulbehl/100DaysOfRTL,https://github.com/raulbehl/100DaysOfRTL,day32/day32.sv
+MiSTer-devel/X68000_MiSTer,https://github.com/MiSTer-devel/X68000_MiSTer,X68000.sv
+melt-umn/silver,https://github.com/melt-umn/silver,grammars/silver/compiler/driver/util/Compilation.sv; grammars/silver/compiler/definition/core/ProductionDcl.sv
+pulp-platform/hier-icache,https://github.com/pulp-platform/hier-icache,TB/tgen_128.sv
+pConst/basic_verilog,https://github.com/pConst/basic_verilog,soft_latch_tb.sv
+mashnoor/iccd-competition-claude-code,https://github.com/mashnoor/iccd-competition-claude-code,task2/sequence_detector.sv
+tearflake/symbolverse,https://github.com/tearflake/symbolverse,examples/natnum.sv
+kei-seu/I2C,https://github.com/kei-seu/I2C,kei_i2c_tb/agents/kei_vip_i2c/kei_vip_i2c_slave_monitor.sv
+ryanmacdonald/Ray-Tracing-GPU,https://github.com/ryanmacdonald/Ray-Tracing-GPU,PERIPHERALS/xmodem.sv; RAYTRACER/caches/cache.sv
+bsc-loca/sauria,https://github.com/bsc-loca/sauria,RTL/src/sauria_core/systolic_array/multiplier/multiplier_wallace.sv
+NicolaLino/Pipelined-Processor,https://github.com/NicolaLino/Pipelined-Processor,DataMemory.sv
+nananapo/rvcpu,https://github.com/nananapo/rvcpu,src/ALU.sv
+pezy-computing/pzbcm,https://github.com/pezy-computing/pzbcm,pzbcm_multi_bits_detector/pzbcm_multi_bits_detector.sv
+michg/pyocdriscv32,https://github.com/michg/pyocdriscv32,pulp/ips/riscv-dbg/src/dm_pkg.sv
+liamgoss/FPGA-RTOS-GAME,https://github.com/liamgoss/FPGA-RTOS-GAME,FinalProjectFiles/db/ip/GameSystem/submodules/altera_merlin_burst_uncompressor.sv; FinalProjectFiles_SDCARD/GameSystem/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+cyyself/cpu232,https://github.com/cyyself/cpu232,defines.vh
+Nanousis/RiscY,https://github.com/Nanousis/RiscY,RISCY20kV2/src/Memories/ram.sv
+comsec-group/cellift-opentitan,https://github.com/comsec-group/cellift-opentitan,hw/dv/sv/cip_lib/cip_base_scoreboard.sv
+idea-fasoc/openfasoc-tapeouts,https://github.com/idea-fasoc/openfasoc-tapeouts,intel16/testsetup/src/dut/hw/ip/opentitan/ip/keymgr/rtl/keymgr_reseed_ctrl.sv
+jakeyun1/FPGA-based-eBike-Controller,https://github.com/jakeyun1/FPGA-based-eBike-Controller,synth/sensorCondition.sv
+adityajoshi1114/LC3_UVM_Verif,https://github.com/adityajoshi1114/LC3_UVM_Verif,UVMF_TB/verification_ip/environment_packages/execute_env_pkg/src/execute_predictor.svh
+jsaussereau/AsteRISC-rtl,https://github.com/jsaussereau/AsteRISC-rtl,rtl/soc/peripherals/perif_spi_slave.sv
+trusster/trusster,https://github.com/trusster/trusster,truss/systemverilog/examples/quad_uart/verification/testbench/top/uart_group.sv; truss/systemverilog/examples/quad_uart/verification/testbench/block_uart/uart_group.sv
+momenmac/UART,https://github.com/momenmac/UART,RTL/Rx_path.sv
+nguyendaithien/CPU_5stage_pipeline,https://github.com/nguyendaithien/CPU_5stage_pipeline,tb/pkg_1.sv
+RickyRick89/16550_UART,https://github.com/RickyRick89/16550_UART,source/axi_ui.sv
+senku-kz/HardwareDesignBootcamp-miniRV-cpu,https://github.com/senku-kz/HardwareDesignBootcamp-miniRV-cpu,register_file.sv
+rayhan-shhadeh/VLSI-Design-Verification,https://github.com/rayhan-shhadeh/VLSI-Design-Verification,Exercise4/ex4.sv
+stanford-ppl/spatial,https://github.com/stanford-ppl/spatial,resources/synth/arria10.hw-resources/build/ip/ghrd_10as066n2/ghrd_10as066n2_f2sdram2_m/timing_adapter_171/synth/ghrd_10as066n2_f2sdram2_m_timing_adapter_171_xf5weri.sv
+zerorisc/expo-otbn-pqc,https://github.com/zerorisc/expo-otbn-pqc,hw/ip/csrng/rtl/csrng_pkg.sv; hw/top_darjeeling/dv/env/seq_lib/chip_sw_ast_clk_outputs_vseq.sv
+MuddasirAttar/AXI4_lite_project,https://github.com/MuddasirAttar/AXI4_lite_project,AXI4_Lite/axi4_lite_slave.sv; AXI4_Lite/More_transaction_tb/AXI4_Lite/axi4_lite_slave.sv
+YuyeLee/RVSoC,https://github.com/YuyeLee/RVSoC,RTL/CPU/core_instr_bus_adapter.sv
+theseus-cores/theseus-cores,https://github.com/theseus-cores/theseus-cores,fpga-rfnoc/testbenches/noc_block_ddc_1_to_n_tb/noc_block_ddc_1_to_n_tb.sv
+petermilder/book-example-code,https://github.com/petermilder/book-example-code,example_code/dma_cordic/tb.sv
+Zawaher-Bin-Asim/AXI-4,https://github.com/Zawaher-Bin-Asim/AXI-4,src/axi_4_slave_mem.sv
+myuan678/vector_cache,https://github.com/myuan678/vector_cache,rtl/mshr/vec_cache_ram_shift_reg.sv
+wqzustc/High-Performance-Tensor-Processing-Engines,https://github.com/wqzustc/High-Performance-Tensor-Processing-Engines,OPT2/weight_rf.sv
+AbiralShakya/tpu_to_fpga,https://github.com/AbiralShakya/tpu_to_fpga,rtl/systolic_controller.sv
+micro-zero/CROSPv0,https://github.com/micro-zero/CROSPv0,src/soc/axi_sdc/sd_data_serial_host.sv
+apedersen00/fenrir,https://github.com/apedersen00/fenrir,src/design_sources/convolution/modules/arbiter.sv
+ARM-software/DeepFreeze,https://github.com/ARM-software/DeepFreeze,examples/synthetic_mnet_0.25/synthetic_mnet_025_rtl_w2_a8/conv7_dw.sv
+amsheth/ProtocolLLM,https://github.com/amsheth/ProtocolLLM,code/i2c/o3/I2C_driver_code_1_RAGTrue.sv
+Shivanagender123/UART-16550,https://github.com/Shivanagender123/UART-16550,uart_agt_top/uart_monitor.sv
+qaztronic/AXI4_LIB,https://github.com/qaztronic/AXI4_LIB,src/axi_framework/axi4_s_to_write_fifos.sv
+macka87/haven,https://github.com/macka87/haven,combov2/comp/fl_tools/storage/fifo/ver/tbench/scoreboard.sv; combov2/comp/fl_tools/edit/marker/ver/tbench/dut.sv
+Rhapsodier/HDLBits,https://github.com/Rhapsodier/HDLBits,Latches_And_Flip-Flops/2014q4b.sv
+FinnHeijink/Federated-Learning-at-the-Edge,https://github.com/FinnHeijink/Federated-Learning-at-the-Edge,Hardware/Final_CLA/pixel_buffer.sv
+Sibakumarpanda/Systemverilog_Concepts_and_Coding_by_Siba,https://github.com/Sibakumarpanda/Systemverilog_Concepts_and_Coding_by_Siba,6_SV_Queue_concept_and_its_methods_Overview.sv
+hossamfadeel/sv-uvm,https://github.com/hossamfadeel/sv-uvm,sv/larger_examples/SVTBLABS/lab4/env/scoreboard.sv; sv/larger_examples/SVTBLABS/lab3/env/scoreboard.sv; sv/larger_examples/SVTBLABS/apb_if/env/scoreboard.sv; sv/larger_examples/SVTBLABS/lab3/.solution/env/scoreboard.sv
+The-OpenROAD-Project/megaboom,https://github.com/The-OpenROAD-Project/megaboom,rtl/TLDebugModule.sv
+9JAyemi/malik25_26,https://github.com/9JAyemi/malik25_26,metrex/dataset/version_1/03199/sva.sv
+nicval2/nvalverdea_digital_design_lab_2024,https://github.com/nicval2/nvalverdea_digital_design_lab_2024,laboratorio_3/movement.sv
+MarwanMohamed12/kareem-waseem,https://github.com/MarwanMohamed12/kareem-waseem,6/ALSU_SHIFT/ALSU_seq_item.sv
+PKUZHOU/NeoProf_FPGA,https://github.com/PKUZHOU/NeoProf_FPGA,intel_rtile_cxl_top_cxltyp3_ed/intel_rtile_cxl_ast_100/sim/cadence/common/rtl/csb_adaptor/rnr_csbcasyncfifo_egr.sv
+ee-uet/UETRV-PCore,https://github.com/ee-uet/UETRV-PCore,rtl/peripherals/spi/spi_regs.sv; FPGA_Target/Nexys-A7/PCore_FPGA.srcs/sources_1/imports/rtl/peripherals/spi/spi_regs.sv
+tomdriley/turtle-cpu,https://github.com/tomdriley/turtle-cpu,src/alu/rtl/alu_pkg.sv
+zhouzaixin/kunminghu,https://github.com/zhouzaixin/kunminghu,xs-env/XiangShan/build/rtl/L2TlbPrefetch.sv; xs-env/XiangShan/build/rtl/FuBusyTableWrite_75.sv; xs-env/XiangShan/build/rtl/Pipeline_19.sv
+aboElhammd/UCIE_phy,https://github.com/aboElhammd/UCIE_phy,SB_RTL/SIDEBAND_TX/SB_CLK_CONTROLLER.sv
+emmaleee789/Doodle_jump_385,https://github.com/emmaleee789/Doodle_jump_385,lab4.1/Processor.sv
+noebackert/ascon128,https://github.com/noebackert/ascon128,SRC/RTL/xor_begin.sv
+kmcho2019/REvolution,https://github.com/kmcho2019/REvolution,exp/llama3_clean_results/RTLLM/Prob048_pe/Gen13/Prob048_pe_M-E_sample5.sv; exp/llama3_clean_results/RTLLM/Prob031_freq_div/Gen17/Prob031_freq_div_C-F_sample5.sv; exp/llama3_clean_results/RTLLM/Prob010_radix2_div/Gen6/Prob010_radix2_div_M-E_sample2.sv; exp/deepseek_clean_results/RTLLM/Prob005_adder_bcd/Gen20/Prob005_adder_bcd_C-F_sample9.sv; exp/llama3_clean_results/RTLLM/Prob018_float_multi/Gen6/Prob018_float_multi_M-R_sample9.sv; exp/llama3_clean_results/RTLLM/Prob022_ring_counter/Gen10/Prob022_ring_counter_M-F_sample8.sv; exp/deepseek_clean_results/RTLLM/Prob041_traffic_light/Gen3/Prob041_traffic_light_M-S_sample4.sv; exp/deepseek_clean_results/VerilogEval-Spec-to-RTL/Prob085_shift4/Gen2/Prob085_shift4_C-F_sample4.sv; exp/deepseek_clean_results/RTLLM/Prob039_serial2parallel/Gen18/Prob039_serial2parallel_M-R_sample7.sv; exp/llama3_clean_results/VerilogEval-Spec-to-RTL/Prob052_gates100/Gen11/Prob052_gates100_M-S_sample3.sv; exp/llama3_baseline_clean_results/RTLLM/Prob011_multi_16bit/Gen0/Prob011_multi_16bit_initial_sample198.sv; exp/deepseek_clean_results/VerilogEval-Spec-to-RTL/Prob028_m2014_q4a/Gen11/Prob028_m2014_q4a_C-F_sample3.sv; exp/llama3_baseline_clean_results/VerilogEval-Spec-to-RTL/Prob081_7458/Gen0/Prob081_7458_initial_sample194.sv; exp/deepseek_clean_results/VerilogEval-Spec-to-RTL/Prob129_ece241_2013_q8/Gen5/Prob129_ece241_2013_q8_M-E_sample5.sv; exp/llama3_baseline_clean_results/VerilogEval-Spec-to-RTL/Prob131_mt2015_q4/Gen0/Prob131_mt2015_q4_initial_sample144.sv; exp/deepseek_clean_results/RTLLM/Prob046_clkgenerator/Gen8/Prob046_clkgenerator_M-F_sample4.sv; exp/llama3_baseline_clean_results/RTLLM/Prob008_comparator_4bit/Gen0/Prob008_comparator_4bit_initial_sample121.sv; exp/deepseek_clean_results/RTLLM/Prob002_adder_16bit/Gen8/Prob002_adder_16bit_M-R_sample6.sv; exp/llama3_clean_results/RTLLM/Prob031_freq_div/Gen18/Prob031_freq_div_C-F_sample7.sv; exp/llama3_clean_results/RTLLM/Prob035_calendar/Gen17/Prob035_calendar_M-R_sample8.sv; exp/deepseek_clean_results/RTLLM/Prob047_instr_reg/Gen5/Prob047_instr_reg_M-E_sample4.sv; exp/llama3_clean_results/VerilogEval-Spec-to-RTL/Prob012_xnorgate/Gen10/Prob012_xnorgate_M-R_sample6.sv; exp/deepseek_clean_results/RTLLM/Prob020_JC_counter/Gen4/Prob020_JC_counter_M-I_sample3.sv; exp/llama3_clean_results/RTLLM/Prob038_pulse_detect/Gen12/Prob038_pulse_detect_M-I_sample7.sv; exp/gpt-4.1-mini_clean_results/RTLLM/Prob021_counter_12/Gen1/Prob021_counter_12_C-F_sample9.sv; exp/deepseek_clean_results/VerilogEval-Spec-to-RTL/Prob027_fadd/Gen17/Prob027_fadd_M-E_sample3.sv; exp/llama3_clean_results/VerilogEval-Spec-to-RTL/Prob153_gshare/Gen3/Prob153_gshare_M-I_sample9.sv; exp/llama3_baseline_clean_results/RTLLM/Prob031_freq_div/Gen0/Prob031_freq_div_initial_sample135.sv; exp/deepseek_clean_results/RTLLM/Prob015_multi_pipe_8bit/Gen3/Prob015_multi_pipe_8bit_M-S_sample2.sv; exp/llama3_clean_results/VerilogEval-Spec-to-RTL/Prob133_2014_q3fsm/Gen7/Prob133_2014_q3fsm_M-R_sample6.sv
+ottobonn/fpga-music-visualizer,https://github.com/ottobonn/fpga-music-visualizer,hardware/nios_system/nios_system/synthesis/submodules/nios_system_id_router_003.sv
+yathAg/agilix5_LPDDR,https://github.com/yathAg/agilix5_LPDDR,baseline_3906/sim/ip/ed_sim/ed_sim_traffic_generator/hydra_rtl_library_100/sim/hydra_log_ram.sv
+lichye/MutationBenchmark,https://github.com/lichye/MutationBenchmark,s838/benchmarks/mutant_25.sv; s820/benchmarks/mutant_240.sv; c2670/benchmarks/mutant_813.sv; c2670/benchmarks/mutant_1088.sv; c3540/benchmarks/mutant_903.sv; c3540/benchmarks/mutant_1396.sv; s5378/benchmarks/mutant_750.sv; s5378/benchmarks/mutant_630.sv; c7552/benchmarks/mutant_472.sv; c7552/benchmarks/mutant_1608.sv; s641/benchmarks/mutant_9.sv; s349/benchmarks/mutant_165.sv; s953/benchmarks/mutant_365.sv; s1488/benchmarks/mutant_287.sv
+Weiyet/RTLStructLib,https://github.com/Weiyet/RTLStructLib,Doubly_Linked_List/vip/uvm/env/dll_vip_scoreboard.sv
+johnson-amalraj/asic_dv,https://github.com/johnson-amalraj/asic_dv,system_verilog/AMBA_APB-main/APB_UVM/interface.sv
+Filza01/uvm_axi_gpio_verif,https://github.com/Filza01/uvm_axi_gpio_verif,gpio_env/gpio_monitor.sv
+nabeel-at-intel/cookbook,https://github.com/nabeel-at-intel/cookbook,dsps/dsp_systolic_27x27u/dsp_systolic_27x27u_tb.sv
+altera-fpga/agilex-ed-ai-suite,https://github.com/altera-fpga/agilex-ed-ai-suite,agilex7/agx7_generic_coredla_ip/altera_ai_ip/verilog/dla_hld_ram_short_depth_stitch.sv; agilex7/agx7_generic_coredla_ip/altera_ai_ip/verilog/dla_aux_depthwise_if.sv; agilex5/agx5_generic_coredla_ip/altera_ai_ip/verilog/dla_hld_ram_short_depth_stitch.sv; agilex3/agx3_small_nosoftmax_coredla_ip/altera_ai_ip/verilog/dla_hld_ram_short_depth_stitch.sv; agilex5/agx5_generic_coredla_ip/altera_ai_ip/verilog/dla_aux_depthwise_if.sv; agilex3/agx3_small_nosoftmax_coredla_ip/altera_ai_ip/verilog/dla_aux_depthwise_if.sv
+rsarwar87/altera-soc-rootfs,https://github.com/rsarwar87/altera-soc-rootfs,ghrd/soc_system/synthesis/submodules/soc_system_mm_interconnect_2_rsp_mux.sv; ghrd/soc_system/synthesis/submodules/soc_system_mm_interconnect_1_avalon_st_adapter_001_error_adapter_0.sv
+shyamvaaluka/UVM_LABS,https://github.com/shyamvaaluka/UVM_LABS,Lab06/sv/yapp_tx_monitor.sv; Lab07/sv/yapp_tx_monitor.sv; Lab08/yapp/sv/yapp_tx_monitor.sv
+DigitalDesignSchool/ce2020labs,https://github.com/DigitalDesignSchool/ce2020labs,next_step/dsmv/credit/src/fifo_w4.sv; next_step/dsmv/conv_with_fifo/src/fifo_w4.sv
+shawn110285/simpoint_openc910,https://github.com/shawn110285/simpoint_openc910,sw_app/cases/debug/debug_memory/had_drv.vh
+EricSongXinLe/ECE189_CPU_Design,https://github.com/EricSongXinLe/ECE189_CPU_Design,phase2/RS_ORDERED.sv
+VictorPeters03/FPGA-project,https://github.com/VictorPeters03/FPGA-project,Computer_System/synthesis/submodules/Computer_System_mm_interconnect_0_avalon_st_adapter_003_error_adapter_0.sv
+mmxsrup/riscv-processor,https://github.com/mmxsrup/riscv-processor,modules/core/csr_file.sv
+jopdorp/nand2tetris-verilog,https://github.com/jopdorp/nand2tetris-verilog,05/cpu_tb.sv
+varung2/FPGA-Tank-Wars,https://github.com/varung2/FPGA-Tank-Wars,lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_router_001.sv
+ewesterhoff/zynq-risc-v,https://github.com/ewesterhoff/zynq-risc-v,zynq-risc-v/zynq-risc-v.srcs/sources_1/imports/verilog/ahb3lite_bfm.sv
+Yaochenger/openhw-,https://github.com/Yaochenger/openhw-,core-v-mcu/core-v-mcu-master/rtl/efpga/ql_fcb/rtl/fcbpif.sv
+altera-fpga/agilex-ed-camera,https://github.com/altera-fpga/agilex-ed-camera,custom_user_subsystems/isp_subsystems/non_qpds_ip/emif_shim/emif_shim.sv
+Archfx/pcie-hbm,https://github.com/Archfx/pcie-hbm,pcie-hbm.srcs/sources_1/imports/top_axis_mst_ext_if.sv
+sammiej/cpen311,https://github.com/sammiej/cpen311,CPEN-311/Lab 5 Wave Generator/DE2_QSYS/synthesis/submodules/DE2_QSYS_rsp_xbar_demux_010.sv
+stellagarden/EE405-Advanced-Digital-Systems-Design,https://github.com/stellagarden/EE405-Advanced-Digital-Systems-Design,4 Pipelined SIMD Processor/inst_dec.sv
+0marAmr/PCIe_Gen5_TL_With_AXI4_Interface,https://github.com/0marAmr/PCIe_Gen5_TL_With_AXI4_Interface,rtl/TL_TX/AXI/Slave_Bridge/A2P_Mapper/rd_atop.sv
+HFTrader/aws-fpga,https://github.com/HFTrader/aws-fpga,hdk/common/shell_current/design/ip/ddr4_core/rtl/axi/ddr4_v2_1_axi_w_channel.sv
+fulcrum34/ara-build-playground,https://github.com/fulcrum34/ara-build-playground,ara-soc/ara-soc_vsept1.srcs/sources_1/imports/hardware/src/ara.sv; ara-only/ara-soc_vsept1/ara-soc_vsept1.srcs/sources_1/imports/hardware/src/ara.sv
+aws/aws-fpga-f1-u200,https://github.com/aws/aws-fpga-f1-u200,hdk/common/shell_v01042210/design/ip/ip.gen/sources_1/ip/ddr4_core_c/rtl/ip_top/ddr4_core_c_ddr4_mem_intfc.sv; hdk/common/shell_v05202215/design/ip/ip.gen/sources_1/ip/ddr4_core_c/rtl/ip_top/ddr4_core_c_ddr4_mem_intfc.sv
+etterli/opentitan-otbn-pqc-isa,https://github.com/etterli/opentitan-otbn-pqc-isa,hw/ip/keymgr_dpe/rtl/keymgr_dpe_reg_top.sv
+leardilap/STAR-SSD-RDO,https://github.com/leardilap/STAR-SSD-RDO,FPGA/RDO/ipcore_dir/fifo36x512/simulation/timing/wave_ncsim.sv; FPGA/RDO/ipcore_dir/fifo36x512/simulation/functional/wave_ncsim.sv
+M10512001/DE2-115,https://github.com/M10512001/DE2-115,SDCard_VGA_WiFi/db/ip/slddd88aba1/submodules/alt_sld_fab_alt_sld_fab_ident.sv
+dolfan1284/PCIe_CycloneVGX_JP,https://github.com/dolfan1284/PCIe_CycloneVGX_JP,pcie_cv_qsys/synthesis/submodules/av_xcvr_reconfig_pll.sv; pcie_cv_qsys/simulation/submodules/av_xcvr_reconfig_pll.sv
+jaredc23/Graphing-Calculator,https://github.com/jaredc23/Graphing-Calculator,Hardware/quartus/soc_system/synthesis/submodules/soc_system_fpga_only_master_b2p_adapter.sv
+gmuraleekrishna/DE10Nano-Balance-Car,https://github.com/gmuraleekrishna/DE10Nano-Balance-Car,Qsys/testbench/Qsys_tb/simulation/submodules/altera_conduit_bfm_0009.sv
+ayk33/my_first_hps-fpga,https://github.com/ayk33/my_first_hps-fpga,fpga-rtl/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_id_router.sv
+anssprasad/UVM_Examples,https://github.com/anssprasad/UVM_Examples,verif_acad_uvm_exs/use_models_tb_build_tbx_uvm/tb_build_uvm/block_level_tbs/spi_tb/env/spi_virtual_sequencer.svh; verif_acad_uvm_exs/use_models_tb_build_tbx_uvm/tb_build_tbx_uvm/block_level_tbs/spi_tb/env/spi_virtual_sequencer.svh
+AISeQLab/BASIC_SOC_COURSE---Real-time_Handwritten_Digit_Recognition_on_FPGA,https://github.com/AISeQLab/BASIC_SOC_COURSE---Real-time_Handwritten_Digit_Recognition_on_FPGA,RTL_Generated_from_HLS/lenet_sys_vivado/lenet_sys/lenet_sys.gen/sources_1/bd/design_1/ip/design_1_xbar_1/sim/design_1_xbar_1_stub.sv
+openhwgroup/core-v-mcu-uvm,https://github.com/openhwgroup/core-v-mcu-uvm,dv/blocks/uvma_adv_timer_b/src/comps/uvma_adv_timer_b_agent.sv
+JamieEdgar/CocotbTests,https://github.com/JamieEdgar/CocotbTests,NeuralNetwork/Integer/FixedVectorDotProduct/fixed_integer_vector_dot_vector.sv
+KULeuven-MICAS/tinyvers,https://github.com/KULeuven-MICAS/tinyvers,ips/pulp_soc/rtl/components/scm_512x32.sv
+cepdnaclk/e19-4yp-Verilog-Code-Generation-With-Variations-Fine-Tuned-Large-Languag-Models,https://github.com/cepdnaclk/e19-4yp-Verilog-Code-Generation-With-Variations-Fine-Tuned-Large-Languag-Models,Model Inferencing/Direct Verilog Approach/auto-v-coder-6.7b/auto-v-coder-6.7b/simple@1/tmp/default_module_1.sv
+zli87/High_Level_Synthesis_for_FPGAs,https://github.com/zli87/High_Level_Synthesis_for_FPGAs,Lab2/smul_v/project_2.gen/sources_1/bd/design_1/ip/design_1_auto_pc_0/sim/design_1_auto_pc_0_stub.sv
+HakamAtassi/ChaosCore,https://github.com/HakamAtassi/ChaosCore,hw/verilog/mem_4096x60.sv
+FabulousMatin/ComputerAidedDesign,https://github.com/FabulousMatin/ComputerAidedDesign,CA3-P2/src/hdl/OFM.sv
+xiaoZ857/Verilog-benchmark,https://github.com/xiaoZ857/Verilog-benchmark,results/deepseek_v3_2_0shot_temp0_0_topP0_01_iterative/Prob070_ece241_2013_q2/attempt_1/Prob070_ece241_2013_q2_code.sv
+RobertPan8291/FPGA_machine_learning,https://github.com/RobertPan8291/FPGA_machine_learning,dnn_accel_system/synthesis/submodules/dnn_accel_system_mm_interconnect_0_router_003.sv
+mbits-mirafra/i3c_avip,https://github.com/mbits-mirafra/i3c_avip,src/hvl_top/target/target_sequences/i3c_target_base_seq.sv
+albert4750/ECE532,https://github.com/albert4750/ECE532,group_demo/group_demo.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_19/synth/bd_afc3_s01tr_0.sv
+buntan-pc/buntan-pc,https://github.com/buntan-pc/buntan-pc,cpu/decoder.sv
+YashSadhu/Single_Cycle_RISc,https://github.com/YashSadhu/Single_Cycle_RISc,Mux.sv
+UCLA-SEAL/HFuzz,https://github.com/UCLA-SEAL/HFuzz,benchmark/IOpipe/io_streaming_report.prj/kernel_hdl/k2_ZTS21LoopBackWriteIOPipeID/k2_ZTS21LoopBackWriteIOPipeID_i_llvm_fpg000hopbackwriteiopipeid0.sv
+lx2u16/ELEC6234_picoMIPS_processor_Coursework,https://github.com/lx2u16/ELEC6234_picoMIPS_processor_Coursework,design specification and appendix/picoMIPS original codes_Tom Kazmierski/prog.sv
+Yashas2801/mod12counter-verification,https://github.com/Yashas2801/mod12counter-verification,mod_12_counter.sv
+goossens-springer/goossens-book-ip-projects,https://github.com/goossens-springer/goossens-book-ip-projects,2024.1/pynq_io/pynq_io_multicore_multicycle/pynq_io_multicore_multicycle_design.gen/sources_1/bd/design_1_multicore_multicycle/ip/design_1_multicore_multicycle_xbar_0/sim/design_1_multicore_multicycle_xbar_0_stub.sv
+andrewsil1/MandelViewer,https://github.com/andrewsil1/MandelViewer,MandelRTL/project_1/project_1.ip_user_files/bd/Fast_IP_Clock/ip/Fast_IP_Clock_smartconnect_0_0/bd_0/ip/ip_56/sim/bd_bb61_m04arn_0.sv; MandelRTL/project_1/project_1.srcs/sources_1/bd/Fast_IP_Clock/ip/Fast_IP_Clock_smartconnect_0_0/bd_0/ip/ip_56/sim/bd_bb61_m04arn_0.sv
+Tiquillo/ldelgado_computer_architecture_1_2024_s2,https://github.com/Tiquillo/ldelgado_computer_architecture_1_2024_s2,procesador/clockDivider.sv; MyISA-Processor/clockDivider.sv
+s-i-r-i/USB-2.0-Verification-,https://github.com/s-i-r-i/USB-2.0-Verification-,s_agent.sv
+CColombus/CO503-Advanced-Embedded-Systems-Labs,https://github.com/CColombus/CO503-Advanced-Embedded-Systems-Labs,Lab04/HARDWARE/Mega_JSoC/synthesis/submodules/Mega_JSoC_mm_interconnect_0_rsp_xbar_mux_005.sv
+hysun00/BEng-Project-Haoyuan-Sun-UoE-18-JAN,https://github.com/hysun00/BEng-Project-Haoyuan-Sun-UoE-18-JAN,SoC_PRJ/v2/project_2/project_2.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_2_0/bd_0/ip/ip_6/synth/bd_a888_sarn_0.sv
+Egrchs/MPEI,https://github.com/Egrchs/MPEI,MPEI_Magistracy/Term_1/digital_design/KM_3_seven_seg_and_lcd/Sipeed_Tang_Primer_20k/7seg/7seg_scrolling/src/shifter.sv
+RyanDevlin/Custom-Cryptographic-Module,https://github.com/RyanDevlin/Custom-Cryptographic-Module,source/RCU.sv
+ssanthoshvlsi/sv_projects,https://github.com/ssanthoshvlsi/sv_projects,SPI/spi_mon.sv
+ATaylorCEngFIET/SP701_Imaging_Vivado,https://github.com/ATaylorCEngFIET/SP701_Imaging_Vivado,mipi_csi2_rx_subsystem_0_ex/mipi_csi2_rx_subsystem_0_ex.ip_user_files/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_39/sim/bd_afc3_m00s2a_0.sv; mipi_csi2_rx_subsystem_0_ex/mipi_csi2_rx_subsystem_0_ex.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_39/sim/bd_afc3_m00s2a_0.sv
+jiru1997/design-and-verification-of-MCDF-phase3,https://github.com/jiru1997/design-and-verification-of-MCDF-phase3,apb_pkg/apb_slave_agent.sv
+Liangqiufenghong/Avalon-bus,https://github.com/Liangqiufenghong/Avalon-bus,IntelFPGA/Board/DE1_SOC/Demonstrations/ControlPanel/Quartus/DE1_SoC_QSYS/synthesis/submodules/DE1_SoC_QSYS_id_router_014.sv; IntelFPGA/Board/DE1_SOC/Demonstrations/SOC_FPGA/my_first_hps-fpga/fpga-rtl/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_id_router.sv
+rajeshmestha/verilog-combinational-circuits,https://github.com/rajeshmestha/verilog-combinational-circuits,testbench/tb_multiplexer.sv
+DeamonYang/zynq_vdma_lvds_lcd,https://github.com/DeamonYang/zynq_vdma_lvds_lcd,vdma_lvds_lcd.srcs/sources_1/bd/vdma_lcd/ip/vdma_lcd_axi_smc_1/bd_0/ip/ip_4/synth/bd_0b09_s00sic_0.sv
+zacky1972/elixirchip_saving,https://github.com/zacky1972/elixirchip_saving,projects/spu_op_es1/testbench/tb_elixirchip_es1_spu_op_xnor/sva_elixirchip_es1_spu_op_xnor.sv
+itzray116R/Interview-Prep-System-Verilog,https://github.com/itzray116R/Interview-Prep-System-Verilog,systemVerilog/mux.sv
+LamboJr/Masterthesis,https://github.com/LamboJr/Masterthesis,GB_MASTER_UNIT/GB_MASTER_UNIT.gen/sources_1/bd/GB_UNIT_design/ip/GB_UNIT_design_axi_smc_0/bd_0/ip/ip_18/synth/bd_5375_m00rn_0.sv
+CRN4X/GCN-Accelerator,https://github.com/CRN4X/GCN-Accelerator,src/cr_Argmax_block.sv
+WashingMachine94/KBS-DOOM,https://github.com/WashingMachine94/KBS-DOOM,KBS-DOOM/KBS-DOOM.gen/sources_1/bd/system/ip/system_smartconnect_0_1/bd_0/ip/ip_23/synth/bd_515b_m00bn_0.sv
+StevenTran11/UML-EECE,https://github.com/StevenTran11/UML-EECE,Advanced_Digital_System_Design/Project4/soc_calc_base/synthesis/submodules/soc_calc_base_mm_interconnect_0_rsp_demux.sv
+xinchen13/ysyx,https://github.com/xinchen13/ysyx,npc/vsrc/cpu_wrapper.sv
+OscarM2023/Digitales_Ronny2024,https://github.com/OscarM2023/Digitales_Ronny2024,Proyecto_2/registers.sv
+hsiang0103/FPGA-2025-Eyeriss,https://github.com/hsiang0103/FPGA-2025-Eyeriss,project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_tier2_xbar_4_0/sim/design_1_tier2_xbar_4_0_stub.sv
+redrob1n/SeniorDesign,https://github.com/redrob1n/SeniorDesign,OpenCL/single_kernel/system/synthesis/submodules/system_acl_iface_acl_kernel_clk_mm_interconnect_0_router.sv
+leandrotozzi/verifythis,https://github.com/leandrotozzi/verifythis,code/ch16/tinyalu_pkg.sv
+vonboog117/ECE_411,https://github.com/vonboog117/ECE_411,mp1/cam/hvl/testbench.sv
+JDuchniewicz/fpga-tcpdump,https://github.com/JDuchniewicz/fpga-tcpdump,bpfcap/tb/avalon_mm_if.sv
+Purdue-SoCET/chiplet-components,https://github.com/Purdue-SoCET/chiplet-components,encdec8b10b/source/wrap_dec_8b_10b.sv
+gravelcai/weiminghu-noc,https://github.com/gravelcai/weiminghu-noc,verilog/Ring4_20bits/IngressUnit.sv
+loserking/ECE-411,https://github.com/loserking/ECE-411,l1icache_control.sv
+tsimons89/RE_optical_flow_fpga,https://github.com/tsimons89/RE_optical_flow_fpga,temp_space_smooth.sv
+arthurafarias/xczu3eg-sfvc784-1-base,https://github.com/arthurafarias/xczu3eg-sfvc784-1-base,xczu3eg-sfvc784-1-base.gen/sources_1/bd/design_1/ip/design_1_smartconnect_0_1/bd_0/ip/ip_36/synth/bd_886d_m01awn_0.sv
+SrijanSU/ASYNC_FIFO_UVM_Verification,https://github.com/SrijanSU/ASYNC_FIFO_UVM_Verification,src/async_fifo_virtual_sequence.sv
+FlatTargetInk/UMD_RISC-16G5,https://github.com/FlatTargetInk/UMD_RISC-16G5,ProjectLab2/Combined[old]/ipcore_dir/EX_MEM/simulation/functional/wave_ncsim.sv
+Bob08082002/SoC_Lab_FINAL_FALL_2025,https://github.com/Bob08082002/SoC_Lab_FINAL_FALL_2025,VIVADO/SoC_Final_v1_8/SoC_Final_v1_8.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_13/synth/bd_afc3_s01mmu_0.sv
+mayu-tatsu/e155-lab2,https://github.com/mayu-tatsu/e155-lab2,source/impl_1/testbench_sev_seg_sel.sv
+iamkishandadhania/EHSD_Project-1,https://github.com/iamkishandadhania/EHSD_Project-1,2. Vivado Projects/Conv_opt_vivado/Conv_opt_vivado.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/sim/design_1_zynq_ultra_ps_e_0_0_stub.sv; 2. Vivado Projects/Conv_no_opt_vivado/Conv_no_opt_vivado.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/sim/design_1_zynq_ultra_ps_e_0_0_stub.sv
+soheilee/NEXYS_A7_FPGA,https://github.com/soheilee/NEXYS_A7_FPGA,UART_7Segment/project_1/project_1.gen/sources_1/bd/top_level/ip/top_level_smartconnect_0_0/bd_0/ip/ip_30/sim/bd_f519_m00wn_0.sv
+ismenc/fpga-vga-driver-game,https://github.com/ismenc/fpga-vga-driver-game,spartan-space-invaders/ipcore_dir/BalaAlien/simulation/functional/wave_ncsim.sv
+ncotti/ngc_modules,https://github.com/ncotti/ngc_modules,ngc_counter/tb/tb_classes/counter_agent.svh
+nhermosilla14/ELO212,https://github.com/nhermosilla14/ELO212,Exp9-reloj/Exp9-reloj.srcs/sources_1/new/Exp9-reloj.sv
+ramacha7/ECE-337,https://github.com/ramacha7/ECE-337,Lab3/source/tb_adder_16bit.sv
+yunusyosaf399/NoC_HBM,https://github.com/yunusyosaf399/NoC_HBM,hbm_module_2/hbm_module_2_noc_tg_interface.gen/sources_1/bd/design_1/ip/design_1_noc_tg_2_0/hdl/rtl/design_1_noc_tg_2_0_top_axi_stream_sptg.sv; hbm_module_2_synth_impl/hbm_module_2_synth_impl.gen/sources_1/bd/design_1/ip/design_1_noc_tg_2_0/hdl/rtl/design_1_noc_tg_2_0_top_axi_stream_sptg.sv; hbm_module_2_synth_impl/hbm_module_2_synth_impl.ip_user_files/bd/design_1/ip/design_1_noc_tg_2_0/hdl/rtl/design_1_noc_tg_2_0_top_axi_stream_sptg.sv
+nguyenHungDrgoi1/UVM_UART,https://github.com/nguyenHungDrgoi1/UVM_UART,src/sw_seqs/uart_random_cfg_seq.sv
+Max-Y-Ma/OoO-Processor,https://github.com/Max-Y-Ma/OoO-Processor,mp_ooo/hdl/magic_backend/control.sv
+epfl-vlsc/parendi-paperspace-demo,https://github.com/epfl-vlsc/parendi-paperspace-demo,workloads/src/rocket/BigRocket9x9CoreMeshConfig/RouteComputer_126.sv; workloads/src/rocket/SmallRocket4x4CoreMeshConfig/RouteComputer_26.sv; workloads/src/rocket/SmallRocket8x8CoreMeshConfig/ClockSinkDomain_43.sv; workloads/src/rocket/SmallRocket9x9CoreMeshConfig/ClockSinkDomain_37.sv; workloads/src/rocket/SmallRocket8x8CoreMeshConfig/IngressUnit_65.sv; workloads/src/rocket/SmallRocket14x14CoreMeshConfig/TLMasterToNoC_134.sv; workloads/src/rocket/SmallRocket11x11CoreMeshConfig/ClockSinkDomain_37.sv; workloads/src/rocket/SmallRocket10x10CoreMeshConfig/ClockSinkDomain_37.sv
+Barkhausen-Institut/M3-hardware,https://github.com/Barkhausen-Institut/M3-hardware,units/boom/source/IP/chipyard.harness.TestHarness.MediumPFBoomMmioJtagUartConfig/gen-collateral/ram_combMem_54_boom.sv
+RPTU-EIS/OpenTitan_with_Access_Control,https://github.com/RPTU-EIS/OpenTitan_with_Access_Control,build-onespin/lowrisc_systems_chip_earlgrey_verilator_0.1/src/lowrisc_prim_lc_sync_0.1/rtl/prim_lc_sync.sv; hw/ip/spi_host/rtl/spi_host.sv
+yuri-panchul/2023-georgia-armenia-exam,https://github.com/yuri-panchul/2023-georgia-armenia-exam,labs/02_fifos/02_flip_flop_fifo_empty_full_optimized_and_debug_2/top.sv
+7asebat/DCNN-Accelerator-FC,https://github.com/7asebat/DCNN-Accelerator-FC,src/ALU.sv
+maskedarray/alsaqr_vivado,https://github.com/maskedarray/alsaqr_vivado,sources/.bender/git/checkouts/hier-icache-df4d0b2ab3ee52a8/TB/tgen_128.sv
+suisuisi/basic_systemverilog,https://github.com/suisuisi/basic_systemverilog,basic_verilog/soft_latch_tb.sv
+AAAaaass2/basic_verilog,https://github.com/AAAaaass2/basic_verilog,soft_latch_tb.sv
+Mujahid-Bilal/Verilog-Basics,https://github.com/Mujahid-Bilal/Verilog-Basics,soft_latch_tb.sv
+lansen31/learngit,https://github.com/lansen31/learngit,basic_verilog/soft_latch_tb.sv
+97H/sauria,https://github.com/97H/sauria,mosa_pe/src/multiplier/multiplier_wallace.sv; RTL/src/sauria_core/systolic_array/multiplier/multiplier_wallace.sv
+Insper/DE10-Standard-v.1.3.0-SystemCD,https://github.com/Insper/DE10-Standard-v.1.3.0-SystemCD,Demonstration/SoC_FPGA/DE10_Standard_FB/soc_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv; Demonstration/FPGA/DE10_Standard_ADC/DE10_Standard_QSYS/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+tuura/fantasi,https://github.com/tuura/fantasi,dependencies/Altera_DE4/niosII/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+gehujun/My_Design,https://github.com/gehujun/My_Design,my_design_tlb/soc_axi_func/rtl/myCPU/defines.vh; my_design_tlb/新建文件夹/func_test_v0.02/soc_axi_func/rtl/myCPU/defines.vh
+PENGLAI-ZGC-TEE/TLROT,https://github.com/PENGLAI-ZGC-TEE/TLROT,src/lowrisc_ip_keymgr_0.1/rtl/keymgr_reseed_ctrl.sv
+litex-hub/pythondata-misc-opentitan,https://github.com/litex-hub/pythondata-misc-opentitan,pythondata_misc_opentitan/resources/hw/ip/keymgr/rtl/keymgr_reseed_ctrl.sv
+minghunghw/TestSetup-Intel16OpenTitanSoC,https://github.com/minghunghw/TestSetup-Intel16OpenTitanSoC,src/dut/hw/ip/opentitan/ip/keymgr/rtl/keymgr_reseed_ctrl.sv
+ForJill/NanhuV3a-m2,https://github.com/ForJill/NanhuV3a-m2,src/main/resources/TLROT/src/lowrisc_ip_keymgr_0.1/rtl/keymgr_reseed_ctrl.sv
+rekendahl/edaphic-studio-truss-project,https://github.com/rekendahl/edaphic-studio-truss-project,examples/quad_uart/verification/testbench/top/uart_group.sv; examples/quad_uart/verification/testbench/block_uart/uart_group.sv
+memory-of-star/HeteroBox,https://github.com/memory-of-star/HeteroBox,intel_rtile_cxl_top_cxltyp3_ed/intel_rtile_cxl_ast_100/sim/cadence/common/rtl/csb_adaptor/rnr_csbcasyncfifo_egr.sv
+ateeb02/UETRV-PCore-6-Stage,https://github.com/ateeb02/UETRV-PCore-6-Stage,peripherals/spi/spi_regs.sv
+ArrowElectronics/altera_workshops,https://github.com/ArrowElectronics/altera_workshops,axc3000/FPGA_AI_Suite_lab/completed_lab/build-agx5-lenet/hw/coredla_ip/altera_ai_ip/verilog/dla_hld_ram_short_depth_stitch.sv
+algyan/IntelFPGA_AzureOTA,https://github.com/algyan/IntelFPGA_AzureOTA,quartus_project/DE10_NANO_SoC_FB/soc_system/synthesis/submodules/soc_system_mm_interconnect_2_rsp_mux.sv
+DawnCarol/OpenC910_Modified,https://github.com/DawnCarol/OpenC910_Modified,smart_run/tests/cases/debug/debug_memory/had_drv.vh
+comsec-group/hybridift,https://github.com/comsec-group/hybridift,docker/facilities/openc910/openc910/openc910/smart_run/tests/cases/debug/debug_memory/had_drv.vh
+cispa/RISCover-artifacts,https://github.com/cispa/RISCover-artifacts,bug_analysis/ghostwrite/ghostwrite_openc910_simulation/smart_run/tests/cases/debug/debug_memory/had_drv.vh; framework_eval/openc906_openc910_cascade_rtl_fuzzing/c910/smart_run/tests/cases/debug/debug_memory/had_drv.vh
+theophile-gousselot/linear-code-extraction,https://github.com/theophile-gousselot/linear-code-extraction,fpga_based_demo/core-v-mcu_lce_demo/src/quicklogic.com_ip_efpga_0/ql_fcb/rtl/fcbpif.sv
+altera-fpga/agilex-ed-camera-ai,https://github.com/altera-fpga/agilex-ed-camera-ai,custom_user_subsystems/isp_subsystems/non_qpds_ip/emif_shim/emif_shim.sv
+zakinder/SDAccel,https://github.com/zakinder/SDAccel,KU115BOARD_SDAccel/SDX_2016_3/VIVADO_2016_3/VERSION_A/xcl_design.srcs/sources_1/bd/xcl_design/ip/xcl_design_ddrmem_0_0/rtl/axi/ddr4_v2_1_axi_w_channel.sv; KU115BOARD_SDAccel/SDX_2016_3/VIVADO_2016_3/VERSION_A/xcl_design.srcs/sources_1/bd/xcl_design/ip/xcl_design_ddrmem_2_0/rtl/axi/ddr4_v2_1_axi_w_channel.sv; KU115BOARD_SDAccel/SDX_2016_3/VIVADO_2016_3/VERSION_A/xcl_design.srcs/sources_1/bd/xcl_design/ip/xcl_design_ddrmem_3_0/rtl/axi/ddr4_v2_1_axi_w_channel.sv; KU115BOARD_SDAccel/SDX_2016_3/VIVADO_2016_3/VERSION_A/xcl_design.srcs/sources_1/bd/xcl_design/ip/xcl_design_ddrmem_1_0/rtl/axi/ddr4_v2_1_axi_w_channel.sv
+lin-snail/opentitan,https://github.com/lin-snail/opentitan,hw/ip/keymgr_dpe/rtl/keymgr_dpe_reg_top.sv
+sg61189/SRC,https://github.com/sg61189/SRC,codes/Year-2/LLM-Assisted-Assertion-Mining/hw/ip/keymgr_dpe/rtl/keymgr_dpe_reg_top.sv
+lixing865/FPGA_072,https://github.com/lixing865/FPGA_072,project_072_z/trans_reconfig_control/av_xcvr_reconfig_pll.sv; project_072_z/testbench/XCVR_reconfig_sim/submodules/av_xcvr_reconfig_pll.sv; project_072_z/trans_reconfig_control_sim/alt_xcvr_reconfig/av_xcvr_reconfig_pll.sv
+ipowerilya/FPGA_Uart_Servo,https://github.com/ipowerilya/FPGA_Uart_Servo,LedThing/soc_system/synthesis/submodules/soc_system_fpga_only_master_b2p_adapter.sv
+pedro-sleao/FPGA_PDS,https://github.com/pedro-sleao/FPGA_PDS,pratica04/FPGA/soc_system/synthesis/submodules/soc_system_fpga_only_master_b2p_adapter.sv
+MarcoMoricoli/MDC,https://github.com/MarcoMoricoli/MDC,DE10_NANO_SoC_GHRD-Copia/soc_system/synthesis/submodules/soc_system_fpga_only_master_b2p_adapter.sv
+Justin-Henrotte/TFE,https://github.com/Justin-Henrotte/TFE,no_pipe_beta_machine/soc_system/synthesis/submodules/soc_system_fpga_only_master_b2p_adapter.sv
+nadgirabhishek/de1soc-cyclonev-hps-iot-controller,https://github.com/nadgirabhishek/de1soc-cyclonev-hps-iot-controller,fpga-rtl/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_id_router.sv
+HartnettMatt/ProgrammableLogic,https://github.com/HartnettMatt/ProgrammableLogic,Homework3Practical/DE1-SoC_v.5.1.2_HWrevF_SystemCD/Demonstrations/SOC_FPGA/my_first_hps-fpga/fpga-rtl/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_id_router.sv; Homework3Practical/DE1-SoC_v.5.1.2_HWrevF_SystemCD/Demonstrations/ControlPanel/Quartus/DE1_SoC_QSYS/synthesis/submodules/DE1_SoC_QSYS_id_router_014.sv
+HACK-EVENT/hackatdac18,https://github.com/HACK-EVENT/hackatdac18,ips/pulp_soc/rtl/components/scm_512x32.sv
+comsec-group/cellift-pulpissimo-hdac-2018,https://github.com/comsec-group/cellift-pulpissimo-hdac-2018,ips/pulp_soc/rtl/components/scm_512x32.sv
+flaviens/hdac-2018-diff,https://github.com/flaviens/hdac-2018-diff,ips/pulp_soc/rtl/components/scm_512x32.sv
+nguyendaithien/PULPISSIMO,https://github.com/nguyendaithien/PULPISSIMO,bender/pulp_soc-2f0fb41fb76ef00f/rtl/components/scm_512x32.sv
+mbits-mirafra/pulpino__i2c_master__ip_verification,https://github.com/mbits-mirafra/pulpino__i2c_master__ip_verification,src/dv/hvl_top/i3c_target_agent/i3c_target_sequences/i3c_target_base_seq.sv
+TristanRobitaille/ECE532-project,https://github.com/TristanRobitaille/ECE532-project,warmup_demo/tut5/Tutorial5/Tutorial5.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_19/synth/bd_afc3_s01tr_0.sv
+wjy99-c/HFuzz,https://github.com/wjy99-c/HFuzz,benchmark/IOpipe/io_streaming_report.prj/kernel_hdl/k2_ZTS21LoopBackWriteIOPipeID/k2_ZTS21LoopBackWriteIOPipeID_i_llvm_fpg000hopbackwriteiopipeid0.sv
+Maxg2212/mgarro_computer_architecture_1_2024_s1,https://github.com/Maxg2212/mgarro_computer_architecture_1_2024_s1,proyecto_2/MemoyModules/clockDivider.sv
+flashbangout/apb_watchdog-,https://github.com/flashbangout/apb_watchdog-,apb_watchdog/uvm/vip_lib/apb_pkg/apb_slave_agent.sv
+jiru1997/design-and-verification-of-MCDF-phase4,https://github.com/jiru1997/design-and-verification-of-MCDF-phase4,apb_pkg/apb_slave_agent.sv
+tommy73594/MCDF_Verification,https://github.com/tommy73594/MCDF_Verification,apb_pkg/apb_slave_agent.sv
+jiru1997/design-and-verification-of-MCDF-phase2,https://github.com/jiru1997/design-and-verification-of-MCDF-phase2,apb3_pkg_ref/apb_slave_agent.sv
+joonhosung/ECE241,https://github.com/joonhosung/ECE241,Guitar Amp/de1-soc-examples/Demonstrations/ControlPanel/Quartus/DE1_SoC_QSYS/synthesis/submodules/DE1_SoC_QSYS_id_router_014.sv
+mayu-tatsu/e155-lab3-2,https://github.com/mayu-tatsu/e155-lab3-2,source/impl_1/testbench_sev_seg_sel.sv
+openhwgroup/core-v-verif,https://github.com/openhwgroup/core-v-verif,cv32e40x/env/corev-dv/cv32e40x_privil_reg.sv
+EttusResearch/uhd,https://github.com/EttusResearch/uhd,fpga/usrp3/top/x400/dboards/zbx/cpld/regmap/basic_regs_regmap_utils.vh
+sergeykhbr/riscv_vhdl,https://github.com/sergeykhbr/riscv_vhdl,sv/rtl/internal/riverlib/dmi/dmidebug.sv
+acl2/acl2,https://github.com/acl2/acl2,books/centaur/sv/cosims/iface_basic2/spec.sv
+alberto-grl/1bitSDR,https://github.com/alberto-grl/1bitSDR,SDR_CycloneIII/qsys_block/synthesis/submodules/altera_merlin_master_translator.sv
+optimsoc/optimsoc,https://github.com/optimsoc/optimsoc,src/soc/hw/channels/rtl/verilog/nasti_channel.sv
+intel/fpga-partial-reconfig,https://github.com/intel/fpga-partial-reconfig,tutorials/a10_pcie_devkit_blinking_led_hpr/hpr/blinking_led_child.sv
+a2fpga/a2fpga_core,https://github.com/a2fpga/a2fpga_core,boards/a2n20v2/hdl/top.sv
+danielholanda/LeBug,https://github.com/danielholanda/LeBug,src/hardware/buildingBlocks/general/vector_scalar_reduce_unit.sv
+CMU-SAFARI/SneakySnake,https://github.com/CMU-SAFARI/SneakySnake,Snake-on-Chip/Hardware_Accelerator/Snake-on-Chip.srcs/riffa/trellis.vh
+chipsalliance/aib-protocols,https://github.com/chipsalliance/aib-protocols,ca/dv/export_src/chan_delay_agent/chan_delay_seq_item.sv
+azonenberg/antikernel-ipcores,https://github.com/azonenberg/antikernel-ipcores,serdes/wrappers/GTYLane_ResetController_UltraScale.sv
+FPGA-MAFIA/fpga_mafia,https://github.com/FPGA-MAFIA/fpga_mafia,source/mini_core/mini_core.sv
+chiggs/UVM,https://github.com/chiggs/UVM,distrib/src/seq/uvm_sequence_item.svh
+MiSTer-devel/Arcade-Zaxxon_MiSTer,https://github.com/MiSTer-devel/Arcade-Zaxxon_MiSTer,Arcade-Zaxxon.sv
+MiSTle-Dev/NanoApple2,https://github.com/MiSTle-Dev/NanoApple2,src/sdram_tn20k.sv
+goncalo5578/aaaa,https://github.com/goncalo5578/aaaa,core/dummy_accelerator.sv
+yunuseryilmaz18/senior_project,https://github.com/yunuseryilmaz18/senior_project,modified_ibex/shared/rtl/sim/simulator_ctrl.sv
+neptuno-fpga/Arcade-DOUBLE_DRAGON_HARDWARE,https://github.com/neptuno-fpga/Arcade-DOUBLE_DRAGON_HARDWARE,common/hq2x.sv
+jeceljr/SoftCoreCompare,https://github.com/jeceljr/SoftCoreCompare,darkriscv/config.vh
+gsneha26/Darwin-WGA,https://github.com/gsneha26/Darwin-WGA,src/hdl/BSW/BSW_Kernel.sv
+Baizhou-713/TsetlinKWS,https://github.com/Baizhou-713/TsetlinKWS,src_hw/src/feature_extractor/ping_pong_buffer.sv
+Noman-10xe/AXI-DMA-Verification,https://github.com/Noman-10xe/AXI-DMA-Verification,tb/stream_uvc/axis_write_monitor.sv
+NEO-JAMMA/Altair8800_Mister,https://github.com/NEO-JAMMA/Altair8800_Mister,core/rtl/altair.sv
+quangdaovu/arty_pulpino,https://github.com/quangdaovu/arty_pulpino,ips/apb/apb_spi_master/spi_master_rx.sv
+baochip/baochip-1x,https://github.com/baochip/baochip-1x,rtl/modules/crypto_pke/rtl/mimm.sv
+svstuff/systemverilog,https://github.com/svstuff/systemverilog,uvm-1.1d/docs/html/src/reg/uvm_reg_block.svh
+luke-kaufman/Team5-OOO-RISCV-core,https://github.com/luke-kaufman/Team5-OOO-RISCV-core,testing/main_mem_old.sv
+Zhikharev/mephi_kaf27_cpu_2015,https://github.com/Zhikharev/mephi_kaf27_cpu_2015,testbench/testbench/my_3transaction.sv
+nitronis/UVM,https://github.com/nitronis/UVM,1800.2-2020/src/base/uvm_comparer.svh
+os-fpga/RTL_Benchmark,https://github.com/os-fpga/RTL_Benchmark,SVerilog/opentitan/ip/pwrmgr/rtl/pwrmgr_pkg.sv
+Eskilrl/TTT4270,https://github.com/Eskilrl/TTT4270,FPGA/src/UARTBuffer.sv
+vbogdev/vbn-Riscv,https://github.com/vbogdev/vbn-Riscv,riscv_pkg.sv
+edwardguo64/ece385-final-project,https://github.com/edwardguo64/ece385-final-project,Tetris/hs.sv
+TorresA/RedSwitch,https://github.com/TorresA/RedSwitch,RedSwitch/tb/ht_scoreboard.sv
+AmoghKaipa/100-Days-of-RTL,https://github.com/AmoghKaipa/100-Days-of-RTL,Day 7/day_7.sv
+pulp-platform/datamover,https://github.com/pulp-platform/datamover,rtl/datamover_top_wrap.sv
+meds-uet/DDV-DBS,https://github.com/meds-uet/DDV-DBS,Hassaan/16-bit ALU/alu.sv
+walberfa/MIPS,https://github.com/walberfa/MIPS,alu_control_tb.sv
+ejbm10/digital_design_proyecto_final,https://github.com/ejbm10/digital_design_proyecto_final,hardware/uartRX.sv
+vul3su4/cpu-design-projects-,https://github.com/vul3su4/cpu-design-projects-,Lab5/src/Reg_File.sv
+AhanDatta/PSEC5-Digital,https://github.com/AhanDatta/PSEC5-Digital,simulation_design.sv
+hamza-2274/CA-LAB,https://github.com/hamza-2274/CA-LAB,single_cycle_processor/register_file.sv
+mole99/leosoc-gfmpw-1,https://github.com/mole99/leosoc-gfmpw-1,verilog/rtl/trng_configs/trng_8x3_model.sv
+tesap/asm-emulator,https://github.com/tesap/asm-emulator,emulator/verilog/register.sv
+Stork1323/riscv_cache,https://github.com/Stork1323/riscv_cache,opt_cache_v1/i_cache.sv
+tylkostudent/PBL,https://github.com/tylkostudent/PBL,Modules/instructions.sv
+yutongshen/RISC-V_SoC,https://github.com/yutongshen/RISC-V_SoC,vivado/soc/soc.srcs/sources_1/bd/soc/ip/soc_smartconnect_0_0/bd_0/ip/ip_24/synth/bd_9a87_m01arn_0.sv
+CESNET/ndk-fpga,https://github.com/CESNET/ndk-fpga,comp/uvm/mfb/property.sv
+dlizarazoestrada/Segmentado,https://github.com/dlizarazoestrada/Segmentado,ex_rd.sv
+robfinch/Thor,https://github.com/robfinch/Thor,Thor2023/rtl/cpu/mem_req_queue.sv
+hejiepn/massive_parallel_fir_filter,https://github.com/hejiepn/massive_parallel_fir_filter,src/rtl/tlul/tlul_assert_multiple.sv
+ForJill/cheri-ot,https://github.com/ForJill/cheri-ot,hw/ip/entropy_src/dv/env/entropy_src_env_cfg.sv
+jagumiel/Data-Acquisition,https://github.com/jagumiel/Data-Acquisition,VHDL/Enclustra/LED_SW_ctrl/system/synthesis/submodules/system_hps_0_hps_io_border.sv
+jonathan93sh/CNNA,https://github.com/jonathan93sh/CNNA,Vivado/CNNAccelTest0/CNNAccelTest0.srcs/sources_1/bd/CNNA_BD/ip/CNNA_BD_axi_smc_1/bd_0/ip/ip_6/synth/bd_06e3_bsw_0.sv
+JustEricGR/AC,https://github.com/JustEricGR/AC,modelsim/modelsim/qvl_src/qvl_monitors/spi4.2/qvl_spi4_2_rx_monitor_assertions.svh
+ghazicc/UVM_Simple_ALU,https://github.com/ghazicc/UVM_Simple_ALU,Verification/monitor.sv
+Sparkles-Qemu/qemu_systemc_with_cnn_processor,https://github.com/Sparkles-Qemu/qemu_systemc_with_cnn_processor,systemc/libsystemctlm-soc/rtl-bridges/pcie-host/ace/rtl/slave/ace_slv_snoop_inf_inst.vh
+aswaterman/trainwreck,https://github.com/aswaterman/trainwreck,rampgold/libconf.sv
+cameron-barrett/ece194bb_final,https://github.com/cameron-barrett/ece194bb_final,final.srcs/sources_1/new/rom.sv
+rifah057/EEE3104-Microprocessor-and-Interfacing-Project,https://github.com/rifah057/EEE3104-Microprocessor-and-Interfacing-Project,Complete V2/design.sv
+ME-TECH-ELECTRONICS/VLSI-LAB,https://github.com/ME-TECH-ELECTRONICS/VLSI-LAB,System_verilog/main_project/monitor.sv
+wandwan/111,https://github.com/wandwan/111,Lab4/barrel_shifter/barrel_shifter.sv
+dclab02/final_project,https://github.com/dclab02/final_project,quartus/src/Final_qsys/synthesis/submodules/uartWrapper.sv
+xinzwang/tcp_cam,https://github.com/xinzwang/tcp_cam,tcp_cam.srcs/sources_1/bd/system/ip/system_axi_smc_0/bd_0/ip/ip_26/synth/bd_44e3_m00e_0.sv
+baigog/i2c,https://github.com/baigog/i2c,rtl/i2c_component.sv
+CinnamonSandwich/Single_Cycle_RISCV_Core,https://github.com/CinnamonSandwich/Single_Cycle_RISCV_Core,Design Sources/RISCV_processor.sv
+horie-t/DigitalDesignAndComputerArchitecture-Ans,https://github.com/horie-t/DigitalDesignAndComputerArchitecture-Ans,chap7/exercise/ex7-25_MipsMultiCyc/srcs/sources/AluDec.sv
+ispras/hdl-benchmarks,https://github.com/ispras/hdl-benchmarks,ispras/crypto/Kuznechik/Encoder/Verilog/KuznechikEncoder_Testbench0.sv
+Roboy/myoFPGA,https://github.com/Roboy/myoFPGA,fpga-rtl/soc_system/synthesis/submodules/soc_system_mm_interconnect_0_router_003.sv
+os-fpga/IP_Catalog,https://github.com/os-fpga/IP_Catalog,rapidsilicon/ip/ocla/v1_0/src/bscell.sv
+dop-amin/opentitan,https://github.com/dop-amin/opentitan,hw/top_earlgrey/rtl/autogen/chip_earlgrey_asic.sv
+FCHXWH823/RAG-aided-Assertion-Generation,https://github.com/FCHXWH823/RAG-aided-Assertion-Generation,Evaluation/Dataset/register/register_Dynamic-RAG-13b-instruct.sv
+adwinying/atk2-lwip,https://github.com/adwinying/atk2-lwip,FPGA/DE2_115_SOPC/synthesis/submodules/DE2_115_SOPC_mm_interconnect_0_id_router_011.sv
+salunkead/SystemVerilog-Basics,https://github.com/salunkead/SystemVerilog-Basics,diffDistOperator.sv
+PQC-OpenTitan/towards-ml-kem-and-ml-dsa-on-opentitan-ref-synth,https://github.com/PQC-OpenTitan/towards-ml-kem-and-ml-dsa-on-opentitan-ref-synth,hw/top_earlgrey/ip_autogen/alert_handler/dv/env/seq_lib/alert_handler_ping_timeout_vseq.sv
+minhluu2000/mlcad2025_vcdiag,https://github.com/minhluu2000/mlcad2025_vcdiag,code/a_bug_injection_vcd_extract/bugdb/opentitan/otp_ctrl/LCI/otp_ctrl_lci_65.sv
+sihunchoi/2025cpu-quartus-,https://github.com/sihunchoi/2025cpu-quartus-,ex_6stage/hardware/source/myCPU/6stage/building_blocks/floprclr2clk.sv
+samin50/skribblnios,https://github.com/samin50/skribblnios,FPGA/NIOSSystem/synthesis/submodules/NIOSSystem_mm_interconnect_0_rsp_demux_003.sv
+quochunglam/mipi_cam_fpga_cycle_v_system_design,https://github.com/quochunglam/mipi_cam_fpga_cycle_v_system_design,hardware_design/rtl_design/db/ip/top/submodules/top_mm_interconnect_3_cmd_demux.sv
+forrest3444/axi2ahb,https://github.com/forrest3444/axi2ahb,dut/AXI_to_AHB_Bridge.sv
+Open-Source-Hardware-Initiative/AES,https://github.com/Open-Source-Hardware-Initiative/AES,tb/inv_shiftrow/inv_shiftrow_tb.sv

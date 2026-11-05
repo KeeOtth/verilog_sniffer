@@ -1,2 +1,0 @@
-NODE_REGEX = re.compile(r"Node .* \(tag: (\w+)\)")
-LEAF_REGEX = re.compile(r'Leaf .* \(#(\w+).*: "([^"]+)"\)')

@@ -3,7 +3,7 @@ import time
 
 import requests
 
-GITHUB_TOKEN = "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"
+GITHUB_TOKEN = ""
 HEADERS = {"Authorization": f"token {GITHUB_TOKEN}"}
 
 
@@ -11,7 +11,7 @@ def buscar_repositorios(paginas=5):
     repositorios = {}
     url = "https://api.github.com/search/code"
 
-    query = "extension:sv OR extension:svh OR extension:vh"
+    query = "extension:sv OR extension:svh OR extension:v"
 
     for page in range(1, paginas + 1):
         params = {"q": query, "per_page": 100, "page": page}

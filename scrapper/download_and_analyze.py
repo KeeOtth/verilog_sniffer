@@ -4,21 +4,19 @@ import logging
 import os
 import shutil
 import sys
-import threading
-import time
 from collections import Counter
 from pathlib import Path
 
 import requests
 
 try:
-    from ..sniffin_variation import SMELL_NAMES, analyze_file
+    from ..sniffin_variation import SMELL_NAMES, SOURCE_EXTENSIONS, analyze_file
 except Exception:
     # Quando executado como script dentro de scrapper (cd scrapper && python -m ...)
     # adiciona o diretório pai ao sys.path para permitir import absoluto.
     # Gambiarra
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-    from sniffin_variation import SMELL_NAMES, analyze_file
+    from sniffin_variation import SMELL_NAMES, SOURCE_EXTENSIONS, analyze_file
 
 BASE_RAW_URL = "https://raw.githubusercontent.com/"
 TEMP_ROOT = Path("temp_repos")
@@ -28,11 +26,12 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 CSV_DIR = REPO_ROOT / "csv"
 
 # CORRIGIDO: Todas as extensões com ponto
-HDL_EXT = (".sv", ".svh", ".vh", ".v", ".vhd", ".vhdl")
+HDL_EXT = tuple(SOURCE_EXTENSIONS)
 
 CSV_INPUT = CSV_DIR / "repositorios_sv.csv"
 CSV_OUT_DETALHADO = CSV_DIR / "resultados_detalhados3.csv"
 CSV_OUT_REPO = CSV_DIR / "tabela_agregada3.csv"
+CSV_OUT_COBERTURA = CSV_DIR / "cobertura3.csv"
 
 # Configuração de paralelismo
 DEFAULT_MAX_WORKERS = max(4, (os.cpu_count() or 2) * 2)
@@ -72,7 +71,6 @@ def ler_csv_repos():
             arquivos_str = row.get("arquivos", "").strip()
             if not arquivos_str:
                 print(f"[AVISO] Repositório sem arquivos: {row['repositório']}")
-                continue
 
             repos.append(
                 {
@@ -81,7 +79,7 @@ def ler_csv_repos():
                     "files": [f.strip() for f in arquivos_str.split(";") if f.strip()],
                 }
             )
-    print(f"[INFO] Total de repositórios com arquivos: {len(repos)}")
+    print(f"[INFO] Total de repositórios listados: {len(repos)}")
     return repos
 
 
@@ -146,39 +144,37 @@ def verificar_extensao_hdl(arquivo_path):
 
 def processar_repositorio(repo, resultados_detalhados, agregador):
     repo_name = repo["name"]
-    files = repo["files"]
+    files = list(dict.fromkeys(p.strip() for p in repo["files"] if p.strip()))
 
     print(f"\n=== PROCESSANDO {repo_name} ({len(files)} arquivos) ===")
 
     temp_repo_dir = TEMP_ROOT / repo_name.replace("/", "__")
     # Contador agregado por smell
     soma_smells_repo = {}
-    arquivos_processados = 0
+    stats = Counter(listados=len(files), analisados=0, falhas_download=0, falhas_analise=0, ignorados=0)
 
     # Usa uma sessão compartilhada por repositório (keep-alive)
     session = requests.Session()
 
     def worker(relative_path):
-        nonlocal arquivos_processados
         relative_path = relative_path.strip()
 
         if not verificar_extensao_hdl(relative_path):
             logging.info(f"PULAR (não HDL): {relative_path}")
-            return None
+            return "ignorados", [], Counter()
 
         dest_file = temp_repo_dir / relative_path
 
         ok, branch = baixar_arquivo_raw(repo_name, relative_path, dest_file, session)
         if not ok:
-            return None
+            return "falhas_download", [], Counter()
 
         try:
             resultado = analyze_file(dest_file)
             smells = contar_smells(resultado)
-            arquivos_processados += 1
         except Exception as e:
             logging.warning(f"Analisando {dest_file}: {e}")
-            return None
+            return "falhas_analise", [], Counter()
 
         num_linhas = contar_linhas(dest_file)
 
@@ -195,7 +191,7 @@ def processar_repositorio(repo, resultados_detalhados, agregador):
                     "quantidade": quantidade,
                 }
             )
-        return (rows, smells)
+        return "analisados", rows, smells
 
     # paraleliza por arquivo (I/O bound + subprocess calls)
     with concurrent.futures.ThreadPoolExecutor(max_workers=DEFAULT_MAX_WORKERS) as exc:
@@ -206,29 +202,34 @@ def processar_repositorio(repo, resultados_detalhados, agregador):
                 res = fut.result()
             except Exception as e:
                 logging.warning(f"Erro no worker: {e}")
-                res = None
+                res = ("falhas_analise", [], Counter())
 
-            if not res:
-                continue
-
-            rows, smells = res
+            status, rows, smells = res
+            stats[status] += 1
             resultados_detalhados.extend(rows)
 
             for smell, qty in smells.items():
                 soma_smells_repo[smell] = soma_smells_repo.get(smell, 0) + qty
 
     print(
-        f"[INFO] {repo_name}: {arquivos_processados}/{len(files)} arquivos processados"
+        f"[INFO] {repo_name}: {stats['analisados']}/{len(files)} arquivos processados"
     )
+
+    session.close()
 
     # Remover arquivos temporários
     if temp_repo_dir.exists():
         shutil.rmtree(temp_repo_dir)
 
-    if soma_smells_repo:  # Só adiciona se processou algum arquivo
+    if stats["analisados"]:  # Inclui análise bem-sucedida com zero ocorrências.
         agregador[repo_name] = soma_smells_repo
     else:
         print(f"[AVISO] Nenhum arquivo HDL processado para {repo_name}")
+
+    stats["status"] = ("sem_analise" if not stats["analisados"] else
+                       "parcial" if stats["falhas_download"] or stats["falhas_analise"] else
+                       "concluido")
+    return {"repo": repo_name, **stats}
 
 
 def salvar_tabela_agregada(agregador):
@@ -250,6 +251,7 @@ def salvar_tabela_agregada(agregador):
 
 def main():
     TEMP_ROOT.mkdir(exist_ok=True)
+    CSV_DIR.mkdir(parents=True, exist_ok=True)
 
     repos = ler_csv_repos()
     print(f"\n[INFO] Total de repositórios para processar: {len(repos)}")
@@ -257,11 +259,12 @@ def main():
     agregador = {}
     resultados_detalhados = []  # <- onde vamos guardar tudo antes de ordenar
 
+    cobertura = []
     contador = 0
     for repo in repos:
         contador += 1
         print(f"\n[{contador}/{len(repos)}] ", end="")
-        processar_repositorio(repo, resultados_detalhados, agregador)
+        cobertura.append(processar_repositorio(repo, resultados_detalhados, agregador))
 
     # =========================
     # PASSO 5 — ORDENAR RESULTADOS
@@ -278,11 +281,15 @@ def main():
         writer.writerows(resultados_detalhados)
 
     salvar_tabela_agregada(agregador)
+    with CSV_OUT_COBERTURA.open("w", newline="", encoding="utf-8") as output:
+        writer = csv.DictWriter(output, fieldnames=["repo", "listados", "analisados", "falhas_download", "falhas_analise", "ignorados", "status"])
+        writer.writeheader()
+        writer.writerows(cobertura)
 
     print(f"\n[OK] Processo finalizado!")
     print(f"[RESUMO] Total repositórios processados: {len(agregador)}")
     print(
-        f"[RESUMO] Total arquivos processados: {sum(len(v) for v in agregador.values())}"
+        f"[RESUMO] Total arquivos processados: {sum(r['analisados'] for r in cobertura)}"
     )
 
 

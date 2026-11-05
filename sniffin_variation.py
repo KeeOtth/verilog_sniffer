@@ -3,6 +3,7 @@ import subprocess
 import sys
 from pathlib import Path
 
+PATH-HERE = "" #Input the path here to the file you want to analyze. It can be a .sv file or a .syntax_tree.txt file.
 
 class VeribleASTParser:
     NODE_REGEX = re.compile(r"Node .* \(tag: (\w+)\)")
@@ -97,12 +98,12 @@ def traverse(node):
         yield from traverse(c)
 
 
-class SmellDetector:
+class AtomDetector:
     def detect(self, tree):
         raise NotImplementedError
 
 
-class UnsizedBaselessDetector(SmellDetector):
+class UnsizedBaselessDetector(AtomDetector):
     def is_control_structure(self, node):
         return node["type"] in [
             "kIfStatement",
@@ -151,7 +152,6 @@ class UnsizedBaselessDetector(SmellDetector):
 
         return []
 
-    # -------- RESULTADO --------
 
     def extract_token(self, number_node):
         leaves = find_descendants(number_node, "TK_DecNumber")
@@ -167,7 +167,7 @@ class UnsizedBaselessDetector(SmellDetector):
             "raw": number_node.get("meta", ""),
         }
 
-    # -------- DETECÇÃO --------
+    # -------- DETECTION --------
 
     def detect(self, tree):
         results = []
@@ -186,7 +186,7 @@ class UnsizedBaselessDetector(SmellDetector):
         return results
 
 
-class NonAutoFunctionDetector(SmellDetector):
+class NonAutoFunctionDetector(AtomDetector):
     def is_function(self, node):
         return node["type"] == "kFunctionDeclaration"
 
@@ -237,10 +237,7 @@ class NonAutoFunctionDetector(SmellDetector):
         return results
 
 
-class PackedMultidimConcatDetector(SmellDetector):
-    # --------------------------------------------------
-    # CATÁLOGO DE VARIÁVEIS MULTIDIMENSIONAIS PACKED
-    # --------------------------------------------------
+class PackedMultidimConcatDetector(AtomDetector):
 
     def collect_multidimensional_packed_vars(self, tree):
 
@@ -250,14 +247,14 @@ class PackedMultidimConcatDetector(SmellDetector):
             if node["type"] != "kPortDeclaration":
                 continue
 
-            packed_dims = get_children_by_type(node, "kDataType")
+            packed_dims = find_descendants(node, "kDataType")
 
             if not packed_dims:
                 continue
 
             data_type = packed_dims[0]
 
-            packed_nodes = get_children_by_type(data_type, "kPackedDimensions")
+            packed_nodes = find_descendants(data_type, "kPackedDimensions")
 
             if not packed_nodes:
                 continue
@@ -268,15 +265,16 @@ class PackedMultidimConcatDetector(SmellDetector):
             if len(dimension_ranges) < 2:
                 continue
 
-            ids = get_children_by_type(node, "kUnqualifiedId")
-
-            if not ids:
-                continue
-
-            symbol_ids = find_descendants(ids[0], "SymbolIdentifier")
+            symbol_ids = []
+            for child in node.get("children", []):
+                if child is data_type or child.get("type") == "kDataType":
+                    continue
+                if child.get("type") == "SymbolIdentifier":
+                    symbol_ids.append(child)
+                symbol_ids.extend(find_descendants(child, "SymbolIdentifier"))
 
             if symbol_ids:
-                variables.add(symbol_ids[0]["token"])
+                variables.add(symbol_ids[-1]["token"])
 
         return variables
 
@@ -324,22 +322,17 @@ class PackedMultidimConcatDetector(SmellDetector):
 
         return None
 
-    # --------------------------------------------------
-    # RHS
-    # --------------------------------------------------
 
-    def rhs_is_concatenation(self, assignment):
-
+    def rhs_is_assignment_pattern(self, assignment):
+  
         expressions = get_children_by_type(assignment, "kExpression")
 
         if not expressions:
             return False
 
-        return len(find_descendants(expressions[0], "kConcatenationExpression")) > 0
+        rhs = expressions[0]
+        return bool(find_descendants(rhs, "kAssignmentPattern"))
 
-    # --------------------------------------------------
-    # RESULTADO
-    # --------------------------------------------------
 
     def build_result(self, assignment, variable):
 
@@ -350,7 +343,7 @@ class PackedMultidimConcatDetector(SmellDetector):
         }
 
     # --------------------------------------------------
-    # DETECÇÃO
+    # DETECTION
     # --------------------------------------------------
 
     def detect(self, tree):
@@ -374,7 +367,7 @@ class PackedMultidimConcatDetector(SmellDetector):
             if self.lhs_has_index(node):
                 continue
 
-            if not self.rhs_is_concatenation(node):
+            if not self.rhs_is_assignment_pattern(node):
                 continue
 
             results.append(self.build_result(node, variable))
@@ -382,18 +375,13 @@ class PackedMultidimConcatDetector(SmellDetector):
         return results
 
 
-class CaseXDetector(SmellDetector):
-    """
-    Detector for casex statements in the AST.
-    Identifies all casex constructs and reports their locations.
-    """
+class CaseXDetector(AtomDetector):
+
 
     def is_case_statement(self, node):
-        """Check if node is a kCaseStatement"""
         return node["type"] == "kCaseStatement"
 
     def get_case_keyword(self, node):
-        """Return the case keyword used on the direct children of a kCaseStatement."""
         for child in node.get("children", []):
             if child.get("type") == "casex":
                 return "casex"
@@ -404,18 +392,9 @@ class CaseXDetector(SmellDetector):
         return None
 
     def has_casex_keyword(self, node):
-        """
-        Check if a kCaseStatement contains the 'casex' keyword.
-        Returns True only when the case statement uses 'casex'.
-        """
         return self.get_case_keyword(node) == "casex"
 
     def extract_case_expression(self, node):
-        """
-        Extract the expression being tested in the case statement.
-        Returns the expression node or None.
-        """
-        # Find the ParenGroup that contains the expression
         paren_groups = get_children_by_type(node, "kParenGroup")
 
         if not paren_groups:
@@ -429,14 +408,9 @@ class CaseXDetector(SmellDetector):
         return None
 
     def extract_case_expression_token(self, case_expr):
-        """
-        Extract the token/name of the case expression.
-        For example: "instruction" from casex (instruction)
-        """
         if not case_expr:
             return None
 
-        # Try to get symbol identifier
         symbol_ids = find_descendants(case_expr, "SymbolIdentifier")
 
         if symbol_ids:
@@ -445,7 +419,6 @@ class CaseXDetector(SmellDetector):
         return None
 
     def count_case_items(self, node):
-        """Count the number of case items"""
         case_item_lists = get_children_by_type(node, "kCaseItemList")
 
         count = 0
@@ -456,7 +429,6 @@ class CaseXDetector(SmellDetector):
         return count
 
     def build_result(self, case_statement):
-        """Build the result dictionary for a casex statement"""
         case_expr = self.extract_case_expression(case_statement)
         expr_token = self.extract_case_expression_token(case_expr)
         item_count = self.count_case_items(case_statement)
@@ -469,10 +441,6 @@ class CaseXDetector(SmellDetector):
         }
 
     def detect(self, tree):
-        """
-        Detect all casex statements in the tree.
-        Returns a list of dictionaries containing casex statement information.
-        """
         results = []
 
         for node in traverse(tree):
@@ -487,13 +455,7 @@ class CaseXDetector(SmellDetector):
         return results
 
 
-class ChainedComparisonDetector(SmellDetector):
-    """Detecta correntes de comparação (ex: a < b < c) para operadores de comparação.
-
-    A detecção é feita varrendo folhas de cada `kExpression` e procurando a
-    subsequência: operando, operador_comparação, operando, operador_comparação, operando.
-    Operadores considerados: <, >, <=, >=, ==, !=, ===, !==.
-    """
+class ChainedComparisonDetector(AtomDetector):
 
     CMP_OPS = {"<", ">", "<=", ">=", "==", "!=", "===", "!=="}
 
@@ -513,7 +475,6 @@ class ChainedComparisonDetector(SmellDetector):
         return tokens
 
     def is_operand(self, tok):
-        # Identificador (ex: foo, obj.field) ou número literal
         if not isinstance(tok, str) or not tok:
             return False
         if re.match(r"^[A-Za-z_]\w*(?:\.[A-Za-z_]\w*)*$", tok):
@@ -544,7 +505,6 @@ class ChainedComparisonDetector(SmellDetector):
             if not tokens:
                 continue
 
-            # Varre sequência procurando operand op operand op operand
             for i in range(len(tokens) - 4):
                 a, op1, b, op2, c = tokens[i : i + 5]
 
@@ -555,22 +515,66 @@ class ChainedComparisonDetector(SmellDetector):
         return results
 
 
-class ImplicitDecimalBinaryDetector(SmellDetector):
+class MixedSignedUnsignedBinaryDetector(AtomDetector):
     ARITHMETIC_OPERATORS = {"+", "-", "*", "/", "%"}
-
-    # --------------------------------------------------
-    # IDENTIFICAÇÃO
-    # --------------------------------------------------
+    DEFAULT_SIGNED_TYPES = {"byte", "shortint", "int", "longint", "integer"}
+    DECLARATION_TYPES = {"kDataDeclaration", "kPortDeclaration"}
 
     def is_binary_expression(self, node):
         return node["type"] == "kBinaryExpression"
 
-    def is_unsized_decimal(self, node):
-        return node["type"] == "kNumber" and not has_child(node, "kBaseDigits")
+    def declared_signedness(self, data_type):
+        tokens = [
+            node.get("token")
+            for node in traverse(data_type)
+            if node.get("token") is not None
+        ]
 
-    # --------------------------------------------------
-    # EXPRESSÃO
-    # --------------------------------------------------
+        if "unsigned" in tokens:
+            return False
+        if "signed" in tokens:
+            return True
+
+        return any(token in self.DEFAULT_SIGNED_TYPES for token in tokens)
+
+    def declared_identifiers(self, declaration, data_type):
+        identifiers = []
+
+        def walk(node):
+            if node is data_type or node.get("type") in {
+                "kExpression",
+                "kNetVariableAssignment",
+            }:
+                return
+
+            if node.get("type") == "SymbolIdentifier":
+                identifiers.append(node["token"])
+
+            for child in node.get("children", []):
+                walk(child)
+
+        walk(declaration)
+        return identifiers
+
+    def collect_variable_signedness(self, tree):
+        signedness = {}
+
+        for node in traverse(tree):
+            if node.get("type") not in self.DECLARATION_TYPES:
+                continue
+
+            data_types = find_descendants(node, "kDataType")
+            if not data_types:
+                continue
+
+            data_type = data_types[0]
+            is_signed = self.declared_signedness(data_type)
+
+            for identifier in self.declared_identifiers(node, data_type):
+                signedness[identifier] = is_signed
+
+        return signedness
+
 
     def extract_operator(self, binary_expr):
 
@@ -594,48 +598,88 @@ class ImplicitDecimalBinaryDetector(SmellDetector):
 
         return children[0], children[2]
 
-    def extract_unsized_decimal_operand(self, binary_expr):
+    def number_signedness(self, number):
+        base_digits = find_descendants(number, "kBaseDigits")
 
-        lhs, rhs = self.extract_operands(binary_expr)
+        if not base_digits:
+            if find_descendants(number, "TK_DecNumber"):
+                return True
+            return None
 
-        for operand in (lhs, rhs):
-            if operand is None:
-                continue
+        base_tokens = [
+            node.get("token", "")
+            for base in base_digits
+            for node in traverse(base)
+            if node.get("token")
+        ]
+        return any(re.match(r"^'[sS]", token) for token in base_tokens)
 
-            if self.is_unsized_decimal(operand):
-                return operand
+    def reference_name(self, node):
+        identifiers = find_descendants(node, "SymbolIdentifier")
+        if identifiers:
+            return identifiers[0]["token"]
+        return None
+
+    def infer_signedness(self, node, variables):
+        if node is None:
+            return None
+
+        if node.get("type") == "kNumber":
+            return self.number_signedness(node)
+
+        if node.get("type") == "kBinaryExpression":
+            lhs, rhs = self.extract_operands(node)
+            lhs_signed = self.infer_signedness(lhs, variables)
+            rhs_signed = self.infer_signedness(rhs, variables)
+            if lhs_signed is None or rhs_signed is None:
+                return None
+            return lhs_signed and rhs_signed
+
+        name = self.reference_name(node)
+        if name in variables:
+            return variables[name]
+
+        children = node.get("children", [])
+        structural_children = [c for c in children if "token" not in c]
+
+        if len(structural_children) == 1:
+            return self.infer_signedness(structural_children[0], variables)
 
         return None
 
-    # --------------------------------------------------
-    # RESULTADO
-    # --------------------------------------------------
 
-    def extract_literal(self, number_node):
+    def operand_description(self, operand):
+        name = self.reference_name(operand)
+        if name:
+            return name
 
-        leaves = find_descendants(number_node, "TK_DecNumber")
+        tokens = [
+            node.get("token")
+            for node in traverse(operand)
+            if node.get("token") is not None
+        ]
+        return "".join(tokens) or None
 
-        if leaves:
-            return leaves[0]["token"]
-
-        return None
-
-    def build_result(self, number_node, binary_expr):
+    def build_result(self, lhs, rhs, lhs_signed, rhs_signed, binary_expr):
 
         return {
-            "smell": "implicit_decimal_literal_in_binary_expression",
-            "literal": self.extract_literal(number_node),
+            "smell": "mixed_signed_unsigned_binary_expression",
             "operator": self.extract_operator(binary_expr),
-            "raw": number_node.get("meta", ""),
+            "left": self.operand_description(lhs),
+            "left_signedness": "signed" if lhs_signed else "unsigned",
+            "right": self.operand_description(rhs),
+            "right_signedness": "signed" if rhs_signed else "unsigned",
+            "raw": binary_expr.get("meta", ""),
         }
 
     # --------------------------------------------------
-    # DETECÇÃO
+    # DETECTION
     # --------------------------------------------------
 
     def detect(self, tree):
 
         results = []
+        variables = self.collect_variable_signedness(tree)
 
         for node in traverse(tree):
             if not self.is_binary_expression(node):
@@ -644,15 +688,23 @@ class ImplicitDecimalBinaryDetector(SmellDetector):
             if not self.is_arithmetic_expression(node):
                 continue
 
-            number = self.extract_unsized_decimal_operand(node)
+            lhs, rhs = self.extract_operands(node)
+            lhs_signed = self.infer_signedness(lhs, variables)
+            rhs_signed = self.infer_signedness(rhs, variables)
 
-            if number is None:
+            if lhs_signed is None or rhs_signed is None:
                 continue
 
-            results.append(self.build_result(number, node))
+            if lhs_signed == rhs_signed:
+                continue
+
+            results.append(
+                self.build_result(lhs, rhs, lhs_signed, rhs_signed, node)
+            )
 
         return results
 
+ImplicitDecimalBinaryDetector = MixedSignedUnsignedBinaryDetector
 
 class Analyzer:
     def __init__(self, detectors):
@@ -671,7 +723,7 @@ class Analyzer:
 def get_input_file():
     if len(sys.argv) > 1:
         return sys.argv[1]
-    return "/home/gabriel/ast-comparator/atom.syntax_tree.txt"
+    return "PATH-HERE"
 
 
 def generate_syntax_tree(file_path: Path):
@@ -690,7 +742,7 @@ def read_syntax_tree(path: Path):
 def get_input_file():
     if len(sys.argv) > 1:
         return Path(sys.argv[1])
-    return Path("/home/gabriel/ast-comparator/atom.syntax_tree.txt")
+    return Path("PATH-HERE")
 
 
 DETECTORS = [
@@ -699,16 +751,16 @@ DETECTORS = [
     PackedMultidimConcatDetector(),
     CaseXDetector(),
     ChainedComparisonDetector(),
-    ImplicitDecimalBinaryDetector(),
+    MixedSignedUnsignedBinaryDetector(),
 ]
 
-SMELL_NAMES = [
+ATOM_NAMES = [
     "unsized_baseless_literal_in_control",
     "non_automatic_function",
     "packed_multidimensional_concat_assignment",
     "casex_statement",
     "chained_comparison",
-    "implicit_decimal_literal_in_binary_expression",
+    "mixed_signed_unsigned_binary_expression",
 ]
 
 
@@ -753,16 +805,16 @@ if __name__ == "__main__":
         PackedMultidimConcatDetector(),
         CaseXDetector(),
         ChainedComparisonDetector(),
-        ImplicitDecimalBinaryDetector(),
+        MixedSignedUnsignedBinaryDetector(),
     ]
 
     # Analyzer
     analyzer = Analyzer(detectors)
     results = analyzer.run(tree)
 
-    print("\n=== RESULTADOS ===\n")
+    print("\n=== RESULTS ===\n")
     if not results:
-        print("Nenhum smell detectado.\n")
+        print("NO ATOMS DETECTED.\n")
     else:
         for r in results:
             print(r)
