@@ -4,7 +4,7 @@ Detects six potentially confusing Verilog/SystemVerilog patterns using Verible s
 
 ## Layout
 
-- `sniffin_variation.py`: syntax-tree parser, detectors, CLI, and `analyze_file(path)` API. The parser builds nested nodes; detectors inspect them; `Analyzer.run()` collects findings.
+- `verilog_sniffer.py`: syntax-tree parser, detectors, CLI, and `analyze_file(path)` API. The parser builds nested nodes; detectors inspect them; `Analyzer.run()` collects findings.
 - `csv/`: repository inventory and saved analysis reports.
 
 ## Dependencies
@@ -19,8 +19,8 @@ The analyzer uses only Python's standard library.
 Run from the repository root:
 
 ```sh
-python sniffin_variation.py path/to/design.sv
-python sniffin_variation.py path/to/design.syntax_tree.txt
+python verilog_sniffer.py path/to/design.sv
+python verilog_sniffer.py path/to/design.syntax_tree.txt
 ```
 
 Source inputs (`.sv`, `.svh`, `.v`) produce a sibling `.syntax_tree.txt` file and print finding dictionaries. Existing Verible `--printtree` text can be analyzed without installing Verible.

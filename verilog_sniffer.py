@@ -736,7 +736,7 @@ def read_syntax_tree(path: Path):
 def get_input_file():
     if len(sys.argv) > 1:
         return Path(sys.argv[1])
-    raise SystemExit("Usage: python sniffin_variation.py <source.sv|syntax_tree.txt>")
+    raise SystemExit("Usage: python verilog_sniffer.py <source.sv|syntax_tree.txt>")
 
 
 DETECTORS = [
