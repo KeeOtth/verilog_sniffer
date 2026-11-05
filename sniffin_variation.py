@@ -3,7 +3,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-PATH-HERE = "" #Input the path here to the file you want to analyze. It can be a .sv file or a .syntax_tree.txt file.
+
 
 class VeribleASTParser:
     NODE_REGEX = re.compile(r"Node .* \(tag: (\w+)\)")
@@ -261,7 +261,7 @@ class PackedMultidimConcatDetector(AtomDetector):
 
             dimension_ranges = find_descendants(packed_nodes[0], "kDimensionRange")
 
-            # Mais de uma dimensão packed
+            # Require at least two packed dimensions.
             if len(dimension_ranges) < 2:
                 continue
 
@@ -720,12 +720,6 @@ class Analyzer:
         return all_results
 
 
-def get_input_file():
-    if len(sys.argv) > 1:
-        return sys.argv[1]
-    return "PATH-HERE"
-
-
 def generate_syntax_tree(file_path: Path):
     txt_output = file_path.with_suffix(".syntax_tree.txt")
     cmd_txt = ["verible-verilog-syntax", "--printtree", str(file_path)]
@@ -742,7 +736,7 @@ def read_syntax_tree(path: Path):
 def get_input_file():
     if len(sys.argv) > 1:
         return Path(sys.argv[1])
-    return Path("PATH-HERE")
+    raise SystemExit("Usage: python sniffin_variation.py <source.sv|syntax_tree.txt>")
 
 
 DETECTORS = [
@@ -753,6 +747,8 @@ DETECTORS = [
     ChainedComparisonDetector(),
     MixedSignedUnsignedBinaryDetector(),
 ]
+
+SOURCE_EXTENSIONS = (".sv", ".svh", ".v")
 
 ATOM_NAMES = [
     "unsized_baseless_literal_in_control",
@@ -768,7 +764,7 @@ def analyze_file(file_path):
 
     file_path = Path(file_path)
 
-    if file_path.suffix == ".sv":
+    if file_path.suffix.lower() in SOURCE_EXTENSIONS:
         syntax_tree_path = generate_syntax_tree(file_path)
         lines = read_syntax_tree(syntax_tree_path)
     else:
@@ -788,7 +784,7 @@ if __name__ == "__main__":
     if not input_path.exists():
         raise FileNotFoundError(f"Input file not found: {input_path}")
 
-    if input_path.suffix == ".sv":
+    if input_path.suffix.lower() in SOURCE_EXTENSIONS:
         syntax_tree_path = generate_syntax_tree(input_path)
         lines = read_syntax_tree(syntax_tree_path)
     else:
@@ -798,7 +794,7 @@ if __name__ == "__main__":
     parser = VeribleASTParser()
     tree = parser.parse(lines)
 
-    # Detectores
+    # Detectors
     detectors = [
         UnsizedBaselessDetector(),
         NonAutoFunctionDetector(),
