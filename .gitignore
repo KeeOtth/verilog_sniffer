@@ -1,3 +1,4 @@
 /scrapper/
 __pycache__/
 *.pyc
+/csv/aggregated_2.csv
